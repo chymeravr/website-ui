@@ -18,6 +18,7 @@ RUN apt-get install -y libpq-dev
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g gulp
+RUN ln -s /usr/bin/nodejs /usr/bin/node
 
 # nginx and uwsgi
 RUN apt-get update
