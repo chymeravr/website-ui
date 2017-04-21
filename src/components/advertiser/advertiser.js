@@ -59,7 +59,7 @@ export class AdvertiserView extends React.Component {
     }
 
     componentDidMount() {
-        document.title = "Campaigns"
+        document.title = 'Campaigns'
     }
 
     postSave(campaign) {
@@ -93,7 +93,7 @@ export class AdvertiserView extends React.Component {
     }
 
     render() {
-        debug("advertiser", this.state);
+        debug('advertiser', this.state);
         if (!this.state.campaigns) {
             return <main className="Site-content ui center aligned grid" style={{ minHeight: '100vh' }} />
         }
@@ -125,7 +125,7 @@ export class AdvertiserView extends React.Component {
                                     {this.state.campaigns.map((campaign, idx) =>
                                         <Table.Row key={campaign.key}>
                                             <Table.Cell>
-                                                <Link to={'/advertiser/campaigns/' + campaign.id + "/"}>
+                                                <Link to={'/advertiser/campaigns/' + campaign.id + '/'}>
                                                     {campaign.name}
                                                 </Link>
                                             </Table.Cell>

@@ -72,11 +72,11 @@ export class AdModal extends React.Component {
         var data = new FormData();
         const ad = this.state.ad;
 
-        data.append("name", ad.name);
-        data.append("adgroup", ad.adgroup);
-        data.append("creative", ad.creative);
-        data.append("landingPage", ad.landingPage);
-        data.append("adType", getCreativeType(ad.creativeFormat, ad.vision));
+        data.append('name', ad.name);
+        data.append('adgroup', ad.adgroup);
+        data.append('creative', ad.creative);
+        data.append('landingPage', ad.landingPage);
+        data.append('adType', getCreativeType(ad.creativeFormat, ad.vision));
 
         fetch(backendUrl + '/user/api/advertiser/ad/', {
             method: 'POST',

@@ -107,7 +107,7 @@ export class CreateTargetingModal extends React.Component {
                                         data-position="right" data-delay="50" data-tooltip="Head Mounted Displays"
                                         onClick={e => $('#hmdDropdown').dropdown('open')}
                                         data-activates='hmdDropdown'>
-                                        {config.hmds[this.state.hmd] ? config.hmds[this.state.hmd] : "All"}
+                                        {config.hmds[this.state.hmd] ? config.hmds[this.state.hmd] : 'All'}
                                         <i className="material-icons col s1">expand_more</i>
                                     </a>
 
@@ -115,7 +115,7 @@ export class CreateTargetingModal extends React.Component {
                                         {Object.keys(config.hmds).map(id =>
                                             <li key={id}>
                                                 <a onClick={e => this.setHmd(id)}>
-                                                    {config.hmds[id] ? config.hmds[id] : "All"}
+                                                    {config.hmds[id] ? config.hmds[id] : 'All'}
                                                 </a>
                                             </li>
                                         )}
@@ -126,14 +126,14 @@ export class CreateTargetingModal extends React.Component {
                                         data-position="right" data-delay="50" data-tooltip="Operating Systems"
                                         onClick={e => $('#osDropdown').dropdown('open')}
                                         data-activates='osDropdown'>
-                                        {config.operatingSystems[this.state.os] ? config.operatingSystems[this.state.os] : "ALL"}
+                                        {config.operatingSystems[this.state.os] ? config.operatingSystems[this.state.os] : 'ALL'}
                                         <i className="material-icons col s1">expand_more</i>
                                     </a>
                                     <ul id='osDropdown' className='dropdown-content'>
                                         {Object.keys(config.operatingSystems).map(id =>
                                             <li key={id}>
                                                 <a onClick={e => this.setOs(id)}>
-                                                    {config.operatingSystems[id] ? config.operatingSystems[id] : "All"}
+                                                    {config.operatingSystems[id] ? config.operatingSystems[id] : 'All'}
                                                 </a>
                                             </li>
                                         )}

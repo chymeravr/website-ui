@@ -33,7 +33,7 @@ export class Login_P extends React.Component {
     }
 
     componentDidMount() {
-        document.title = "Login";
+        document.title = 'Login';
     }
 
     signup(e) {

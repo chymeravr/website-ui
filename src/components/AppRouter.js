@@ -101,7 +101,7 @@ export class AppRouter extends React.Component {
     }
 
     render() {
-        debug("router", this.state);
+        debug('router', this.state);
 
 
         return (

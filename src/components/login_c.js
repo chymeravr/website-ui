@@ -15,8 +15,8 @@ const mapDispatchToProps = (dispatch) => {
         tryLogin: (event, username, password) => {
             event.preventDefault();
             var data = new FormData();
-            data.append("username", username);
-            data.append("password", password);
+            data.append('username', username);
+            data.append('password', password);
             dispatch(startLogin());
             callRawApiWithJwt('/user/api/login',
                 'POST',

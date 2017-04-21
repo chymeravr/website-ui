@@ -32,9 +32,9 @@ export class EquiStereoFormat extends React.Component {
             image.src = oFREvent.target.result;
             image.onload = function () {
                 if (this.height != 2048 || this.width != 4096) {
-                    alert("Please upload 2048x4096 images")
+                    alert('Please upload 2048x4096 images')
                 } else {
-                    that.state[label + "ImageData"] = oFREvent.target.result;
+                    that.state[label + 'ImageData'] = oFREvent.target.result;
                     that.setState(Object.assign({}, that.state), that.validateImageData)
                 }
             };
@@ -54,7 +54,7 @@ export class EquiStereoFormat extends React.Component {
 
     getImageData(context, canvas, label) {
         var img = new Image();
-        img.src = this.state[label + "ImageData"];
+        img.src = this.state[label + 'ImageData'];
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.drawImage(img, 0, 0, imgWidth, imgHeight);
         return context.getImageData(0, 0, imgWidth, imgHeight);
@@ -67,12 +67,12 @@ export class EquiStereoFormat extends React.Component {
 
 
     stitchEye(eye, start_x, start_y) {
-        var c = document.getElementById("workingCanvas");
-        var ctx = c.getContext("2d");
+        var c = document.getElementById('workingCanvas');
+        var ctx = c.getContext('2d');
 
         var imageData = this.getImageData(ctx, c, eye);
-        var stitchedCanvas = document.getElementById("stitchedCanvas");
-        var stitchedContext = stitchedCanvas.getContext("2d");
+        var stitchedCanvas = document.getElementById('stitchedCanvas');
+        var stitchedContext = stitchedCanvas.getContext('2d');
 
         stitchedContext.putImageData(imageData, start_x, start_y)
     }
@@ -83,16 +83,16 @@ export class EquiStereoFormat extends React.Component {
         this.stitchEye('left', 0, 0);
         this.stitchEye('right', 0, 2048);
 
-        var c = document.getElementById("stitchedCanvas");
-        var ctx = c.getContext("2d");
+        var c = document.getElementById('stitchedCanvas');
+        var ctx = c.getContext('2d');
 
-        var previewCanvas = document.getElementById("previewCanvas");
-        var previewContext = previewCanvas.getContext("2d");
+        var previewCanvas = document.getElementById('previewCanvas');
+        var previewContext = previewCanvas.getContext('2d');
         var previewImg = new Image();
         previewImg.src = c.toDataURL();
         previewContext.drawImage(previewImg, 0, 0, 4096, 4096, 0, 0, 600, 600);
 
-        var image = c.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
+        var image = c.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');  // here is the most important part because if you dont replace you will get a DOM 18 exception.
         this.onCreativeAddition(dataURItoBlob(image));
         this.setState(Object.assign({}, this.state, { conversion: CONVERTED }))
     }
@@ -111,7 +111,7 @@ export class EquiStereoFormat extends React.Component {
                                         </Table.Row>
                                     </Table.Header>
                                     <Table.Row textAlign='center'>
-                                        <ImgUploadColumn label="left" onImgFileChange={e => this.setFileName("left")(e)} src={this.state.leftImageData} width='600px' height='300px' />
+                                        <ImgUploadColumn label="left" onImgFileChange={e => this.setFileName('left')(e)} src={this.state.leftImageData} width='600px' height='300px' />
                                     </Table.Row>
                                 </Table.Body>
                             </Table>
@@ -127,7 +127,7 @@ export class EquiStereoFormat extends React.Component {
                                         </Table.Row>
                                     </Table.Header>
                                     <Table.Row textAlign='center'>
-                                        <ImgUploadColumn label="right" onImgFileChange={e => this.setFileName("right")(e)} src={this.state.rightImageData} width='600px' height='300px' />
+                                        <ImgUploadColumn label="right" onImgFileChange={e => this.setFileName('right')(e)} src={this.state.rightImageData} width='600px' height='300px' />
                                     </Table.Row>
                                 </Table.Body>
                             </Table>
@@ -141,8 +141,8 @@ export class EquiStereoFormat extends React.Component {
                         <Grid.Column width={6} />
                     </Grid.Row>
                 </Grid>
-                <canvas id="workingCanvas" height="2048" width="4096" style={{ display: "none" }} />
-                <canvas id="stitchedCanvas" height="4096" width="4096" style={{ display: "none" }} />
+                <canvas id="workingCanvas" height="2048" width="4096" style={{ display: 'none' }} />
+                <canvas id="stitchedCanvas" height="4096" width="4096" style={{ display: 'none' }} />
                 <Segment basic textAlign="center">
                     <canvas className="ui" id="previewCanvas" height="600" width="600" style={this.state.conversion == CONVERTED ? {} : { display: 'none' }} />
                 </Segment>

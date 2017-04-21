@@ -100,25 +100,25 @@ export class HomeView extends React.Component {
 
 
                     <Grid.Row className='section' columns={5}>
-                        {getImageWithCaption("cross-promotion.png", 'CROSS PROMOTE APPS')}
-                        {getImageWithCaption("access-premium.png", 'MONETIZE VR CONTENT')}
-                        {getImageWithCaption("increase-downloads.png", 'GET UNMATCHED ROI')}
+                        {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
+                        {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT')}
+                        {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI')}
                     </Grid.Row>
 
 
                     <Grid.Row columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
                         <Grid.Column width={1} />
                         {getClientLink('ADVERTISER',
-                            "Virtual Reality is a powerful storytelling platform. Research suggests \
+                            'Virtual Reality is a powerful storytelling platform. Research suggests \
                             that VR content evokes emotions of a higher intensity vis-a-vis traditional \
                             2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
-                            discover the secret to a user's heart!",
+                            discover the secret to a user\'s heart!',
                             '/advertiser/', 'summary advertiserSummary')}
                         <Grid.Column width={1} />
                         {getClientLink('PUBLISHER',
-                            "VR advertising is attracting marketing dollars globally. Our seamless experience\
+                            'VR advertising is attracting marketing dollars globally. Our seamless experience\
                              makes it highly effective and incredibly engaging. Did we say they are no-nonsense\
-                              and users look forward to them! Let's get started, shall we?",
+                              and users look forward to them! Let\'s get started, shall we?',
                             '/publisher/', 'summary publisherSummary')}
                         <Grid.Column width={1} />
                     </Grid.Row>

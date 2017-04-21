@@ -25,7 +25,7 @@ const adgroupHeaders = {
 export class CampaignDetailView extends React.Component {
     constructor(props) {
         super(props);
-        debug("CampaignDetailsProps", props);
+        debug('CampaignDetailsProps', props);
         this.state = {
             cmpModalIsOpen: false,
             agModalIsOpen: false,
@@ -58,7 +58,7 @@ export class CampaignDetailView extends React.Component {
                     adgroup.endDate = moment(adgroup.endDate, 'YYYY-MM-DD');
                 })
                 this.setState(Object.assign({}, this.state, { campaign: response }));
-                document.title = response.name + " | Campaign";
+                document.title = response.name + ' | Campaign';
             },
             (error) => {
                 alert(error);
@@ -121,7 +121,7 @@ export class CampaignDetailView extends React.Component {
     }
 
     render() {
-        debug("campaignDetail", this.state);
+        debug('campaignDetail', this.state);
         if (!this.state.campaign) {
             return <main className="Site-content ui center aligned grid" style={{ minHeight: '100vh' }} />
         }
@@ -191,7 +191,7 @@ export class CampaignDetailView extends React.Component {
                                     {this.state.campaign.adgroups.map((adgroup, idx) =>
                                         <Table.Row key={adgroup.id}>
                                             <Table.Cell>
-                                                <Link to={'/advertiser/adgroups/' + adgroup.id + "/"}>
+                                                <Link to={'/advertiser/adgroups/' + adgroup.id + '/'}>
                                                     {adgroup.name}
                                                 </Link>
                                             </Table.Cell>

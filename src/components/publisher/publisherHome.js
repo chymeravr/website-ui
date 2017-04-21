@@ -75,13 +75,13 @@ export class PublisherHomeView extends React.Component {
                             </Header>
                         </Grid.Column>
                         <Grid.Column stretched width={1} />
-                        {getImageWithCaption("integrate-chymera.png", 'INTEGRATE CHYMERA ADS')}
+                        {getImageWithCaption('integrate-chymera.png', 'INTEGRATE CHYMERA ADS')}
                         <Grid.Column only='computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
                         <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
-                        {getImageWithCaption("earn-credits.png", 'EARN CREDITS')}
+                        {getImageWithCaption('earn-credits.png', 'EARN CREDITS')}
                         <Grid.Column only='computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
                         <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
-                        {getImageWithCaption("spend-credits.png", 'PROMOTE YOUR APP')}
+                        {getImageWithCaption('spend-credits.png', 'PROMOTE YOUR APP')}
                         <Grid.Column width={2} />
                     </Grid.Row>
                     <Divider />

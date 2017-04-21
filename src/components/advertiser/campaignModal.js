@@ -29,8 +29,8 @@ export class CampaignEditModal extends React.Component {
         this.postSave = props.postSave;
         this.closeModal = props.closeModal;
 
-        this.label = this.isEditModal ? "Edit Campaign" : "Create Campaign";
-        this.saveMethod = this.isEditModal ? "PUT" : "POST";
+        this.label = this.isEditModal ? 'Edit Campaign' : 'Create Campaign';
+        this.saveMethod = this.isEditModal ? 'PUT' : 'POST';
         this.successStatus = this.isEditModal ? 200 : 201;
 
         this.onDatesChange = this.onDatesChange.bind(this);
@@ -125,7 +125,7 @@ export class CampaignEditModal extends React.Component {
 
 
     render() {
-        debug("campaignModal", this.state);
+        debug('campaignModal', this.state);
         const { startDate, endDate } = this.state.campaign;
         const { focusedInput } = this.state;
         const campaign = this.state.campaign;

@@ -27,7 +27,7 @@ export class EquiStereoFormat extends React.Component {
                 if (this.height != 4096 || this.width != 4096) {
                     that.setState({ valid: false })
                 } else {
-                    that.state["imageData"] = oFREvent.target.result;
+                    that.state['imageData'] = oFREvent.target.result;
                     that.onCreativeAddition(dataURItoBlob(oFREvent.target.result));
                     that.setState(Object.assign({}, that.state, { valid: true }))
                 }
@@ -57,7 +57,7 @@ export class EquiStereoFormat extends React.Component {
                         </Message>}
                     <Table.Body>
                         <Table.Row textAlign='center'>
-                            <ImgUploadColumn label="Creative" onImgFileChange={e => this.setFileName("top")(e)} src={this.state.imageData} height="300px" width="300px" />
+                            <ImgUploadColumn label="Creative" onImgFileChange={e => this.setFileName('top')(e)} src={this.state.imageData} height="300px" width="300px" />
                         </Table.Row>
                     </Table.Body>
                 </Table>

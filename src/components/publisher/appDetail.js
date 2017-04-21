@@ -43,7 +43,7 @@ export class AppDetailView extends React.Component {
             null,
             (response) => {
                 this.setState(Object.assign({}, this.state, { app: response }));
-                document.title = response.name + " | App"
+                document.title = response.name + ' | App'
             },
             (error) => {
                 alert(error);
@@ -101,7 +101,7 @@ export class AppDetailView extends React.Component {
     }
 
     render() {
-        debug("appDetail", this.state);
+        debug('appDetail', this.state);
         if (!this.state.app) {
             return <main className="Site-content ui center aligned grid" style={{ minHeight: '100vh' }} />
         }

@@ -33,9 +33,9 @@ export class CubeMonoFormat extends React.Component {
             image.onload = function () {
                 console.info(this.height, this.width)
                 if (this.height != 1024 || this.width != 1024) {
-                    alert("Please upload 1024x1024 images")
+                    alert('Please upload 1024x1024 images')
                 } else {
-                    that.state[label + "ImageData"] = oFREvent.target.result;
+                    that.state[label + 'ImageData'] = oFREvent.target.result;
                     that.setState(Object.assign({}, that.state), that.validateImageData)
                 }
             };
@@ -61,7 +61,7 @@ export class CubeMonoFormat extends React.Component {
 
     getImageData(context, canvas, label) {
         var img = new Image();
-        img.src = this.state[label + "ImageData"];
+        img.src = this.state[label + 'ImageData'];
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.drawImage(img, 0, 0, imgWidth, imgWidth);
         return context.getImageData(0, 0, imgWidth, imgWidth).data;
@@ -77,15 +77,15 @@ export class CubeMonoFormat extends React.Component {
     }
 
     convertToEqui() {
-        var c = document.getElementById("workingCanvas");
-        var ctx = c.getContext("2d");
+        var c = document.getElementById('workingCanvas');
+        var ctx = c.getContext('2d');
 
-        var topImageData = this.getImageData(ctx, c, "top")
-        var bottomImageData = this.getImageData(ctx, c, "bottom")
-        var leftImageData = this.getImageData(ctx, c, "left")
-        var rightImageData = this.getImageData(ctx, c, "right")
-        var frontImageData = this.getImageData(ctx, c, "front")
-        var backImageData = this.getImageData(ctx, c, "back")
+        var topImageData = this.getImageData(ctx, c, 'top')
+        var bottomImageData = this.getImageData(ctx, c, 'bottom')
+        var leftImageData = this.getImageData(ctx, c, 'left')
+        var rightImageData = this.getImageData(ctx, c, 'right')
+        var frontImageData = this.getImageData(ctx, c, 'front')
+        var backImageData = this.getImageData(ctx, c, 'back')
 
         var width = imgWidth * 4,
             height = imgWidth * 2,
@@ -146,13 +146,13 @@ export class CubeMonoFormat extends React.Component {
         idata.data.set(buffer);
         ctx.putImageData(idata, 0, 0)
 
-        var previewCanvas = document.getElementById("previewCanvas");
-        var previewContext = previewCanvas.getContext("2d");
+        var previewCanvas = document.getElementById('previewCanvas');
+        var previewContext = previewCanvas.getContext('2d');
         var previewImg = new Image();
         previewImg.src = c.toDataURL();
         previewContext.drawImage(previewImg, 0, 0, 4096, 2048, 0, 0, 600, 300);
 
-        var image = c.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+        var image = c.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');
         this.onCreativeAddition(dataURItoBlob(image));
         this.setState(Object.assign({}, this.state, { conversion: CONVERTED }))
     }
@@ -163,14 +163,14 @@ export class CubeMonoFormat extends React.Component {
                 <Table compact basic collapsing celled padded={false} style={{ padding: 0, margin: '0px auto' }} >
                     <Table.Body>
                         <Table.Row textAlign='center'>
-                            <ImgUploadColumn label="top" onImgFileChange={e => this.setFileName("top")(e)} src={this.state.topImageData} />
-                            <ImgUploadColumn label="left" onImgFileChange={e => this.setFileName("left")(e)} src={this.state.leftImageData} />
-                            <ImgUploadColumn label="front" onImgFileChange={e => this.setFileName("front")(e)} src={this.state.frontImageData} />
+                            <ImgUploadColumn label="top" onImgFileChange={e => this.setFileName('top')(e)} src={this.state.topImageData} />
+                            <ImgUploadColumn label="left" onImgFileChange={e => this.setFileName('left')(e)} src={this.state.leftImageData} />
+                            <ImgUploadColumn label="front" onImgFileChange={e => this.setFileName('front')(e)} src={this.state.frontImageData} />
                         </Table.Row>
                         <Table.Row textAlign='center'>
-                            <ImgUploadColumn label="bottom" onImgFileChange={e => this.setFileName("bottom")(e)} src={this.state.bottomImageData} />
-                            <ImgUploadColumn label="right" onImgFileChange={e => this.setFileName("right")(e)} src={this.state.rightImageData} />
-                            <ImgUploadColumn label="back" onImgFileChange={e => this.setFileName("back")(e)} src={this.state.backImageData} />
+                            <ImgUploadColumn label="bottom" onImgFileChange={e => this.setFileName('bottom')(e)} src={this.state.bottomImageData} />
+                            <ImgUploadColumn label="right" onImgFileChange={e => this.setFileName('right')(e)} src={this.state.rightImageData} />
+                            <ImgUploadColumn label="back" onImgFileChange={e => this.setFileName('back')(e)} src={this.state.backImageData} />
                         </Table.Row>
                     </Table.Body>
                     <Table.Footer fullWidth>
@@ -181,7 +181,7 @@ export class CubeMonoFormat extends React.Component {
                         </Table.Row>
                     </Table.Footer>
                 </Table>
-                <canvas id="workingCanvas" height="2048" width="4096" style={{ display: "none" }} />
+                <canvas id="workingCanvas" height="2048" width="4096" style={{ display: 'none' }} />
                 <Segment basic textAlign="center">
                     <canvas className="ui" id="previewCanvas" height="300" width="600" style={this.state.conversion == CONVERTED ? {} : { display: 'none' }} />
                 </Segment>

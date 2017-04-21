@@ -34,7 +34,7 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = Object.assign({}, props);
-        debug("AppProps", props)
+        debug('AppProps', props)
     }
 
     componentWillReceiveProps(props) {
@@ -42,7 +42,7 @@ export default class App extends React.Component {
     }
 
     render() {
-        debug("App", this.state);
+        debug('App', this.state);
 
         return !this.state.adblock ? (
             <div className="Site">

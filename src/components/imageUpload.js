@@ -24,7 +24,7 @@ export class ImgUploadColumn extends React.Component {
 
         return (
             <Table.Cell collapsing onClick={() => this.fileInput.click()} style={{ width: this.width }}>
-                <img style={{ margin: "0px auto" }} className="ui image" id={this.label} data-caption="Preview" height={this.height} src={this.state.src} />
+                <img style={{ margin: '0px auto' }} className="ui image" id={this.label} data-caption="Preview" height={this.height} src={this.state.src} />
                 <span>{this.label}</span>
                 <input type="file" ref={input => this.fileInput = input} onChange={e => this.onImgFileChange(e)} />
             </Table.Cell>

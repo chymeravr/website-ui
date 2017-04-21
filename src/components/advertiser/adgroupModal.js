@@ -29,8 +29,8 @@ export class AdgroupEditModal extends React.Component {
         this.closeModal = props.closeModal;
         this.postSave = props.postSave;
 
-        this.label = this.isEditModal ? "Edit Adgroup" : "Create Adgroup";
-        this.saveMethod = this.isEditModal ? "PUT" : "POST"
+        this.label = this.isEditModal ? 'Edit Adgroup' : 'Create Adgroup';
+        this.saveMethod = this.isEditModal ? 'PUT' : 'POST'
         this.successStatus = this.isEditModal ? 200 : 201
 
         this.onDatesChange = this.onDatesChange.bind(this);
@@ -126,7 +126,7 @@ export class AdgroupEditModal extends React.Component {
     }
 
     render() {
-        debug("adgroupModal", this.state);
+        debug('adgroupModal', this.state);
         const { startDate, endDate } = this.state.adgroup;
         const { focusedInput } = this.state;
 
@@ -144,7 +144,7 @@ export class AdgroupEditModal extends React.Component {
                 </a>
         }
 
-        const title = this.saveMethod == "PUT" ? "Edit Adgroup" : "Create Adgroup";
+        const title = this.saveMethod == 'PUT' ? 'Edit Adgroup' : 'Create Adgroup';
         const adgroup = this.state.adgroup;
 
         return (

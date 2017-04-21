@@ -54,7 +54,7 @@ export class AdgroupDetailView extends React.Component {
                 response.startDate = moment(response.startDate, 'YYYY-MM-DD');
                 response.endDate = moment(response.endDate, 'YYYY-MM-DD');
                 this.setState(Object.assign({}, this.state, { adgroup: response }))
-                document.title = response.name + " | Adgroup";
+                document.title = response.name + ' | Adgroup';
             },
             (error) => {
                 console.info(error)
@@ -108,7 +108,7 @@ export class AdgroupDetailView extends React.Component {
     }
 
     render() {
-        debug("adgroupDetail", this.state);
+        debug('adgroupDetail', this.state);
         if (!this.state.adgroup) {
             return <main className="Site-content ui center aligned grid" style={{ minHeight: '100vh' }} />
         }
@@ -186,7 +186,7 @@ export class AdgroupDetailView extends React.Component {
 
                                             </Table.Cell>
                                             <Table.Cell><img src={ad.creative} width="100px" /></Table.Cell>
-                                            <Table.Cell><a href={"http://" + ad.landingPage} target='_blank' ><Icon name="external" /></a></Table.Cell>
+                                            <Table.Cell><a href={'http://' + ad.landingPage} target='_blank' ><Icon name="external" /></a></Table.Cell>
                                         </Table.Row>)
                                     }
                                 </Table.Body>

@@ -93,14 +93,14 @@ export class AppEditModal extends React.Component {
     }
 
     render() {
-        debug("appModal", this.state);
+        debug('appModal', this.state);
         const appStores = config.appStores;
         const appStoreOptions = Object.keys(appStores).map(appStoreId => {
             return { key: appStoreId, text: appStores[appStoreId], value: appStoreId };
         });
 
         const app = this.state.app;
-        const title = this.saveMethod == "PUT" ? 'Edit App' : 'Create App';
+        const title = this.saveMethod == 'PUT' ? 'Edit App' : 'Create App';
         return (
             <Modal open={this.state.open} onClose={this.closeModal} dimmer='blurring'>
                 <Modal.Header>{this.label}</Modal.Header>

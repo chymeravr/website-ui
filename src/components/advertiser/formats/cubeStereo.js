@@ -31,9 +31,9 @@ export class CubeStereoFormat extends React.Component {
             image.src = oFREvent.target.result;
             image.onload = function () {
                 if (this.height != 1024 || this.width != 1024) {
-                    alert("Please upload 1024x1024 images")
+                    alert('Please upload 1024x1024 images')
                 } else {
-                    that.state[label + "ImageData"] = oFREvent.target.result;
+                    that.state[label + 'ImageData'] = oFREvent.target.result;
                     that.setState(Object.assign({}, that.state), that.validateImageData)
                 }
             };
@@ -59,7 +59,7 @@ export class CubeStereoFormat extends React.Component {
 
     getImageData(context, canvas, label) {
         var img = new Image();
-        img.src = this.state[label + "ImageData"];
+        img.src = this.state[label + 'ImageData'];
         context.clearRect(0, 0, canvas.width, canvas.height);
         context.drawImage(img, 0, 0, imgWidth, imgWidth);
         return context.getImageData(0, 0, imgWidth, imgWidth).data;
@@ -81,15 +81,15 @@ export class CubeStereoFormat extends React.Component {
     }
 
     convertToEquiEye(eye, start_x, start_y) {
-        var c = document.getElementById("workingCanvas");
-        var ctx = c.getContext("2d");
+        var c = document.getElementById('workingCanvas');
+        var ctx = c.getContext('2d');
 
-        var topImageData = this.getImageData(ctx, c, eye + "_top")
-        var bottomImageData = this.getImageData(ctx, c, eye + "_bottom")
-        var leftImageData = this.getImageData(ctx, c, eye + "_left")
-        var rightImageData = this.getImageData(ctx, c, eye + "_right")
-        var frontImageData = this.getImageData(ctx, c, eye + "_front")
-        var backImageData = this.getImageData(ctx, c, eye + "_back")
+        var topImageData = this.getImageData(ctx, c, eye + '_top')
+        var bottomImageData = this.getImageData(ctx, c, eye + '_bottom')
+        var leftImageData = this.getImageData(ctx, c, eye + '_left')
+        var rightImageData = this.getImageData(ctx, c, eye + '_right')
+        var frontImageData = this.getImageData(ctx, c, eye + '_front')
+        var backImageData = this.getImageData(ctx, c, eye + '_back')
 
         var width = imgWidth * 4,
             height = imgWidth * 2,
@@ -147,8 +147,8 @@ export class CubeStereoFormat extends React.Component {
             }
         }
 
-        var stitchedCanvas = document.getElementById("stitchedCanvas");
-        var stitchedContext = stitchedCanvas.getContext("2d");
+        var stitchedCanvas = document.getElementById('stitchedCanvas');
+        var stitchedContext = stitchedCanvas.getContext('2d');
 
         var idata = stitchedContext.createImageData(width, height);
         idata.data.set(buffer);
@@ -159,16 +159,16 @@ export class CubeStereoFormat extends React.Component {
         this.convertToEquiEye('l', 0, 0);
         this.convertToEquiEye('r', 0, 2048);
 
-        var c = document.getElementById("stitchedCanvas");
-        var ctx = c.getContext("2d");
+        var c = document.getElementById('stitchedCanvas');
+        var ctx = c.getContext('2d');
 
-        var previewCanvas = document.getElementById("previewCanvas");
-        var previewContext = previewCanvas.getContext("2d");
+        var previewCanvas = document.getElementById('previewCanvas');
+        var previewContext = previewCanvas.getContext('2d');
         var previewImg = new Image();
         previewImg.src = c.toDataURL();
         previewContext.drawImage(previewImg, 0, 0, 4096, 4096, 0, 0, 600, 600);
 
-        var image = c.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
+        var image = c.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');  // here is the most important part because if you dont replace you will get a DOM 18 exception.
         this.onCreativeAddition(dataURItoBlob(image));
         this.setState(Object.assign({}, this.state, { conversion: CONVERTED }))
     }
@@ -187,14 +187,14 @@ export class CubeStereoFormat extends React.Component {
                                         </Table.Row>
                                     </Table.Header>
                                     <Table.Row textAlign='center'>
-                                        <ImgUploadColumn label="l_top" onImgFileChange={e => this.setFileName("l_top")(e)} src={this.state.l_topImageData} />
-                                        <ImgUploadColumn label="l_left" onImgFileChange={e => this.setFileName("l_left")(e)} src={this.state.l_leftImageData} />
-                                        <ImgUploadColumn label="l_front" onImgFileChange={e => this.setFileName("l_front")(e)} src={this.state.l_frontImageData} />
+                                        <ImgUploadColumn label="l_top" onImgFileChange={e => this.setFileName('l_top')(e)} src={this.state.l_topImageData} />
+                                        <ImgUploadColumn label="l_left" onImgFileChange={e => this.setFileName('l_left')(e)} src={this.state.l_leftImageData} />
+                                        <ImgUploadColumn label="l_front" onImgFileChange={e => this.setFileName('l_front')(e)} src={this.state.l_frontImageData} />
                                     </Table.Row>
                                     <Table.Row textAlign='center'>
-                                        <ImgUploadColumn label="l_bottom" onImgFileChange={e => this.setFileName("l_bottom")(e)} src={this.state.l_bottomImageData} />
-                                        <ImgUploadColumn label="l_right" onImgFileChange={e => this.setFileName("l_right")(e)} src={this.state.l_rightImageData} />
-                                        <ImgUploadColumn label="l_back" onImgFileChange={e => this.setFileName("l_back")(e)} src={this.state.l_backImageData} />
+                                        <ImgUploadColumn label="l_bottom" onImgFileChange={e => this.setFileName('l_bottom')(e)} src={this.state.l_bottomImageData} />
+                                        <ImgUploadColumn label="l_right" onImgFileChange={e => this.setFileName('l_right')(e)} src={this.state.l_rightImageData} />
+                                        <ImgUploadColumn label="l_back" onImgFileChange={e => this.setFileName('l_back')(e)} src={this.state.l_backImageData} />
                                     </Table.Row>
                                 </Table.Body>
                             </Table>
@@ -210,14 +210,14 @@ export class CubeStereoFormat extends React.Component {
                                         </Table.Row>
                                     </Table.Header>
                                     <Table.Row textAlign='center'>
-                                        <ImgUploadColumn label="r_top" onImgFileChange={e => this.setFileName("r_top")(e)} src={this.state.r_topImageData} />
-                                        <ImgUploadColumn label="r_left" onImgFileChange={e => this.setFileName("r_left")(e)} src={this.state.r_leftImageData} />
-                                        <ImgUploadColumn label="r_front" onImgFileChange={e => this.setFileName("r_front")(e)} src={this.state.r_frontImageData} />
+                                        <ImgUploadColumn label="r_top" onImgFileChange={e => this.setFileName('r_top')(e)} src={this.state.r_topImageData} />
+                                        <ImgUploadColumn label="r_left" onImgFileChange={e => this.setFileName('r_left')(e)} src={this.state.r_leftImageData} />
+                                        <ImgUploadColumn label="r_front" onImgFileChange={e => this.setFileName('r_front')(e)} src={this.state.r_frontImageData} />
                                     </Table.Row>
                                     <Table.Row textAlign='center'>
-                                        <ImgUploadColumn label="r_bottom" onImgFileChange={e => this.setFileName("r_bottom")(e)} src={this.state.r_bottomImageData} />
-                                        <ImgUploadColumn label="r_right" onImgFileChange={e => this.setFileName("r_right")(e)} src={this.state.r_rightImageData} />
-                                        <ImgUploadColumn label="r_back" onImgFileChange={e => this.setFileName("r_back")(e)} src={this.state.r_backImageData} />
+                                        <ImgUploadColumn label="r_bottom" onImgFileChange={e => this.setFileName('r_bottom')(e)} src={this.state.r_bottomImageData} />
+                                        <ImgUploadColumn label="r_right" onImgFileChange={e => this.setFileName('r_right')(e)} src={this.state.r_rightImageData} />
+                                        <ImgUploadColumn label="r_back" onImgFileChange={e => this.setFileName('r_back')(e)} src={this.state.r_backImageData} />
                                     </Table.Row>
                                 </Table.Body>
                             </Table>
@@ -232,8 +232,8 @@ export class CubeStereoFormat extends React.Component {
                         <Grid.Column width={6} />
                     </Grid.Row>
                 </Grid>
-                <canvas id="workingCanvas" height="2048" width="4096" style={{ display: "none" }} />
-                <canvas id="stitchedCanvas" height="4096" width="4096" style={{ display: "none" }} />
+                <canvas id="workingCanvas" height="2048" width="4096" style={{ display: 'none' }} />
+                <canvas id="stitchedCanvas" height="4096" width="4096" style={{ display: 'none' }} />
                 <Segment basic textAlign="center">
                     <canvas className="ui" id="previewCanvas" height="600" width="600" style={this.state.conversion == CONVERTED ? {} : { display: 'none' }} />
                 </Segment>

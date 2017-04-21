@@ -34,7 +34,7 @@ export class PublisherView extends React.Component {
             (response) => {
                 response = response.map(app => Object.assign(app, { key: app.id }));
                 this.setState(Object.assign({}, this.state, { apps: response }));
-                document.title = "Apps"
+                document.title = 'Apps'
             },
             (error) => {
                 // alert(error);
@@ -131,12 +131,12 @@ export class PublisherView extends React.Component {
                                 {this.state.apps.map((app, idx) =>
                                     <Table.Row key={app.key}>
                                         <Table.Cell>
-                                            <Link to={'/publisher/apps/' + app.id + "/"}>
+                                            <Link to={'/publisher/apps/' + app.id + '/'}>
                                                 {app.name}
                                             </Link>
                                         </Table.Cell>
                                         <Table.Cell>{config.appStores[app.appStore]}</Table.Cell>
-                                        <Table.Cell>{app.approved ? "Pending Approval" : "Approved"}</Table.Cell>
+                                        <Table.Cell>{app.approved ? 'Pending Approval' : 'Approved'}</Table.Cell>
                                     </Table.Row>)
                                 }
                             </Table.Body>

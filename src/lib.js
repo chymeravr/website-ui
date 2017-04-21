@@ -11,7 +11,7 @@ export function debug(message, props) {
 }
 
 export function callApiWithJwt(path, method, body, onSuccess, onError, statusCode = 200) {
-    document.body.classList.add("wait");
+    document.body.classList.add('wait');
     const jwtToken = localStorage.getItem(config.jwt.tokenKey);
     fetch(backendUrl + path, {
         method: method,
@@ -26,22 +26,22 @@ export function callApiWithJwt(path, method, body, onSuccess, onError, statusCod
         if (response.status != statusCode) {
             json.then(error => {
                 onError(error);
-                document.body.classList.remove("wait");
+                document.body.classList.remove('wait');
             })
         } else {
             json.then(json => {
                 onSuccess(json);
-                document.body.classList.remove("wait");
+                document.body.classList.remove('wait');
             })
         }
     }).catch(error => {
-        document.body.classList.remove("wait");
+        document.body.classList.remove('wait');
         alert('Site unreachable');
     });
 }
 
 export function callApi(path, method, body, onSuccess, onError, statusCode = 200) {
-    document.body.classList.add("wait");
+    document.body.classList.add('wait');
     fetch(backendUrl + path, {
         method: method,
         body: body,
@@ -54,22 +54,22 @@ export function callApi(path, method, body, onSuccess, onError, statusCode = 200
         if (response.status != statusCode) {
             json.then(error => {
                 onError(error);
-                document.body.classList.remove("wait");
+                document.body.classList.remove('wait');
             })
         } else {
             json.then(json => {
                 onSuccess(json);
-                document.body.classList.remove("wait");
+                document.body.classList.remove('wait');
             })
         }
     }).catch(error => {
-        document.body.classList.remove("wait");
+        document.body.classList.remove('wait');
         alert('Site unreachable');
     });;
 }
 
 export function callRawApiWithJwt(path, method, body, onSuccess, onError, statusCode = 200) {
-    document.body.classList.add("wait");
+    document.body.classList.add('wait');
     const jwtToken = localStorage.getItem(config.jwt.tokenKey);
     fetch(backendUrl + path, {
         method: method,
@@ -83,16 +83,16 @@ export function callRawApiWithJwt(path, method, body, onSuccess, onError, status
         if (response.status != statusCode) {
             json.then(error => {
                 onError(error);
-                document.body.classList.remove("wait");
+                document.body.classList.remove('wait');
             })
         } else {
             json.then(json => {
                 onSuccess(json);
-                document.body.classList.remove("wait");
+                document.body.classList.remove('wait');
             })
         }
     }).catch(error => {
-        document.body.classList.remove("wait");
+        document.body.classList.remove('wait');
         alert('Site unreachable');
     });;
 }
@@ -104,7 +104,7 @@ export function logout(hashHistory) {
 
 export function addHttp(url) {
     if (!/^(?:f|ht)tps?\:\/\//.test(url)) {
-        url = "http://" + url;
+        url = 'http://' + url;
     }
     return url;
 }
