@@ -27,8 +27,10 @@ RUN apt-get install -y nginx
 # Create logging directory
 RUN mkdir /var/log/dashboardui
 
+# Copy semantic stuff
 COPY package.json $BASE/
 COPY semantic.json $BASE/
+COPY semantic $BASE/semantic
 
 WORKDIR $BASE
 RUN npm install
