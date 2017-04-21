@@ -1,0 +1,15 @@
+[Unit]
+Description=Dashboard UI container
+Requires=docker.service
+After=docker.service
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill dashboardui
+ExecStartPre=-/usr/bin/docker rm dashboardui
+ExecStartPre=/bin/sh -c "echo 'Starting dashboardui service on' $(hostname) | slacktee.sh"
+ExecStart=/usr/bin/docker run --net=host --name dashboardui ui-prod
+ExecStop=/usr/bin/docker stop dashboardui
+ExecStopPost=/bin/sh -c "echo 'Stopping dashboardui service on' $(hostname) | slacktee.sh"
+
+[Install]
+WantedBy=default.target

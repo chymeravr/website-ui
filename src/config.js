@@ -5,7 +5,8 @@ export var config = {}
  * Never change IDs in this class. Changing anything here will lead to changes everywhere the field is consumed
  */
 
-config.backendUrl = PRODUCTION ? 'http://api.chymeravr.com' : 'http://localhost:8000'
+// TODO Change this to https
+config.backendUrl = PRODUCTION ? 'http://api.chymeravr.com:8000' : 'http://localhost:8000'
 
 config.jwt = {
     tokenKey: 'chym_token'
