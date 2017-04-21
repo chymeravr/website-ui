@@ -10,9 +10,8 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    const that = this;
     return {
-        tryLogin: (event, username, password) => {
+        tryLogin: (event, username, password, history) => {
             event.preventDefault();
             var data = new FormData();
             data.append('username', username);
@@ -27,14 +26,17 @@ const mapDispatchToProps = (dispatch) => {
                         'GET',
                         null,
                         (response) => {
-                            console.info(response);
                             dispatch(loginSucceeded(response.user.username));
-                            that.props.history.push('/profile/')
+                            history.push('/profile/')
                         },
-                        (error) => dispatch(loginFailed())
+                        (error) => {
+                            console.error(error)
+                            dispatch(loginFailed())
+                        }
                     );
                 },
                 (error) => {
+                    console.error(error);
                     dispatch(loginFailed());
                 }
             );

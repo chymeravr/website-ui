@@ -95,17 +95,6 @@ module.exports = {
         use: ['url-loader?limit=100000',],
         exclude: /node_modules/,
       },
-      // {
-      //   test: /\.css$/,
-      //   // include: path.resolve(__dirname, '../semantic/dist'),
-      //   use: 'style-loader!css-loader!postcss-loader',
-      //   exclude: /node_modules/,
-      // },
-      // {
-      //   test: /\.css$/,
-      //   // include: path.resolve(__dirname, 'assets/dashboard/css'),
-      //   use: 'style-loader!css-loader!postcss-loader',
-      // },
       {
         test: /\.css$/,
         // include: path.resolve(__dirname, '../node_modules/react-dates/lib/css/'),

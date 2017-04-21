@@ -39,7 +39,7 @@ export class HomeView extends React.Component {
                     <div >
                         <Header as='h2' style={{ fontWeight: 'bold', color: '#008fcb', }}>{header}</Header>
                         <p>{content}</p>
-                        <Button color="orange" as='a' content='Read More' onClick={(e, d) => history.push(link)} href={link} />
+                        <Button color="orange" as='a' content='Read More' onClick={(e, d) => this.props.history.push(link)} href={link} />
                     </div>
                 </Grid.Column>
             )
@@ -90,7 +90,7 @@ export class HomeView extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row className="blueBg">
-                        <Image src="/static/img/arrow.png" />
+                        <Image src="static/img/arrow.png" />
                     </Grid.Row>
                     <Grid.Row style={{ backgroundColor: '#0d95ce', }} columns={1}>
                         <Grid.Column width={16}>
@@ -113,13 +113,13 @@ export class HomeView extends React.Component {
                             that VR content evokes emotions of a higher intensity vis-a-vis traditional \
                             2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
                             discover the secret to a user\'s heart!',
-                            '/advertiser/', 'summary advertiserSummary')}
+                            '/#/advertiser/', 'summary advertiserSummary')}
                         <Grid.Column width={1} />
                         {getClientLink('PUBLISHER',
                             'VR advertising is attracting marketing dollars globally. Our seamless experience\
                              makes it highly effective and incredibly engaging. Did we say they are no-nonsense\
                               and users look forward to them! Let\'s get started, shall we?',
-                            '/publisher/', 'summary publisherSummary')}
+                            '/#/publisher/', 'summary publisherSummary')}
                         <Grid.Column width={1} />
                     </Grid.Row>
 
@@ -130,17 +130,17 @@ export class HomeView extends React.Component {
                                 <Grid.Row columns={1}>
                                     <Grid.Column>
                                         <Header as='h2' className='greyText centerText'>Ad Formats</Header>
-                                        <Image centered src="/static/img/lines-heading.png" />
+                                        <Image centered src="static/img/lines-heading.png" />
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row columns={2}>
                                     <Grid.Column verticalAlign='top' width={8}>
-                                        <Image centered src="/static/img/360-image-video.png" />
+                                        <Image centered src="static/img/360-image-video.png" />
                                         <Header as='h3' className="boldText blue"> 360 IMAGE/VIDEO ADS</Header>
                                         <p style={{ paddingLeft: '40px', paddingRight: '40px' }}>Fully immersive user experience using 360 Ad creatives</p>
                                     </Grid.Column>
                                     <Grid.Column verticalAlign='top' width={8}>
-                                        <Image centered src="/static/img/2d-texture.png" />
+                                        <Image centered src="static/img/2d-texture.png" />
                                         <Header as='h3' className="boldText blue">TEXTURE ADS</Header>
                                         <p style={{ paddingLeft: '40px', paddingRight: '40px' }}>Traditional 2D Ads, strategically placed within VR environment</p>
                                     </Grid.Column>
@@ -148,7 +148,7 @@ export class HomeView extends React.Component {
                                 <Grid.Row only='computer' />
                                 <Grid.Row>
                                     <Grid.Column>
-                                        <Image size='medium' centered src="/static/img/all-platforms.png" />
+                                        <Image size='medium' centered src="static/img/all-platforms.png" />
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>

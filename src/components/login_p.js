@@ -1,6 +1,5 @@
 import React from 'react'
 import { config } from '../config.js'
-import { hashHistory } from 'react-router';
 import { callRawApiWithJwt, callApiWithJwt, debug, callApi } from '../lib.js'
 import { FormInput } from './common'
 import { Button, Form, Container, Grid, Message, Header, Menu } from 'semantic-ui-react'
@@ -76,7 +75,7 @@ export class Login_P extends React.Component {
                 <Form>
                     <Form.Input placeholder='Username' onChange={(e, d) => this.handleChange('username')(e, d)} />
                     <Form.Input placeholder='Password' type='password' onChange={(e, d) => this.handleChange('password')(e, d)} />
-                    <Button type='submit' onClick={(e) => this.tryLogin(e, this.state.username, this.state.password)}>Submit</Button>
+                    <Button type='submit' onClick={(e) => this.tryLogin(e, this.state.username, this.state.password, this.props.history)}>Submit</Button>
                 </Form>
             </Grid.Column>
 

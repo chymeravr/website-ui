@@ -76,11 +76,11 @@ export class PublisherHomeView extends React.Component {
                         </Grid.Column>
                         <Grid.Column stretched width={1} />
                         {getImageWithCaption('integrate-chymera.png', 'INTEGRATE CHYMERA ADS')}
-                        <Grid.Column only='computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
-                        <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
+                        <Grid.Column only='computer' width={1}><Image centered src="static/img/arrow-right.png" /></Grid.Column>
+                        <Grid.Column only='mobile' width={1}><Image centered src="static/img/arrow-down.png" /></Grid.Column>
                         {getImageWithCaption('earn-credits.png', 'EARN CREDITS')}
-                        <Grid.Column only='computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
-                        <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
+                        <Grid.Column only='computer' width={1}><Image centered src="static/img/arrow-right.png" /></Grid.Column>
+                        <Grid.Column only='mobile' width={1}><Image centered src="static/img/arrow-down.png" /></Grid.Column>
                         {getImageWithCaption('spend-credits.png', 'PROMOTE YOUR APP')}
                         <Grid.Column width={2} />
                     </Grid.Row>
@@ -88,7 +88,7 @@ export class PublisherHomeView extends React.Component {
                     <Grid.Row columns={3} verticalAlign='middle' className='section'>
                         <Grid.Column only='computer' width={2} />
                         <Grid.Column only='computer' width={4}>
-                            <Image centered src="/static/img/access-premium.png" size='small' />
+                            <Image centered src="static/img/access-premium.png" size='small' />
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <Header as='h1' className='boldText blue'>

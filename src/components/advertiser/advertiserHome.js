@@ -61,7 +61,7 @@ export class AdvertiserHomeView extends React.Component {
                     <Grid.Row columns={3} verticalAlign='middle' className='section'>
                         <Grid.Column only='computer' width={2} />
                         <Grid.Column only='computer' width={4}>
-                            <Image centered src="/static/img/access-to-premium.png" width='200px' />
+                            <Image centered src="static/img/access-to-premium.png" width='200px' />
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <Header as='h1' className='boldText blue'>
@@ -84,14 +84,14 @@ export class AdvertiserHomeView extends React.Component {
                             </p>
                         </Grid.Column>
                         <Grid.Column only='computer' width={4}>
-                            <Image centered src="/static/img/global-audience.png" width='200px' />
+                            <Image centered src="static/img/global-audience.png" width='200px' />
                         </Grid.Column>
                         <Grid.Column width={2} />
                     </Grid.Row>
                     <Grid.Row columns={3} verticalAlign='middle' className='section'>
                         <Grid.Column only='computer' width={2} />
                         <Grid.Column only='computer' width={4}>
-                            <Image centered src="/static/img/analytics-to-understand.png" width='300px' />
+                            <Image centered src="static/img/analytics-to-understand.png" width='300px' />
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <Header as='h1' className='boldText blue'>
@@ -114,7 +114,7 @@ export class AdvertiserHomeView extends React.Component {
                             </p>
                         </Grid.Column>
                         <Grid.Column only='computer' width={4}>
-                            <Image centered src="/static/img/ad-creation-services.png" width='200px'/>
+                            <Image centered src="static/img/ad-creation-services.png" width='200px'/>
                         </Grid.Column>
                         <Grid.Column width={2} />
                     </Grid.Row>
@@ -124,17 +124,17 @@ export class AdvertiserHomeView extends React.Component {
                                 <Grid.Row columns={1}>
                                     <Grid.Column>
                                         <Header as='h2' className='greyText centerText'>Ad Formats</Header>
-                                        <Image centered src="/static/img/lines-heading.png" />
+                                        <Image centered src="static/img/lines-heading.png" />
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row columns={2}>
                                     <Grid.Column verticalAlign='top' width={8}>
-                                        <Image centered src="/static/img/360-image-video.png" />
+                                        <Image centered src="static/img/360-image-video.png" />
                                         <Header as='h3' className="boldText blue"> 360 IMAGE/VIDEO ADS</Header>
                                         <p style={{ paddingLeft: '40px', paddingRight: '40px' }}>Fully immersive user experience using 360 Ad creatives</p>
                                     </Grid.Column>
                                     <Grid.Column verticalAlign='top' width={8}>
-                                        <Image centered src="/static/img/2d-texture.png" />
+                                        <Image centered src="static/img/2d-texture.png" />
                                         <Header as='h3' className="boldText blue">TEXTURE ADS</Header>
                                         <p style={{ paddingLeft: '40px', paddingRight: '40px' }}>Traditional 2D Ads, strategically placed within VR environment</p>
                                     </Grid.Column>
@@ -142,7 +142,7 @@ export class AdvertiserHomeView extends React.Component {
                                 <Grid.Row only='computer' />
                                 <Grid.Row>
                                     <Grid.Column>
-                                        <Image size='medium' centered src="/static/img/all-platforms.png" />
+                                        <Image size='medium' centered src="static/img/all-platforms.png" />
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>

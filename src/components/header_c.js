@@ -9,9 +9,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleLogout: () => {
+        handleLogout: (history) => {
             console.error('Logout')
-            logoutMethod(this.props.history);
+            logoutMethod(history);
             dispatch(logout())
         }
     }

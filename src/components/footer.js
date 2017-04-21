@@ -39,7 +39,7 @@ export default class Footer extends React.Component {
                             <Grid.Column only='computer' width={2} verticalAlign='middle'>
                                 <List style={{ textAlign: 'left' }}>
                                     <List.Item>
-                                        <Image src='/static/img/logo-simple.png' size='tiny' ></Image>
+                                        <Image src='static/img/logo-simple.png' size='tiny' ></Image>
                                     </List.Item>
                                     <List.Item href='/' style={iconTextStyle}>
                                         © Chymera VR, Inc.
