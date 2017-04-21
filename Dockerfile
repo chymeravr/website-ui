@@ -48,6 +48,6 @@ RUN npm run build
 # nginx config
 COPY server/ui.conf /etc/nginx/sites-enabled/
 RUN rm /etc/nginx/sites-enabled/default
-# COPY server/nginx.conf /etc/nginx/nginx.conf
+COPY server/nginx.conf /etc/nginx/nginx.conf
 
 CMD service nginx restart; while true;do sleep 100000; done
