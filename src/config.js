@@ -4,8 +4,8 @@ export var config = {}
  * 
  * Never change IDs in this class. Changing anything here will lead to changes everywhere the field is consumed
  */
-console.info(PRODUCTION)
-config.backendUrl = PRODUCTION ? 'http://chymeravr.com' : 'http://localhost:8000'
+
+config.backendUrl = PRODUCTION ? 'http://api.chymeravr.com' : 'http://localhost:8000'
 
 config.jwt = {
     tokenKey: 'chym_token'
