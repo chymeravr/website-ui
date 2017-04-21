@@ -31,6 +31,10 @@ COPY package.json $BASE/
 WORKDIR $BASE
 RUN npm install
 
+WORKDIR $BASE/semantic
+RUN gulp build
+
+WORKDIR $BASE
 
 # Copy all the project files. Excluded files are present in .dockerignore
 COPY . $BASE/
