@@ -28,6 +28,7 @@ RUN apt-get install -y nginx
 RUN mkdir /var/log/dashboardui
 
 COPY package.json $BASE/
+COPY semantic.json $BASE/
 
 WORKDIR $BASE
 RUN npm install
