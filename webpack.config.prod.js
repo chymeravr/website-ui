@@ -41,6 +41,9 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: 'static', to: 'static' }
-    ])
+    ]),
+    new webpack.DefinePlugin({
+      PRODUCTION: true
+    })
   ]
 };
