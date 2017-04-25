@@ -19,7 +19,7 @@ export class ProfileView extends React.Component {
             null,
             (response) => {
                 this.setState(response);
-                document.title = response.username;
+                document.title = response.user.username + " | Profile";
             },
             (error) => {
                 this.props.history.push('/login/');
