@@ -1,6 +1,6 @@
 var React = require('react');
 var Link = require('react-router').Link
-import { debug, callApiWithJwt } from '../lib.js'
+import { debug, callApiWithJwt, callApi } from '../lib.js'
 import { SignUp } from './signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
 
@@ -12,8 +12,15 @@ export class HomeView extends React.Component {
         };
     }
 
-    componentDidMount() {
+    componentWillMount() {
         document.title = 'Chymera VR | VR Ad Network';
+
+        callApi('/user/api/events/',
+            'GET',
+            null,
+            (response) => this.setState(Object.assign({}, this.state, { eventName: response.event_name, description: response.description })),
+            (error) => { console.info(error); },
+            200);
     }
 
     componentDidMount() {
@@ -94,7 +101,7 @@ export class HomeView extends React.Component {
                     </Grid.Row>
                     <Grid.Row style={{ backgroundColor: '#0d95ce', }} columns={1}>
                         <Grid.Column width={16}>
-                            <p className='centerText whiteText'>Meet us at <strong>VRLA 2017</strong>, 14-15 April in Los Angeles, CA</p>
+                            {this.state.eventName ? <p className='centerText whiteText'>Meet us at <strong>{this.state.eventName} </strong>{this.state.description}</p> : ''}
                         </Grid.Column>
                     </Grid.Row>
 

@@ -37,6 +37,10 @@ export default class App extends React.Component {
         debug('AppProps', props)
     }
 
+    componentWillMount() {
+        document.title= "Chymera VR | VR Ad Network"
+    }
+
     componentWillReceiveProps(props) {
         this.setState(Object.assign({}, this.state, props));
     }
