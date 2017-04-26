@@ -18,7 +18,9 @@ export class HomeView extends React.Component {
             'GET',
             null,
             (response) => this.setState(Object.assign({}, this.state, { eventName: response.event_name, description: response.description })),
-            (error) => { console.info(error); },
+            (error) => {
+                console.info(error);
+            },
             200);
     }
 

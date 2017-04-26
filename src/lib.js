@@ -1,5 +1,5 @@
 import { config } from './config.js'
-const DEBUG = true;
+const DEBUG = !PRODUCTION;
 
 const backendUrl = config.backendUrl;
 
@@ -36,7 +36,8 @@ export function callApiWithJwt(path, method, body, onSuccess, onError, statusCod
         }
     }).catch(error => {
         document.body.classList.remove('wait');
-        alert('Site unreachable');
+        console.error('Site unreachable');
+        console.error(error);
     });
 }
 
@@ -64,7 +65,8 @@ export function callApi(path, method, body, onSuccess, onError, statusCode = 200
         }
     }).catch(error => {
         document.body.classList.remove('wait');
-        alert('Site unreachable');
+        console.error('Site unreachable');
+        console.error(error);
     });;
 }
 
@@ -93,7 +95,8 @@ export function callRawApiWithJwt(path, method, body, onSuccess, onError, status
         }
     }).catch(error => {
         document.body.classList.remove('wait');
-        alert('Site unreachable');
+        console.error('Site unreachable');
+        console.error(error);
     });;
 }
 
