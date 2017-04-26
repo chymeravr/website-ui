@@ -1,7 +1,7 @@
 import React from 'react'
 import 'react-dom'
 import { Router, Route } from 'react-router'
-import { Link } from 'react-router-dom'
+import { Link, Switch } from 'react-router-dom'
 import 'fuckadblock'
 import 'whatwg-fetch'
 // import 'particlesjs'
@@ -109,24 +109,27 @@ export class AppRouter extends React.Component {
                 <div className="Site">
                     {// List of arguments -> (path, name, child, adblock = false, transparent = false)
                     }
-                    {
-                        getRouteComponents(
-                            [
-                                ['/', 'home', HomeView],
-                                ['/contact/', 'contact', ContactView],
-                                ['/careers/', 'careers', CareerView],
-                                ['/terms/', 'terms', TermsView],
-                                ['/login/', 'login', Login_C, this.state.adblock],
-                                ['/profile/', 'profile', ProfileView, this.state.adblock],
-                                ['/advertiser/', 'advertiser', AdvertiserHomeView, this.state.adblock, true],
-                                ['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
-                                ['/dashboard/publisher/', 'publisherDashboard', PublisherView, this.state.adblock],
-                                ['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
-                                ['/advertiser/adgroups/:adgroupId', 'adgroupDetail', AdgroupDetailView, this.state.adblock],
-                                ['/publisher/', 'publisher', PublisherHomeView, false, true],
-                                ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
-                            ])
-                    }
+                    <Switch>
+                        {
+                            getRouteComponents(
+                                [
+                                    ['/', 'home', HomeView],
+                                    ['/contact/', 'contact', ContactView],
+                                    ['/careers/', 'careers', CareerView],
+                                    ['/terms/', 'terms', TermsView],
+                                    ['/login/', 'login', Login_C, this.state.adblock],
+                                    ['/profile/', 'profile', ProfileView, this.state.adblock],
+                                    ['/advertiser/', 'advertiser', AdvertiserHomeView, this.state.adblock, true],
+                                    ['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
+                                    ['/dashboard/publisher/', 'publisherDashboard', PublisherView, this.state.adblock],
+                                    ['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
+                                    ['/advertiser/adgroups/:adgroupId', 'adgroupDetail', AdgroupDetailView, this.state.adblock],
+                                    ['/publisher/', 'publisher', PublisherHomeView, false, true],
+                                    ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
+                                ])
+                        }
+                        <Route component={AppView} />  
+                    </Switch>
                 </div>
             </Router>
         );
