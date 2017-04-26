@@ -12,9 +12,8 @@ export class HomeView extends React.Component {
         };
     }
 
-    componentWillMount() {
+    componentDidMount() {
         document.title = 'Chymera VR | VR Ad Network';
-
         callApi('/user/api/events/',
             'GET',
             null,
@@ -23,18 +22,18 @@ export class HomeView extends React.Component {
             200);
     }
 
-    componentDidMount() {
-        // Particles.init({
-        //     // normal options
-        //     selector: '.particles',
-        //     maxParticles: 0, // Disabled
-        //     // connectParticles: true,
-        //     speed: 1,
-        //     sizeVariations: 2,
-        //     minDistance: 200,
-        //     color: '#ffffff',
-        // })
-    }
+    // componentDidMount() {
+    //     // Particles.init({
+    //     //     // normal options
+    //     //     selector: '.particles',
+    //     //     maxParticles: 0, // Disabled
+    //     //     // connectParticles: true,
+    //     //     speed: 1,
+    //     //     sizeVariations: 2,
+    //     //     minDistance: 200,
+    //     //     color: '#ffffff',
+    //     // })
+    // }
 
 
     render() {
