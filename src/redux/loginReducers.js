@@ -3,7 +3,6 @@ import { LOGIN_FAILED, LOGIN_SUCCEEDED, ATTEMPT_LOGIN, LOGOUT, LOGIN_STATES, NOT
 
 
 function loginState(state = NOT_ATTEMPTED, action) {
-    console.info(state, action);
     switch (action.type) {
         case ATTEMPT_LOGIN:
             return ATTEMPT_LOGIN;
