@@ -9,18 +9,12 @@ RUN apt-get update
 
 # Common system tools
 RUN apt-get install -y vim curl python-pip python-software-properties
-RUN pip install --upgrade pip
-
-# Postgres
-RUN apt-get install -y libpq-dev 
 
 # NPM
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g gulp
 
-# nginx and uwsgi
-RUN apt-get update
 RUN apt-get install -y nginx
 
 # Create logging directory
