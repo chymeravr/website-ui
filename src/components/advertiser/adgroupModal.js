@@ -1,13 +1,11 @@
 import React from 'react'
 import { FormInput, NumberInput } from '../common'
 import { callApiWithJwt, debug } from '../../lib.js'
-import { hashHistory } from 'react-router'
 import { config } from '../../config'
 import { CreateTargetingModal } from './createTargetingModal'
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio } from 'semantic-ui-react'
 import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
-import 'react-dates/lib/css/_datepicker.css';
 
 export class AdgroupEditModal extends React.Component {
     constructor(props) {

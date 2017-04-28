@@ -1,7 +1,7 @@
 import React from 'react'
 import { debug, callApiWithJwt } from '../../lib.js'
 import { config } from '../../config.js'
-import { hashHistory, Link } from 'react-router'
+import { Link } from 'react-router'
 import { FormInput, spinner, PageHeading } from '../common'
 import { AdgroupEditModal } from './adgroupModal'
 import { AdModal } from './adModal'
