@@ -6,7 +6,6 @@ import 'fuckadblock'
 import { debug, callApiWithJwt, callRawApiWithJwt } from '../lib.js'
 import ReactGA from 'react-ga'
 import '../../semantic/dist/semantic.min.css';
-import 'react-dates/lib/css/_datepicker.css';
 import { Grid, Container, Message } from 'semantic-ui-react'
 import { loginSucceeded } from '../redux/loginActions'
 import { HomeView } from './home'
