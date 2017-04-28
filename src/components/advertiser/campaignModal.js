@@ -1,9 +1,8 @@
 import React, { ReactDOM } from 'react'
-import { FormInput, NumberInput } from '../common'
 import { callApiWithJwt, debug, addHttp } from '../../lib.js'
 import { config } from '../../config'
 
-import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio, Message, Dropdown } from 'semantic-ui-react'
+import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio, Message, Dropdown } from 'semantic-ui-react';
 import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 

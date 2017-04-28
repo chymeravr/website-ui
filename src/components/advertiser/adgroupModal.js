@@ -2,8 +2,7 @@ import React from 'react'
 import { FormInput, NumberInput } from '../common'
 import { callApiWithJwt, debug } from '../../lib.js'
 import { config } from '../../config'
-import { CreateTargetingModal } from './createTargetingModal'
-import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio } from 'semantic-ui-react'
+import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio } from 'semantic-ui-react';
 import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 

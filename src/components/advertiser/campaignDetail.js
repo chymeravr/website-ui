@@ -1,6 +1,5 @@
 import React from 'react'
 import { debug, callApiWithJwt } from '../../lib.js'
-import { config } from '../../config.js'
 import { Link } from 'react-router-dom'
 import { FormInput, spinner, PageHeading } from '../common'
 import { AdgroupEditModal } from './adgroupModal'
