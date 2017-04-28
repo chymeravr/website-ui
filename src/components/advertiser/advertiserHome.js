@@ -35,7 +35,7 @@ export class AdvertiserHomeView extends React.Component {
             <Grid.Row>
                 <Grid.Column width={12}>
                     <Header as='h3' className="centerText greyText">
-                        Are you a VR Advertiser looking to promote your content?
+                        Are you a VR Advertiser looking to tap into the potential of VR?
                         <br />
                         <strong>Reach us!</strong>
                     </Header>
@@ -49,8 +49,8 @@ export class AdvertiserHomeView extends React.Component {
                     <Grid.Row columns={1} verticalAlign='middle' className='advertiserHomeMain' style={{ minHeight: 'calc(80vh)' }}>
                         <Grid.Column width={10}>
                             <Header as='h2' className='centerText whiteText boldText italic'>
-                                Promote your VR &amp; 360<sup>o</sup> Video Content <br />
-                                &amp; drive discovery <br /><br />
+                                Tell your brand story  &amp; <br />
+                                generate user interest like never before <br /><br />
                                 <Button className="ui button navbarButton transparent" onClick={(e, d) => { } }>
                                     <Icon name='book' /> Documentation
                                 </Button>
@@ -65,10 +65,12 @@ export class AdvertiserHomeView extends React.Component {
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <Header as='h1' className='boldText blue'>
-                                Premium Advertisers
+                                Looking beyond mobile ads
                             </Header>
                             <p style={{ lineHeight: '35px' }}>
-                                
+                                Chymera ads served have generated <b> 60% higher </b> click-through rates (<b>CTR</b>) and <b>200% higher CPMs </b> compared to 2D mobile ads.
+                                <br /> <br />VR headsets capture data that hasn’t been captured before and we analyze this novel data to generate User Behavior Cohorts and
+                                Engagement reports
                             </p>
                         </Grid.Column>
                         <Grid.Column width={2} />
@@ -77,10 +79,14 @@ export class AdvertiserHomeView extends React.Component {
                         <Grid.Column only='computer' width={2} />
                         <Grid.Column width={6}>
                             <Header as='h1' className='boldText blue'>
-                                Global audience to reach
+                                Global audience reach
                             </Header>
                             <p style={{ lineHeight: '35px' }}>
-                               
+                                <ul>
+                                    <li>Publishers in US, UK and France</li>
+                                    <li>Ads served to users from 40+ countries</li>
+                                    <li>Advertisers from 10+ countries</li>
+                                </ul>
                             </p>
                         </Grid.Column>
                         <Grid.Column only='computer' width={4}>
@@ -98,7 +104,11 @@ export class AdvertiserHomeView extends React.Component {
                                 Analytics
                             </Header>
                             <p style={{ lineHeight: '35px' }}>
-                               
+                                <ul>
+                                    <li>Reports to analyze how well did your ads perform</li>
+                                    <li>Analytics to help you improve ad creatives</li>
+                                    <li>Reports to understand how user behaved in your ad scene</li>
+                                </ul>
                             </p>
                         </Grid.Column>
                         <Grid.Column width={2} />
@@ -110,11 +120,14 @@ export class AdvertiserHomeView extends React.Component {
                                 Ad creation services
                             </Header>
                             <p style={{ lineHeight: '35px' }}>
-                               
+                                Content creation in VR is non-trivial and a badly designed ad can put off users, thereby lowering your brand value.
+                                Chymera pays special attention to user experience leading to much more engagement and a higher ROI.
+                                <br /><br />
+                                Join our network and get access to our <b> Partner VR content creators</b> who have designed award winning ads.
                             </p>
                         </Grid.Column>
                         <Grid.Column only='computer' width={4}>
-                            <Image centered src="static/img/ad-creation-services.png" width='200px'/>
+                            <Image centered src="static/img/ad-creation-services.png" width='200px' />
                         </Grid.Column>
                         <Grid.Column width={2} />
                     </Grid.Row>
