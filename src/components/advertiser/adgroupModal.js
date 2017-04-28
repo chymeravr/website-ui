@@ -3,7 +3,7 @@ import { FormInput, NumberInput } from '../common'
 import { callApiWithJwt, debug } from '../../lib.js'
 import { config } from '../../config'
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio } from 'semantic-ui-react';
-import { DateRangePicker } from 'react-dates';
+// import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 
 export class AdgroupEditModal extends React.Component {
@@ -161,7 +161,7 @@ export class AdgroupEditModal extends React.Component {
                             <Form.Field>
                                 <label>Schedule</label>
                             </Form.Field>
-                            <DateRangePicker
+                            {/* <DateRangePicker
                                 onDatesChange={this.onDatesChange}
                                 onFocusChange={this.onFocusChange}
                                 focusedInput={focusedInput}
@@ -169,7 +169,8 @@ export class AdgroupEditModal extends React.Component {
                                 endDate={endDate}
                                 numberOfMonths={2}
                                 displayFormat="YYYY-MMM-DD"
-                                />
+                                />*/
+                            }
                         </Form>
                     </Modal.Content>
                     <Modal.Actions>

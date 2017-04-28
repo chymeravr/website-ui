@@ -3,7 +3,7 @@ import { callApiWithJwt, debug, addHttp } from '../../lib.js'
 import { config } from '../../config'
 
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio, Message, Dropdown } from 'semantic-ui-react';
-import { DateRangePicker } from 'react-dates';
+// import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
 
 export class CampaignEditModal extends React.Component {
@@ -173,7 +173,8 @@ export class CampaignEditModal extends React.Component {
                         <Form.Field>
                             <label>Schedule</label>
                         </Form.Field>
-                        <DateRangePicker
+                        {
+                            /*<DateRangePicker
                             onDatesChange={this.onDatesChange}
                             onFocusChange={this.onFocusChange}
                             focusedInput={focusedInput}
@@ -181,7 +182,8 @@ export class CampaignEditModal extends React.Component {
                             endDate={endDate}
                             numberOfMonths={2}
                             displayFormat="YYYY-MMM-DD"
-                            />
+                            />*/
+                        }
                     </Form>
 
                 </Modal.Content>
