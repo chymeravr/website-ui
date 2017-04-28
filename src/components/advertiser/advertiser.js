@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 import { FormInput, spinner, PageHeading } from '../common'
 import { CampaignEditModal } from './campaignModal'
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio } from 'semantic-ui-react'
-import { DateRangePicker } from 'react-dates';
 import moment from 'moment'
 
 /**

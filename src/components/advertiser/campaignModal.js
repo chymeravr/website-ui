@@ -6,7 +6,6 @@ import { config } from '../../config'
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio, Message, Dropdown } from 'semantic-ui-react'
 import { DateRangePicker } from 'react-dates';
 import moment from 'moment';
-import 'react-dates/lib/css/_datepicker.css';
 
 export class CampaignEditModal extends React.Component {
     constructor(props) {

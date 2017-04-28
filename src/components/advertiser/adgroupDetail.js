@@ -8,8 +8,6 @@ import { AdModal } from './adModal'
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio, Divider, Statistic } from 'semantic-ui-react'
 import moment from 'moment';
 
-
-
 /**
  * Store direct properties of campaigns which can be printed by map
  */
