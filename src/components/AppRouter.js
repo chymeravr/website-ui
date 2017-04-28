@@ -120,7 +120,6 @@ export class AppRouter extends React.Component {
                             ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
                         ].map(x => getRouteComponent.apply(null, x))
                     }
-                    <Route component={home} />
                 </div>
             </Router>
         );
