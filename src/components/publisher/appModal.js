@@ -1,7 +1,6 @@
 import React, { ReactDOM } from 'react'
 import { FormInput, NumberInput } from '../common'
 import { callApiWithJwt, debug } from '../../lib.js'
-import { hashHistory } from 'react-router'
 import { config } from '../../config'
 import { Image as ImageComponent, Item, Grid, Card, Statistic, Icon, Button, Divider, Table, Checkbox, Form, Input, Dropdown, Modal } from 'semantic-ui-react'
 

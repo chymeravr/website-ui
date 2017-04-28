@@ -1,6 +1,6 @@
 import React from 'react'
 import { Router, Route } from 'react-router'
-import {  Switch } from 'react-router-dom'
+import { Switch } from 'react-router-dom'
 import 'fuckadblock'
 // import 'particlesjs'
 import { debug, callApiWithJwt, callRawApiWithJwt } from '../lib.js'
@@ -10,18 +10,6 @@ import { Grid, Container, Message } from 'semantic-ui-react'
 import { loginSucceeded } from '../redux/loginActions'
 import { HomeView } from './home'
 import AppView from './App'
-import { ProfileView } from './profile'
-import { ContactView } from './contact'
-import { CareerView } from './careers'
-import Login_C from './login_c'
-import { TermsView } from './terms'
-import { AdvertiserView } from './advertiser/advertiser'
-import { CampaignDetailView } from './advertiser/campaignDetail'
-import { AdgroupDetailView } from './advertiser/adgroupDetail'
-import { PublisherHomeView } from './publisher/publisherHome'
-import { AdvertiserHomeView } from './advertiser/advertiserHome'
-import { PublisherView } from './publisher/publisher'
-import { AppDetailView } from './publisher/appDetail'
 import { createHashHistory } from 'history'
 import { loginStore } from '../index'
 
@@ -104,24 +92,23 @@ export class AppRouter extends React.Component {
                     }
                     <Switch>
                         {
-                            getRouteComponents(
-                                [
-                                    ['/', 'home', HomeView],
-                                    ['/contact/', 'contact', ContactView],
-                                    ['/careers/', 'careers', CareerView],
-                                    ['/terms/', 'terms', TermsView],
-                                    ['/login/', 'login', Login_C, this.state.adblock],
-                                    ['/profile/', 'profile', ProfileView, this.state.adblock],
-                                    ['/advertiser/', 'advertiser', AdvertiserHomeView, this.state.adblock, true],
-                                    ['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
-                                    ['/dashboard/publisher/', 'publisherDashboard', PublisherView, this.state.adblock],
-                                    ['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
-                                    ['/advertiser/adgroups/:adgroupId', 'adgroupDetail', AdgroupDetailView, this.state.adblock],
-                                    ['/publisher/', 'publisher', PublisherHomeView, false, true],
-                                    ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
-                                ])
+                            [
+                                ['/', 'home', HomeView],
+                                ['/contact/', 'contact', ContactView],
+                                ['/careers/', 'careers', CareerView],
+                                ['/terms/', 'terms', TermsView],
+                                ['/login/', 'login', Login_C, this.state.adblock],
+                                ['/profile/', 'profile', ProfileView, this.state.adblock],
+                                ['/advertiser/', 'advertiser', AdvertiserHomeView, this.state.adblock, true],
+                                ['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
+                                ['/dashboard/publisher/', 'publisherDashboard', PublisherView, this.state.adblock],
+                                ['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
+                                ['/advertiser/adgroups/:adgroupId', 'adgroupDetail', AdgroupDetailView, this.state.adblock],
+                                ['/publisher/', 'publisher', PublisherHomeView, false, true],
+                                ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
+                            ].map(x => getRouteComponent.apply(null, x))
                         }
-                        <Route component={AppView} />  
+                        <Route component={AppView} />
                     </Switch>
                 </div>
             </Router>

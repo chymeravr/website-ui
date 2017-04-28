@@ -1,7 +1,7 @@
 import React from 'react'
 import { debug, callApiWithJwt } from '../lib.js'
 import { config } from '../config.js'
-import { hashHistory, Link } from 'react-router';
+import { Link } from 'react-router';
 import { Button, Form, Container, Grid, Message, Card, Image, Statistic, Icon, Header, Input, Flag, Table, Item, Divider } from 'semantic-ui-react'
 
 export class TermsView extends React.Component {
