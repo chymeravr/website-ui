@@ -56,7 +56,7 @@ export class HomeView extends React.Component {
         const getImageWithCaption = (image, caption) => {
             return (
                 <Grid.Column verticalAlign='bottom' width={3}>
-                    <Image centered src={'static/img/' + image} />
+                    <Image centered src={'/static/img/' + image} />
                     <p className="boldText caption">{caption}</p>
                 </Grid.Column>
             )
@@ -98,7 +98,7 @@ export class HomeView extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row className="blueBg">
-                        <Image src="static/img/arrow.png" />
+                        <Image src="/static/img/arrow.png" />
                     </Grid.Row>
                     <Grid.Row style={{ backgroundColor: '#0d95ce', }} columns={1}>
                         <Grid.Column width={16}>
@@ -138,12 +138,12 @@ export class HomeView extends React.Component {
                                 <Grid.Row columns={1}>
                                     <Grid.Column>
                                         <Header as='h2' className='greyText centerText'>Ad Formats</Header>
-                                        <Image centered src="static/img/lines-heading.png" />
+                                        <Image centered src="/static/img/lines-heading.png" />
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row columns={2}>
                                     <Grid.Column verticalAlign='top' width={8}>
-                                        <Image centered src="static/img/360-image-video.png" />
+                                        <Image centered src="/static/img/360-image-video.png" />
                                         <Header as='h3' className="boldText blue"> 360 IMAGE/VIDEO ADS</Header>
                                         <p style={{ paddingLeft: '40px', paddingRight: '40px' }}>Fully immersive user experience using 360 Ad creatives</p>
                                     </Grid.Column>
@@ -156,7 +156,7 @@ export class HomeView extends React.Component {
                                 <Grid.Row only='computer' />
                                 <Grid.Row>
                                     <Grid.Column>
-                                        <Image size='medium' centered src="static/img/all-platforms.png" />
+                                        <Image size='medium' centered src="/static/img/all-platforms.png" />
                                     </Grid.Column>
                                 </Grid.Row>
                             </Grid>

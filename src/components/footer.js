@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
         var style = {
             color: '#ffffff',
             backgroundColor: '#003045',
-            backgroundImage: 'url(static/img/footer-arts-dark.png)',
+            backgroundImage: 'url(/static/img/footer-arts-dark.png)',
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'bottom',
             minHeight: '40vh',
@@ -19,7 +19,7 @@ export default class Footer extends React.Component {
             fontFamily: 'Roboto'
         }
 
-        const footerLink = (content, href) => <List.Item as='a' style={{ fontSize: '1rem', color: '#fff' }}  href={'/#/' + href}>{content}</List.Item>;
+        const footerLink = (content, href) => <List.Item as='a' style={{ fontSize: '1rem', color: '#fff' }}  href={href}>{content}</List.Item>;
         const footerLinkNewTab = (content, href) => <List.Item as='a' style={{ fontSize: '1rem', color: '#fff' }} href={href} target='_blank'>{content}</List.Item>;
 
         const iconTextStyle = {
@@ -39,7 +39,7 @@ export default class Footer extends React.Component {
                             <Grid.Column only='computer' width={2} verticalAlign='middle'>
                                 <List style={{ textAlign: 'left' }}>
                                     <List.Item>
-                                        <Image src='static/img/logo-simple.png' size='tiny' ></Image>
+                                        <Image src='/static/img/logo-simple.png' size='tiny' ></Image>
                                     </List.Item>
                                     <List.Item href='/' style={iconTextStyle}>
                                         © Chymera VR, Inc.
@@ -56,9 +56,9 @@ export default class Footer extends React.Component {
                                             <Table.Cell>
                                                 <List link inverted>
                                                     <List.Item><Header as='h3' style={headingStyle}>Links</Header></List.Item>
-                                                    {footerLink('Contact Us', 'contact/')}
-                                                    {footerLinkNewTab('Blog', '')}
-                                                    {footerLink('Careers', 'careers/')}
+                                                    {footerLink('Contact Us', '/contact/')}
+                                                    {footerLinkNewTab('Blog', '/')}
+                                                    {footerLink('Careers', '/careers/')}
                                                 </List>
                                             </Table.Cell>
                                             <Table.Cell>

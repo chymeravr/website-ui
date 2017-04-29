@@ -60,7 +60,7 @@ export class Header_P extends React.Component {
             <Grid columns={16}>
                 <Grid.Row only='mobile' columns={2} className={'navbarMobile ' + (transparent ? 'transparent' : 'blueBg')}>
                     <Grid.Column width={6}>
-                        <Image size='tiny' src='static/img/logo-simple.png' style={{ padding: '15px 20px 0px 15px' }} onClick={(e) => this.props.history.push('/#/')} />
+                        <Image size='tiny' src='/static/img/logo-simple.png' style={{ padding: '15px 20px 0px 15px' }} onClick={(e) => this.props.history.push('/#/')} />
                     </Grid.Column>
                     <Grid.Column width={10}>
                         <Accordion>
@@ -83,7 +83,7 @@ export class Header_P extends React.Component {
                     <Table padded inverted className={'navbar ' + (transparent ? 'transparent' : 'blueBg')}>
                         <Table.Body>
                             <Table.Row>
-                                <Table.Cell><Image src="static/img/logo.png" size="tiny" href="/#/" style={{ paddingTop: '14px' }} /></Table.Cell>
+                                <Table.Cell><Image src="/static/img/logo.png" size="tiny" href="/" style={{ paddingTop: '14px' }} /></Table.Cell>
                                 <Table.Cell textAlign='right'>
                                     <Menu pointing secondary size='massive' floated='right' color='blue' className="navbarMenu">
                                         {getItem('advertisers', '/advertiser/')}

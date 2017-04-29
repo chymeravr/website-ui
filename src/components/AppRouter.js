@@ -22,15 +22,15 @@ import { PublisherHomeView } from './publisher/publisherHome'
 import { AdvertiserHomeView } from './advertiser/advertiserHome'
 import { PublisherView } from './publisher/publisher'
 import { AppDetailView } from './publisher/appDetail'
-import { createHashHistory } from 'history'
+import { createBrowserHistory } from 'history'
 import { loginStore } from '../index'
 
-export const hashHistory = createHashHistory();
+export const hashHistory = createBrowserHistory();
 
 hashHistory.listen((location, action) => {
     window.scrollTo(0, 0);
-    ReactGA.set({ page: window.location.hash });
-    ReactGA.pageview(window.location.hash);
+    ReactGA.set({ page: window.location.pathname });
+    ReactGA.pageview(window.location.pathname);
 });
 
 let createHandlers = function (dispatch) {
