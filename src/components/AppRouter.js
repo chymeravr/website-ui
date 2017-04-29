@@ -15,8 +15,8 @@ import { ContactView } from './contact'
 import { CareerView } from './careers'
 import Login_C from './login_c'
 import { TermsView } from './terms'
-// import { AdvertiserView } from './advertiser/advertiser'
-// import { CampaignDetailView } from './advertiser/campaignDetail'
+import { AdvertiserView } from './advertiser/advertiser'
+import { CampaignDetailView } from './advertiser/campaignDetail'
 import { AdgroupDetailView } from './advertiser/adgroupDetail'
 import { PublisherHomeView } from './publisher/publisherHome'
 import { AdvertiserHomeView } from './advertiser/advertiserHome'
@@ -111,9 +111,9 @@ export class AppRouter extends React.Component {
                             ['/login/', 'login', Login_C, this.state.adblock],
                             ['/profile/', 'profile', ProfileView, this.state.adblock],
                             ['/advertiser/', 'advertiser', AdvertiserHomeView, this.state.adblock, true],
-                            //['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
+                            ['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
                             ['/dashboard/publisher/', 'publisherDashboard', PublisherView, this.state.adblock],
-                            //['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
+                            ['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
                             ['/advertiser/adgroups/:adgroupId', 'adgroupDetail', AdgroupDetailView, this.state.adblock],
                             ['/publisher/', 'publisher', PublisherHomeView, false, true],
                             ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
