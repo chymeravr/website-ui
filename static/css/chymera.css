@@ -4,6 +4,10 @@ body {
     color: #555 !important;
 }
 
+.react-datepicker__tether-element {
+    filter: none !important;
+}
+
 .particles {
   position: absolute;
   display: block;

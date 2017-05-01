@@ -3,7 +3,8 @@ import { FormInput, NumberInput } from '../common'
 import { callApiWithJwt, debug } from '../../lib.js'
 import { config } from '../../config'
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio } from 'semantic-ui-react';
-// import { DateRangePicker } from 'react-dates';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 export class AdgroupEditModal extends React.Component {
@@ -31,7 +32,6 @@ export class AdgroupEditModal extends React.Component {
         this.successStatus = this.isEditModal ? 200 : 201
 
         this.onDatesChange = this.onDatesChange.bind(this);
-        this.onFocusChange = this.onFocusChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
 
     }
@@ -40,15 +40,13 @@ export class AdgroupEditModal extends React.Component {
         this.setState(Object.assign({}, this.state, nextProps));
     }
 
-    onDatesChange({ startDate, endDate }) {
-        var newAdgroup = Object.assign({}, this.state.adgroup, { startDate, endDate });
-        const nextState = Object.assign({}, this.state, { adgroup: newAdgroup });
-        delete nextState.focusedInput;
-        this.setState(nextState, this.validateState);
-    }
-
-    onFocusChange(focusedInput) {
-        this.setState(Object.assign({}, this.state, { focusedInput: focusedInput }), this.validateState);
+    onDatesChange(dateType) {
+        return (date) => {
+            var newAdgroup = Object.assign({}, this.state.adgroup);
+            newAdgroup[dateType] = date;
+            const nextState = Object.assign({}, this.state, { adgroup: newAdgroup });
+            this.setState(nextState, this.validateState);
+        }
     }
 
     validateState() {
@@ -158,9 +156,31 @@ export class AdgroupEditModal extends React.Component {
                                 <Form.Field control={Input} label='Daily Budget ($)' type='number' placeholder='Daily Budget' onChange={this.handleChange('dailyBudget')} value={adgroup.dailyBudget} />
                                 <Form.Field control={Input} label='Cost Per Click ($)' type='number' placeholder='Cost Per Click' onChange={this.handleChange('bid')} value={adgroup.bid} />
                             </Form.Group>
-                            <Form.Field>
-                                <label>Schedule</label>
-                            </Form.Field>
+                            <Form.Group>
+                                <Form.Field>
+                                    <label>Start Date</label>
+                                    <DatePicker
+                                        selected={startDate}
+                                        selectsStart
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                        onChange={(e) => this.onDatesChange('startDate')(e)}
+                                        placeholderText="Start Date"
+                                        />
+                                </Form.Field>
+                                <Form.Field>
+                                    <label>End Date</label>
+                                    <DatePicker
+                                        selected={endDate}
+                                        selectsEnd
+                                        startDate={startDate}
+                                        endDate={endDate}
+                                        onChange={(e) => this.onDatesChange('endDate')(e)}
+                                        placeholderText="End Date"
+                                        />
+                                </Form.Field>
+                            </Form.Group>
+
                             {/* <DateRangePicker
                                 onDatesChange={this.onDatesChange}
                                 onFocusChange={this.onFocusChange}
