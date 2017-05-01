@@ -3,7 +3,8 @@ import { callApiWithJwt, debug, addHttp } from '../../lib.js'
 import { config } from '../../config'
 
 import { Grid, Card, Table, Checkbox, Button, Icon, Header, Modal, Form, Input, Select, Radio, Message, Dropdown } from 'semantic-ui-react';
-// import { DateRangePicker } from 'react-dates';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 
 export class CampaignEditModal extends React.Component {
@@ -31,7 +32,6 @@ export class CampaignEditModal extends React.Component {
         this.successStatus = this.isEditModal ? 200 : 201;
 
         this.onDatesChange = this.onDatesChange.bind(this);
-        this.onFocusChange = this.onFocusChange.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.validateState = this.validateState.bind(this);
         this.setOs = this.setOs.bind(this);
@@ -46,15 +46,13 @@ export class CampaignEditModal extends React.Component {
         this.setState(Object.assign({}, this.state, nextProps));
     }
 
-    onDatesChange({ startDate, endDate }) {
-        var newCampaign = Object.assign({}, this.state.campaign, { startDate, endDate });
-        const nextState = Object.assign({}, this.state, { campaign: newCampaign });
-        delete nextState.focusedInput;
-        this.setState(nextState, this.validateState);
-    }
-
-    onFocusChange(focusedInput) {
-        this.setState(Object.assign({}, this.state, { focusedInput: focusedInput }), this.validateState);
+    onDatesChange(dateType) {
+        return (date) => {
+            var newCampaign = Object.assign({}, this.state.campaign);
+            newCampaign[dateType] = date;
+            const nextState = Object.assign({}, this.state, { campaign: newCampaign });
+            this.setState(nextState, this.validateState);
+        }
     }
 
     handleChange(key) {
@@ -168,22 +166,30 @@ export class CampaignEditModal extends React.Component {
                             <Form.Field control={Dropdown} selection label='Os' options={osOptions} placeholder='Os'
                                 onChange={this.setOs} value={this.state.campaign.os + ''} />
                         </Form.Group>
-
-
-                        <Form.Field>
-                            <label>Schedule</label>
-                        </Form.Field>
-                        {
-                            /*<DateRangePicker
-                            onDatesChange={this.onDatesChange}
-                            onFocusChange={this.onFocusChange}
-                            focusedInput={focusedInput}
-                            startDate={startDate}
-                            endDate={endDate}
-                            numberOfMonths={2}
-                            displayFormat="YYYY-MMM-DD"
-                            />*/
-                        }
+                        <Form.Group>
+                            <Form.Field>
+                                <label>Start Date</label>
+                                <DatePicker
+                                    selected={startDate}
+                                    selectsStart
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    onChange={this.onDatesChange('startDate')}
+                                    placeholderText="Start Date"
+                                    />
+                            </Form.Field>
+                            <Form.Field>
+                                <label>End Date</label>
+                                <DatePicker
+                                    selected={endDate}
+                                    selectsEnd
+                                    startDate={startDate}
+                                    endDate={endDate}
+                                    onChange={this.onDatesChange('endDate')}
+                                    placeholderText="End Date"
+                                    />
+                            </Form.Field>
+                        </Form.Group>
                     </Form>
 
                 </Modal.Content>

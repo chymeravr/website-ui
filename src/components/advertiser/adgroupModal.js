@@ -180,17 +180,6 @@ export class AdgroupEditModal extends React.Component {
                                         />
                                 </Form.Field>
                             </Form.Group>
-
-                            {/* <DateRangePicker
-                                onDatesChange={this.onDatesChange}
-                                onFocusChange={this.onFocusChange}
-                                focusedInput={focusedInput}
-                                startDate={startDate}
-                                endDate={endDate}
-                                numberOfMonths={2}
-                                displayFormat="YYYY-MMM-DD"
-                                />*/
-                            }
                         </Form>
                     </Modal.Content>
                     <Modal.Actions>
