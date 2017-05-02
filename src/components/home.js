@@ -121,13 +121,13 @@ export class HomeView extends React.Component {
                             that VR content evokes emotions of a higher intensity vis-a-vis traditional \
                             2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
                             discover the secret to a user\'s heart!',
-                            '/#/advertiser/', 'summary advertiserSummary')}
+                            '/advertiser/', 'summary advertiserSummary')}
                         <Grid.Column width={1} />
                         {getClientLink('PUBLISHER',
                             'VR advertising is attracting marketing dollars globally. Our seamless experience\
                              makes it highly effective and incredibly engaging. Did we say they are no-nonsense\
                               and users look forward to them! Let\'s get started, shall we?',
-                            '/#/publisher/', 'summary publisherSummary')}
+                            '/publisher/', 'summary publisherSummary')}
                         <Grid.Column width={1} />
                     </Grid.Row>
 

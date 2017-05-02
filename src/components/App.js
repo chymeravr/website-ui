@@ -47,13 +47,12 @@ let sitemapFunction = (() => {
     return (
         <urlset>
             <url><loc>http://chymeravr.com</loc><priority>0.5</priority></url>
-            <url><loc>http://chymeravr.com/#/advertiser/</loc><priority>0.5</priority></url>
-            <url><loc>http://chymeravr.com/#/publisher/</loc><priority>0.5</priority></url>
-            <url><loc>http://chymeravr.com/#/careers</loc><priority>0.5</priority></url>
-            <url><loc>http://chymeravr.com/</loc><priority>0.5</priority></url>
-            <url><loc>http://chymeravr.com/#/terms</loc><priority>0.5</priority></url>
-            <url><loc>http://chymeravr.com/#/contact</loc><priority>0.5</priority></url>
-            <url><loc>http://chymeravr.com/#/terms</loc><priority>0.5</priority></url>
+            <url><loc>http://chymeravr.com/advertiser/</loc><priority>0.5</priority></url>
+            <url><loc>http://chymeravr.com/publisher/</loc><priority>0.5</priority></url>
+            <url><loc>http://chymeravr.com/careers</loc><priority>0.5</priority></url>
+            <url><loc>http://chymeravr.com/terms</loc><priority>0.5</priority></url>
+            <url><loc>http://chymeravr.com/contact</loc><priority>0.5</priority></url>
+            <url><loc>http://chymeravr.com/terms</loc><priority>0.5</priority></url>
         </urlset>
     )
 });

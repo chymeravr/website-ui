@@ -60,7 +60,7 @@ export class Header_P extends React.Component {
             <Grid columns={16}>
                 <Grid.Row only='mobile' columns={2} className={'navbarMobile ' + (transparent ? 'transparent' : 'blueBg')}>
                     <Grid.Column width={6}>
-                        <Image size='tiny' src='/static/img/logo-simple.png' style={{ padding: '15px 20px 0px 15px' }} onClick={(e) => this.props.history.push('/#/')} />
+                        <Image size='tiny' src='/static/img/logo-simple.png' style={{ padding: '15px 20px 0px 15px' }} onClick={(e) => this.props.history.push('/')} />
                     </Grid.Column>
                     <Grid.Column width={10}>
                         <Accordion>
