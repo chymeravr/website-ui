@@ -1,5 +1,5 @@
 var React = require('react');
-var Link = require('react-router').Link
+import { Link } from 'react-router-dom'
 import { debug, callApiWithJwt, callApi } from '../lib.js'
 import { SignUp } from './signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
@@ -47,7 +47,7 @@ export class HomeView extends React.Component {
                     <div >
                         <Header as='h2' style={{ fontWeight: 'bold', color: '#008fcb', }}>{header}</Header>
                         <p>{content}</p>
-                        <Button color="orange" as='a' content='Read More' onClick={(e, d) => this.props.history.push(link)} href={link} />
+                        <Button color="orange" content='Read More' as={Link} to={link} />
                     </div>
                 </Grid.Column>
             )
