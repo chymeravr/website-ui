@@ -39,10 +39,10 @@ export class Login_P extends React.Component {
         e.preventDefault();
         const data = {
             user: {
-                username: this.state.r_username,
-                password: this.state.r_password
+                username: this.state.username,
+                password: this.state.password
             },
-            email: this.state.r_email,
+            email: this.state.email,
         }
         callApi('/user/api/signup',
             'POST',
@@ -72,9 +72,9 @@ export class Login_P extends React.Component {
         const loginForm =
             <Grid.Column verticalAlign='middle' width={4}>
                 {loginErrorMessage}
-                <Form>
-                    <Form.Input placeholder='Username' onChange={(e, d) => this.handleChange('username')(e, d)} />
-                    <Form.Input placeholder='Password' type='password' onChange={(e, d) => this.handleChange('password')(e, d)} />
+                <Form key="login">
+                    <Form.Input placeholder='Username' onChange={(e, d) => this.handleChange('username')(e, d)} value={this.state.username} />
+                    <Form.Input placeholder='Password' type='password' onChange={(e, d) => this.handleChange('password')(e, d)} value={this.state.password} />
                     <Button type='submit' onClick={(e) => this.tryLogin(e, this.state.username, this.state.password, this.props.history)}>Submit</Button>
                 </Form>
             </Grid.Column>
@@ -86,15 +86,15 @@ export class Login_P extends React.Component {
         const signUpForm =
             <Grid.Column verticalAlign='middle' width={4}>
                 {this.state.registered ? <Message positive content='Registration Successful. Our team will contact you regarding further steps on how to activate your account' /> : ''}
-                <Form error={this.state.error}>
+                <Form error={this.state.error} key="signUp">
                     {usernameError ? (<Message error content={this.state.error.user.username.join('\n')} />) : <div></div>}
-                    <Form.Input placeholder='Username' onChange={(e, d) => this.handleChange('r_username')(e, d)} error={usernameError} />
+                    <Form.Input placeholder='Username' onChange={(e, d) => this.handleChange('username')(e, d)} error={usernameError} value={this.state.username} />
 
                     {passwordError ? (<Message error content={this.state.error.user.password.join('\n')} />) : <div></div>}
-                    <Form.Input placeholder='Password' type='password' onChange={(e, d) => this.handleChange('r_password')(e, d)} error={passwordError} />
+                    <Form.Input placeholder='Password' type='password' onChange={(e, d) => this.handleChange('password')(e, d)} error={passwordError} value={this.state.password}/>
 
                     {emailError ? (<Message error content={this.state.error.email.join('\n')} />) : <div></div>}
-                    <Form.Input placeholder='Email' type='email' onChange={(e, d) => this.handleChange('r_email')(e, d)} error={emailError} />
+                    <Form.Input placeholder='Email' type='email' onChange={(e, d) => this.handleChange('email')(e, d)} error={emailError} value={this.state.email}/>
                     <Button type='submit' onClick={(e) => this.signup(e)}>Submit</Button>
                 </Form>
             </Grid.Column>
