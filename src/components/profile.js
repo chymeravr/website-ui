@@ -92,7 +92,7 @@ export class ProfileView extends React.Component {
                                 name="Chymera VR Inc."
                                 description="Add funds"
                                 token={this.onToken}
-                                stripeKey="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+                                stripeKey={config.stripeKey}
                                 amount={this.state.amount * 100}
                                 >
                                 <Button disabled={amount != parseInt(amount, 10)} fluid content="Pay with Card" color='green' />
