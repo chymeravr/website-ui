@@ -32,6 +32,7 @@ config.hmds = {
     '-1': null,
     '1': 'Gear VR',
     '2': 'Cardboard',
+    '3': 'Daydream'
 }
 
 config.defaultHmd = '-1';
