@@ -22,17 +22,13 @@ export class AppEditModal extends React.Component {
         this.label = props.label;
         this.closeModal = props.closeModal;
         this.successStatus = props.successStatus;
-        this.handleChange = this.handleChange.bind(this);
-        this.validateState = this.validateState.bind(this);
-        this.setAppStore = this.setAppStore.bind(this);
-        this.saveApp = this.saveApp.bind(this);
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState(Object.assign({}, this.state, { open: nextProps.open }))
     }
 
-    validateState() {
+    validateState = () => {
         var valid = this.state.app;
 
         // App should be present
@@ -55,7 +51,7 @@ export class AppEditModal extends React.Component {
         this.setState(Object.assign({}, this.state, { valid: valid }));
     }
 
-    handleChange(key) {
+    handleChange = (key) => {
         return (e, d) => {
             this.state.app[key] = e.target.value;
             var newApp = Object.assign({}, this.state.app);
@@ -66,14 +62,14 @@ export class AppEditModal extends React.Component {
     }
 
 
-    setAppStore(e, d) {
+    setAppStore = (e, d) => {
         var app = Object.assign(this.state.app, {
             appStore: d.value
         });
         this.setState(Object.assign({}, this.state, { app: app }), this.validateState);
     }
 
-    saveApp() {
+    saveApp = () => {
         const apiSuffix = this.saveMethod === 'PUT' ? this.state.app.id : '';
         const apiPath = '/user/api/publisher/apps/' + apiSuffix;
         callApiWithJwt(

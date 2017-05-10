@@ -17,10 +17,6 @@ export class PublisherHomeView extends React.Component {
         document.title = 'Publisher | Chymera VR'
     }
 
-    componentWillMount() {
-
-    }
-
     render() {
         const getImageWithCaption = (image, caption) => {
             return (

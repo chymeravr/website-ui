@@ -14,15 +14,9 @@ export class CubeMonoFormat extends React.Component {
         super(props);
         this.onCreativeAddition = props.onCreativeAddition;
         this.state = { conversion: INITIAL }
-        this.convertToEqui = this.convertToEqui.bind(this);
-        this.convertToEquiWrapper = this.convertToEquiWrapper.bind(this);
-        this.setFile = this.setFile.bind(this);
-        this.setFileName = this.setFileName.bind(this);
-        this.getImageData = this.getImageData.bind(this);
-        this.validateImageData = this.validateImageData.bind(this);
     }
 
-    setFile(file, label) {
+    setFile = (file, label) => {
         const that = this;
         var oFReader = new FileReader();
         oFReader.readAsDataURL(file);
@@ -43,7 +37,7 @@ export class CubeMonoFormat extends React.Component {
 
     }
 
-    setFileName(label) {
+    setFileName = (label) => {
         return e => {
             this.setFile(e.target.files[0], label);
             const fileObject = {}
@@ -52,14 +46,14 @@ export class CubeMonoFormat extends React.Component {
         };
     }
 
-    scaleToSize(x) {
+    scaleToSize = (x) => {
         x = Math.round((1 + x) * 512);
         x = Math.min(x, 1023);
         x = Math.max(0, x);
         return x;
     }
 
-    getImageData(context, canvas, label) {
+    getImageData = (context, canvas, label) => {
         var img = new Image();
         img.src = this.state[label + 'ImageData'];
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -67,16 +61,16 @@ export class CubeMonoFormat extends React.Component {
         return context.getImageData(0, 0, imgWidth, imgWidth).data;
     }
 
-    validateImageData() {
+    validateImageData = () => {
         const { topImageData, bottomImageData, leftImageData, rightImageData, frontImageData, backImageData } = this.state;
         this.setState(Object.assign({}, this.state, { valid: topImageData && bottomImageData && leftImageData && rightImageData && frontImageData && backImageData }));
     }
 
-    convertToEquiWrapper() {
+    convertToEquiWrapper = () => {
         this.setState(Object.assign({}, this.state, { conversion: STARTED }), this.convertToEqui)
     }
 
-    convertToEqui() {
+    convertToEqui = () => {
         var c = document.getElementById('workingCanvas');
         var ctx = c.getContext('2d');
 

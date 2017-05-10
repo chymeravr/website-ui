@@ -9,8 +9,6 @@ export class ProfileView extends React.Component {
     constructor(props) {
         super(props);
         this.state = { amount: 100, chargeFailed: false, chargeSucceeded: false };
-        this.handleChange = this.handleChange.bind(this);
-        this.onToken = this.onToken.bind(this);
     }
 
     componentDidMount() {
@@ -27,15 +25,15 @@ export class ProfileView extends React.Component {
         );
     }
 
-    handleChange(key) {
-        return function (e) {
+    handleChange = (key) => {
+        return (e) => {
             var state = {};
             state[key] = e.target.value;
             this.setState(Object.assign({}, this.state, state));
         };
     }
 
-    onToken(token) {
+    onToken = (token) => {
         callApiWithJwt('/user/api/charge',
             'POST',
             JSON.stringify({ token: token.id, amount: this.state.amount }),
@@ -85,7 +83,7 @@ export class ProfileView extends React.Component {
                             </Card>
                             <Divider />
                             <Header as='h3' className='whiteText'>Add Funds</Header>
-                            <Input type='number' min='1' step='1' fluid label="Amount ($)" value={amount} onChange={this.handleChange('amount').bind(this)} />
+                            <Input type='number' min='1' step='1' fluid label="Amount ($)" value={amount} onChange={this.handleChange('amount')} />
                             {amount != parseInt(amount, 10) ? <Message error className='smallText' content="Please round up the amount to nearest dollar value" /> : ''}
                             <br />
                             <StripeCheckout

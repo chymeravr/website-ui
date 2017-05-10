@@ -35,12 +35,6 @@ export class AdModal extends React.Component {
         }, JSON.parse(JSON.stringify(props)));
         this.postSave = props.postSave;
         this.closeModal = props.closeModal;
-        this.saveAd = this.saveAd.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.validateState = this.validateState.bind(this);
-        this.setCreative = this.setCreative.bind(this);
-        this.setCreativeFormat = this.setCreativeFormat.bind(this);
-        this.setVision = this.setVision.bind(this);
     }
 
 
@@ -48,13 +42,13 @@ export class AdModal extends React.Component {
         this.setState(Object.assign({}, this.state, { open: nextProps.open }))
     }
 
-    validateState() {
+    validateState = () => {
         var valid = this.state.ad && this.state.ad.creative && this.state.ad.landingPage && this.state.ad.name;
         valid = valid && this.state.ad.landingPage.length > 0
         this.setState(Object.assign({}, this.state, { valid: valid }));
     }
 
-    handleChange(key) {
+    handleChange = (key) => {
         return (e, d) => {
             this.state.ad[key] = e.target.value;
             var newAd = Object.assign({}, this.state.ad);
@@ -64,7 +58,7 @@ export class AdModal extends React.Component {
         };
     }
 
-    saveAd() {
+    saveAd = () => {
         this.setState(Object.assign({}, this.state, { uploading: true }));
         const jwtToken = localStorage.getItem(config.jwt.tokenKey);
         var data = new FormData();
@@ -106,19 +100,19 @@ export class AdModal extends React.Component {
         });
     }
 
-    setCreative(imgData) {
+    setCreative = (imgData) => {
         this.state.ad.creative = imgData;
         this.setState(Object.assign({}, this.state), this.validateState)
     }
 
-    setCreativeFormat(e, d) {
+    setCreativeFormat = (e, d) => {
         var ad = Object.assign(this.state.ad, {
             creativeFormat: d.value
         });
         this.setState(Object.assign({}, this.state, { ad: ad }), this.validateState);
     }
 
-    setVision(e, d) {
+    setVision = (e, d) => {
         var ad = Object.assign(this.state.ad, {
             vision: d.value
         });

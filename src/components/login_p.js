@@ -14,16 +14,14 @@ export class Login_P extends React.Component {
             activeItem: 'login',
             loginState: props.loginState,
         };
-        this.handleItemClick = this.handleItemClick.bind(this);
         this.tryLogin = props.tryLogin;
-        this.signup = this.signup.bind(this);
     }
 
     componentWillReceiveProps(props) {
         this.setState(Object.assign({}, this.state, { loginState: props.loginState }));
     }
 
-    handleChange(key) {
+    handleChange = (key) => {
         return (e, d) => {
             var state = {};
             state[key] = d.value;
@@ -35,7 +33,7 @@ export class Login_P extends React.Component {
         document.title = 'Login';
     }
 
-    signup(e) {
+    signup = (e) => {
         e.preventDefault();
         const data = {
             user: {
@@ -52,7 +50,7 @@ export class Login_P extends React.Component {
             201);
     }
 
-    handleItemClick(name) {
+    handleItemClick = (name) => {
         return () => this.setState(Object.assign({}, this.state, { activeItem: name }))
     }
 
@@ -91,10 +89,10 @@ export class Login_P extends React.Component {
                     <Form.Input placeholder='Username' onChange={(e, d) => this.handleChange('username')(e, d)} error={usernameError} value={this.state.username} />
 
                     {passwordError ? (<Message error content={this.state.error.user.password.join('\n')} />) : <div></div>}
-                    <Form.Input placeholder='Password' type='password' onChange={(e, d) => this.handleChange('password')(e, d)} error={passwordError} value={this.state.password}/>
+                    <Form.Input placeholder='Password' type='password' onChange={(e, d) => this.handleChange('password')(e, d)} error={passwordError} value={this.state.password} />
 
                     {emailError ? (<Message error content={this.state.error.email.join('\n')} />) : <div></div>}
-                    <Form.Input placeholder='Email' type='email' onChange={(e, d) => this.handleChange('email')(e, d)} error={emailError} value={this.state.email}/>
+                    <Form.Input placeholder='Email' type='email' onChange={(e, d) => this.handleChange('email')(e, d)} error={emailError} value={this.state.email} />
                     <Button type='submit' onClick={(e) => this.signup(e)}>Submit</Button>
                 </Form>
             </Grid.Column>

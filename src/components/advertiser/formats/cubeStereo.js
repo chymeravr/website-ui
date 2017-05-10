@@ -13,16 +13,9 @@ export class CubeStereoFormat extends React.Component {
         super(props);
         this.onCreativeAddition = props.onCreativeAddition;
         this.state = { conversion: INITIAL }
-        this.convertToEqui = this.convertToEqui.bind(this);
-        this.convertToEquiEye = this.convertToEquiEye.bind(this);
-        this.convertToEquiWrapper = this.convertToEquiWrapper.bind(this);
-        this.setFile = this.setFile.bind(this);
-        this.setFileName = this.setFileName.bind(this);
-        this.getImageData = this.getImageData.bind(this);
-        this.validateImageData = this.validateImageData.bind(this);
     }
 
-    setFile(file, label) {
+    setFile = (file, label) => {
         const that = this;
         var oFReader = new FileReader();
         oFReader.readAsDataURL(file);
@@ -41,7 +34,7 @@ export class CubeStereoFormat extends React.Component {
 
     }
 
-    setFileName(label) {
+    setFileName = (label) => {
         return e => {
             this.setFile(e.target.files[0], label);
             const fileObject = {}
@@ -50,14 +43,14 @@ export class CubeStereoFormat extends React.Component {
         };
     }
 
-    scaleToSize(x) {
+    scaleToSize = (x) => {
         x = Math.round((1 + x) * 512);
         x = Math.min(x, 1023);
         x = Math.max(0, x);
         return x;
     }
 
-    getImageData(context, canvas, label) {
+    getImageData = (context, canvas, label) => {
         var img = new Image();
         img.src = this.state[label + 'ImageData'];
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -66,7 +59,7 @@ export class CubeStereoFormat extends React.Component {
     }
 
 
-    validateImageData() {
+    validateImageData = () => {
         const labels = ['bottomImageData', 'topImageData', 'leftImageData', 'rightImageData', 'frontImageData', 'backImageData']
         const l_labels = labels.map(e => 'l_' + e)
         const r_labels = labels.map(e => 'r_' + e)
@@ -76,11 +69,11 @@ export class CubeStereoFormat extends React.Component {
         this.setState(Object.assign({}, this.state, { valid: l_valid && r_valid }));
     }
 
-    convertToEquiWrapper() {
+    convertToEquiWrapper = () => {
         this.setState(Object.assign({}, this.state, { conversion: STARTED }), this.convertToEqui)
     }
 
-    convertToEquiEye(eye, start_x, start_y) {
+    convertToEquiEye = (eye, start_x, start_y) => {
         var c = document.getElementById('workingCanvas');
         var ctx = c.getContext('2d');
 
@@ -155,7 +148,7 @@ export class CubeStereoFormat extends React.Component {
         stitchedContext.putImageData(idata, start_x, start_y)
     }
 
-    convertToEqui() {
+    convertToEqui = () => {
         this.convertToEquiEye('l', 0, 0);
         this.convertToEquiEye('r', 0, 2048);
 

@@ -24,13 +24,10 @@ export class AdvertiserView extends React.Component {
     constructor(props) {
         super(props);
         this.state = { modalIsOpen: false };
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
 
-    handleChange(key) {
+    handleChange = (key) => {
         return function (e) {
             var state = {};
             state[key] = e.target.value;
@@ -59,22 +56,22 @@ export class AdvertiserView extends React.Component {
         document.title = 'Campaigns'
     }
 
-    postSave(campaign) {
+    postSave = (campaign) => {
         campaign.key = campaign.id;
         this.state.campaigns.unshift(campaign);
         this.setState(Object.assign({}, this.state), this.closeModal);
 
     }
 
-    openModal() {
+    openModal = () => {
         this.setState(Object.assign({}, this.state, { modalIsOpen: true }));
     }
 
-    closeModal() {
+    closeModal = () => {
         this.setState(Object.assign({}, this.state, { modalIsOpen: false }));
     }
 
-    setCampaignStatus(index, status) {
+    setCampaignStatus = (index, status) => {
         const campaignId = this.state.campaigns[index].id;
         callApiWithJwt('/user/api/advertiser/campaigns/' + campaignId,
             'PATCH',
@@ -141,7 +138,7 @@ export class AdvertiserView extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
-                <CampaignEditModal saveMethod="POST" postSave={this.postSave.bind(this)} open={this.state.modalIsOpen} closeModal={this.closeModal} />
+                <CampaignEditModal saveMethod="POST" postSave={this.postSave} open={this.state.modalIsOpen} closeModal={this.closeModal} />
             </main>
 
         );

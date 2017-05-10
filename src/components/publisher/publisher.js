@@ -12,18 +12,14 @@ export class PublisherView extends React.Component {
     constructor(props) {
         super(props);
         this.state = { activeItem: APPS };
-        this.openModal = this.openModal.bind(this);
-        this.closeModal = this.closeModal.bind(this);
-        this.toggleTabs = this.toggleTabs.bind(this);
-        this.addTestDevice = this.addTestDevice.bind(this);
     }
 
-    handleChange(key) {
-        return function (e) {
+    handleChange = (key) => {
+        return (e) => {
             var state = {};
             state[key] = e.target.value;
             this.setState(Object.assign({}, this.state, state));
-        }.bind(this);
+        }
     }
 
     componentWillMount() {
@@ -55,25 +51,25 @@ export class PublisherView extends React.Component {
         );
     }
 
-    postSave(app) {
+    postSave = (app) => {
         app.key = app.id;
         this.state.apps.unshift(app);
         this.setState(Object.assign({}, this.state), this.closeModal);
     }
 
-    openModal() {
+    openModal = () => {
         this.setState(Object.assign({}, this.state, { modalIsOpen: true }));
     }
 
-    closeModal() {
+    closeModal = () => {
         this.setState(Object.assign({}, this.state, { modalIsOpen: false }));
     }
 
-    toggleTabs(tab) {
+    toggleTabs = (tab) => {
         this.setState(Object.assign({}, this.state, { activeItem: tab }));
     }
 
-    addTestDevice() {
+    addTestDevice = () => {
         callApiWithJwt('/user/api/testDevices/',
             'POST',
             JSON.stringify({ deviceId: this.state.testDeviceId }),
@@ -89,7 +85,7 @@ export class PublisherView extends React.Component {
         );
     }
 
-    setTestDeviceStatus(index, status) {
+    setTestDeviceStatus = (index, status) => {
         const testDeviceId = this.state.testDevices[index].id;
         callApiWithJwt('/user/api/testDevices/' + testDeviceId,
             'PATCH',
@@ -177,7 +173,7 @@ export class PublisherView extends React.Component {
                 const submitButton = <Button color='orange' onClick={this.addTestDevice} disabled={!this.state.testDeviceId || this.state.testDeviceId.length <= 0}><Icon name="add" /></Button>;
                 addButton = (
                     <Grid.Column width={5}>
-                        <Input fluid action={submitButton} placeholder='Add New Test Device Id' onChange={this.handleChange('testDeviceId').bind(this)} value={this.state.testDeviceId} />
+                        <Input fluid action={submitButton} placeholder='Add New Test Device Id' onChange={this.handleChange('testDeviceId')} value={this.state.testDeviceId} />
                     </Grid.Column>
                 )
                 break;
@@ -199,7 +195,7 @@ export class PublisherView extends React.Component {
                         {content}
                     </Grid.Row>
                 </Grid>
-                <AppEditModal label="Create App" saveMethod="POST" postSave={this.postSave.bind(this)} successStatus="201" closeModal={this.closeModal} open={this.state.modalIsOpen} />
+                <AppEditModal label="Create App" saveMethod="POST" postSave={this.postSave} successStatus="201" closeModal={this.closeModal} open={this.state.modalIsOpen} />
             </main>
         );
     }

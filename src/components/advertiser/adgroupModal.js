@@ -30,17 +30,13 @@ export class AdgroupEditModal extends React.Component {
         this.label = this.isEditModal ? 'Edit Adgroup' : 'Create Adgroup';
         this.saveMethod = this.isEditModal ? 'PUT' : 'POST'
         this.successStatus = this.isEditModal ? 200 : 201
-
-        this.onDatesChange = this.onDatesChange.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-
     }
 
     componentWillReceiveProps(nextProps) {
         this.setState(Object.assign({}, this.state, nextProps));
     }
 
-    onDatesChange(dateType) {
+    onDatesChange = (dateType) => {
         return (date) => {
             var newAdgroup = Object.assign({}, this.state.adgroup);
             newAdgroup[dateType] = date;
@@ -49,7 +45,7 @@ export class AdgroupEditModal extends React.Component {
         }
     }
 
-    validateState() {
+    validateState = () => {
         var valid = this.state.adgroup;
 
         // Adgroup should be present
@@ -74,7 +70,7 @@ export class AdgroupEditModal extends React.Component {
         this.setState(Object.assign({}, this.state, { valid: valid }));
     }
 
-    handleChange(key) {
+    handleChange = (key) => {
         return (e, d) => {
             this.state.adgroup[key] = e.target.value;
             var newAdgroup = Object.assign({}, this.state.adgroup);
@@ -86,7 +82,7 @@ export class AdgroupEditModal extends React.Component {
     }
 
 
-    setPricing(id) {
+    setPricing = (id) => {
         var newAdgroup = Object.assign(this.state.adgroup, {
             pricing: id
         });
@@ -95,7 +91,7 @@ export class AdgroupEditModal extends React.Component {
     }
 
 
-    saveAdgroup() {
+    saveAdgroup = () => {
         const apiSuffix = this.isEditModal ? this.state.adgroup.id : '';
         const apiPath = '/user/api/advertiser/adgroups/' + apiSuffix;
         const adgroup = Object.assign({}, this.state.adgroup);
@@ -183,7 +179,7 @@ export class AdgroupEditModal extends React.Component {
                         </Form>
                     </Modal.Content>
                     <Modal.Actions>
-                        <Button positive content="Save" disabled={!this.state.valid} onClick={this.saveAdgroup.bind(this)} />
+                        <Button positive content="Save" disabled={!this.state.valid} onClick={this.saveAdgroup} />
                     </Modal.Actions>
                 </Modal>
             </div>
