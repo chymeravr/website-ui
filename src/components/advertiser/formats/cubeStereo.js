@@ -69,10 +69,6 @@ export class CubeStereoFormat extends React.Component {
         this.setState(Object.assign({}, this.state, { valid: l_valid && r_valid }));
     }
 
-    convertToEquiWrapper = () => {
-        this.setState(Object.assign({}, this.state, { conversion: STARTED }), this.convertToEqui)
-    }
-
     convertToEquiEye = (eye, start_x, start_y) => {
         var c = document.getElementById('workingCanvas');
         var ctx = c.getContext('2d');
@@ -159,11 +155,17 @@ export class CubeStereoFormat extends React.Component {
         var previewContext = previewCanvas.getContext('2d');
         var previewImg = new Image();
         previewImg.src = c.toDataURL();
-        previewContext.drawImage(previewImg, 0, 0, 4096, 4096, 0, 0, 600, 600);
+        previewImg.onload = () => previewContext.drawImage(previewImg, 0, 0, 4096, 4096, 0, 0, 600, 600);
 
         var image = c.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');  // here is the most important part because if you dont replace you will get a DOM 18 exception.
         this.onCreativeAddition(dataURItoBlob(image));
         this.setState(Object.assign({}, this.state, { conversion: CONVERTED }))
+    }
+
+
+    convertToEquiWrapper = (e, d) => {
+        e.preventDefault();
+        this.setState(Object.assign({}, this.state, { conversion: STARTED }), this.convertToEqui)
     }
 
     render() {
@@ -220,7 +222,7 @@ export class CubeStereoFormat extends React.Component {
                     <Grid.Row columns={3}>
                         <Grid.Column width={6} />
                         <Grid.Column width={4}>
-                            <Button fluid positive content="Convert" onClick={this.convertToEquiWrapper} disabled={!this.state.valid} />
+                            <Button fluid positive content="Convert" onClick={(e, d) => this.convertToEquiWrapper(e, d)} disabled={!this.state.valid} />
                         </Grid.Column>
                         <Grid.Column width={6} />
                     </Grid.Row>

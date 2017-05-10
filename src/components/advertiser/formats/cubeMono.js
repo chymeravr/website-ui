@@ -66,7 +66,8 @@ export class CubeMonoFormat extends React.Component {
         this.setState(Object.assign({}, this.state, { valid: topImageData && bottomImageData && leftImageData && rightImageData && frontImageData && backImageData }));
     }
 
-    convertToEquiWrapper = () => {
+    convertToEquiWrapper = (e, d) => {
+        e.preventDefault();
         this.setState(Object.assign({}, this.state, { conversion: STARTED }), this.convertToEqui)
     }
 
@@ -144,8 +145,7 @@ export class CubeMonoFormat extends React.Component {
         var previewContext = previewCanvas.getContext('2d');
         var previewImg = new Image();
         previewImg.src = c.toDataURL();
-        previewContext.drawImage(previewImg, 0, 0, 4096, 2048, 0, 0, 600, 300);
-
+        previewImg.onload = () => previewContext.drawImage(previewImg, 0, 0, 4096, 2048, 0, 0, 600, 300);
         var image = c.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');
         this.onCreativeAddition(dataURItoBlob(image));
         this.setState(Object.assign({}, this.state, { conversion: CONVERTED }))
@@ -170,7 +170,7 @@ export class CubeMonoFormat extends React.Component {
                     <Table.Footer fullWidth>
                         <Table.Row>
                             <Table.HeaderCell colSpan='4'>
-                                <Button floated="right" positive content="Convert" onClick={this.convertToEquiWrapper} disabled={!this.state.valid} />
+                                <Button floated="right" positive content="Convert" onClick={(e, d) => this.convertToEquiWrapper(e, d)} disabled={!this.state.valid} />
                             </Table.HeaderCell>
                         </Table.Row>
                     </Table.Footer>
