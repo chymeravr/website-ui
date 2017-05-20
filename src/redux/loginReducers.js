@@ -20,7 +20,7 @@ function loginState(state = NOT_ATTEMPTED, action) {
 function username(state = '', action) {
     switch (action.type) {
         case LOGIN_SUCCEEDED:
-            return action.username
+            return action.username //TODO: clear user state on logout
         default:
             return state;
     }
