@@ -30,19 +30,14 @@ export class CampaignDetailView extends React.Component {
             agModalIsOpen: false,
             campaignId: props.match.params.campaignId
         };
-        this.openCampaignModal = this.openCampaignModal.bind(this);
-        this.closeCampaignModal = this.closeCampaignModal.bind(this);
-        this.openAgModal = this.openAgModal.bind(this);
-        this.closeAgModal = this.closeAgModal.bind(this);
-
     }
 
-    handleChange(key) {
-        return function (e) {
+    handleChange = (key) => {
+        return (e) => {
             var state = {};
             state[key] = e.target.value;
             this.setState(Object.assign({}, this.state, state));
-        }.bind(this);
+        }
     }
 
     componentWillMount() {
@@ -67,23 +62,23 @@ export class CampaignDetailView extends React.Component {
     }
 
 
-    openCampaignModal() {
+    openCampaignModal = () => {
         this.setState(Object.assign({}, this.state, { cmpModalIsOpen: true }));
     }
 
-    closeCampaignModal() {
+    closeCampaignModal = () => {
         this.setState(Object.assign({}, this.state, { cmpModalIsOpen: false }));
     }
 
-    openAgModal() {
+    openAgModal = () => {
         this.setState(Object.assign({}, this.state, { agModalIsOpen: true }));
     }
 
-    closeAgModal() {
+    closeAgModal = () => {
         this.setState(Object.assign({}, this.state, { agModalIsOpen: false }));
     }
 
-    postSave(campaign) {
+    postSave = (campaign) => {
         campaign.startDate = moment(campaign.startDate, 'YYYY-MM-DD');
         campaign.endDate = moment(campaign.endDate, 'YYYY-MM-DD');
         campaign.adgroups.forEach(adgroup => {
@@ -93,14 +88,14 @@ export class CampaignDetailView extends React.Component {
         this.setState(Object.assign({}, this.state, { campaign: campaign }), this.closeCampaignModal)
     }
 
-    postAdgroupAddition(adgroup) {
+    postAdgroupAddition = (adgroup) => {
         adgroup.startDate = moment(adgroup.startDate, 'YYYY-MM-DD');
         adgroup.endDate = moment(adgroup.endDate, 'YYYY-MM-DD')
         this.state.campaign.adgroups.unshift(adgroup);
         this.setState(Object.assign({}, this.state), this.closeAgModal);
     }
 
-    setAdgroupStatus(index, status) {
+    setAdgroupStatus = (index, status) => {
         const adgroupId = this.state.campaign.adgroups[index].id;
         callApiWithJwt('/user/api/advertiser/adgroups/' + adgroupId,
             'PATCH',
@@ -152,7 +147,7 @@ export class CampaignDetailView extends React.Component {
                                     <Divider />
                                     <Card.Description>
                                         <Statistic>
-                                            <Statistic.Value>{this.state.campaign.dailyBudget}<Icon name="dollar" size="mini" /></Statistic.Value>
+                                            <Statistic.Value>{this.state.campaign.totalBudget}<Icon name="dollar" size="mini" /></Statistic.Value>
                                             <Statistic.Label>Total Budget</Statistic.Label>
                                         </Statistic>
                                         <Statistic>
@@ -208,8 +203,8 @@ export class CampaignDetailView extends React.Component {
                             </Table>
                         </Grid.Column>
                     </Grid.Row>
-                    <CampaignEditModal postSave={this.postSave.bind(this)} open={this.state.cmpModalIsOpen} closeModal={this.closeCampaignModal} campaign={this.state.campaign} />
-                    <AdgroupEditModal postSave={this.postAdgroupAddition.bind(this)} campaignId={this.state.campaign.id} open={this.state.agModalIsOpen} closeModal={this.closeAgModal} />
+                    <CampaignEditModal postSave={this.postSave} open={this.state.cmpModalIsOpen} closeModal={this.closeCampaignModal} campaign={this.state.campaign} />
+                    <AdgroupEditModal postSave={this.postAdgroupAddition} campaignId={this.state.campaign.id} open={this.state.agModalIsOpen} closeModal={this.closeAgModal} />
                 </Grid >
             </main>
         );

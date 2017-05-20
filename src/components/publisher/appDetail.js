@@ -22,19 +22,14 @@ export class AppDetailView extends React.Component {
             appId: props.match.params.appId,
             newPlacement: '',
         };
-        this.openAppModal = this.openAppModal.bind(this);
-        this.closeAppModal = this.closeAppModal.bind(this);
-        this.openPmModal = this.openPmModal.bind(this);
-        this.closePmModal = this.closePmModal.bind(this);
-        this.savePlacement = this.savePlacement.bind(this);
     }
 
-    handleChange(key) {
-        return function (e) {
+    handleChange = (key) => {
+        return (e) => {
             var state = {};
             state[key] = e.target.value;
             this.setState(Object.assign({}, this.state, state));
-        }.bind(this);
+        }
     }
 
     componentWillMount() {
@@ -55,33 +50,33 @@ export class AppDetailView extends React.Component {
 
     }
 
-    openAppModal() {
+    openAppModal = () => {
         this.setState(Object.assign({}, this.state, { isAppModalOpen: true }))
     }
 
-    closeAppModal() {
+    closeAppModal = () => {
         this.setState(Object.assign({}, this.state, { isAppModalOpen: false }))
     }
 
-    openPmModal() {
+    openPmModal = () => {
         this.setState(Object.assign({}, this.state, { isPmModalOpen: true }))
     }
 
-    closePmModal() {
+    closePmModal = () => {
         this.setState(Object.assign({}, this.state, { isPmModalOpen: false }))
     }
 
-    postSave(app) {
+    postSave = (app) => {
         this.setState(Object.assign({}, this.state, { app: app }), this.closeAppModal)
     }
 
-    postPlacementAddition(placement) {
+    postPlacementAddition = (placement) => {
         this.state.app.placements.unshift(placement);
         this.state.newPlacement = '';
         this.setState(Object.assign({}, this.state), this.closePmModal);
     }
 
-    savePlacement() {
+    savePlacement = () => {
         const apiPath = '/user/api/publisher/placements/';
         callApiWithJwt(
             apiPath,
@@ -172,7 +167,7 @@ export class AppDetailView extends React.Component {
                             </Table>
                         </Grid.Column>
                     </Grid.Row>
-                    <AppEditModal label="Edit App" saveMethod="PUT" postSave={this.postSave.bind(this)} successStatus="200"
+                    <AppEditModal label="Edit App" saveMethod="PUT" postSave={this.postSave} successStatus="200"
                         closeModal={this.closeAppModal} open={this.state.isAppModalOpen} app={this.state.app} />
 
                     <Modal size="small" open={this.state.isPmModalOpen} onClose={this.closePmModal} dimmer='blurring'>

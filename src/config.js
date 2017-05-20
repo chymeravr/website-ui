@@ -8,6 +8,8 @@ export var config = {}
 // TODO Change this to https
 config.backendUrl = PRODUCTION ? 'http://api.chymeravr.com:8000' : 'http://localhost:8000'
 
+config.stripeKey = 'pk_test_NslzGej9kBW6psznMNs3H8zR'
+
 config.jwt = {
     tokenKey: 'chym_token'
 }
@@ -30,6 +32,7 @@ config.hmds = {
     '-1': null,
     '1': 'Gear VR',
     '2': 'Cardboard',
+    '3': 'Daydream'
 }
 
 config.defaultHmd = '-1';

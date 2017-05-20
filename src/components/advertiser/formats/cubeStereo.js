@@ -13,16 +13,9 @@ export class CubeStereoFormat extends React.Component {
         super(props);
         this.onCreativeAddition = props.onCreativeAddition;
         this.state = { conversion: INITIAL }
-        this.convertToEqui = this.convertToEqui.bind(this);
-        this.convertToEquiEye = this.convertToEquiEye.bind(this);
-        this.convertToEquiWrapper = this.convertToEquiWrapper.bind(this);
-        this.setFile = this.setFile.bind(this);
-        this.setFileName = this.setFileName.bind(this);
-        this.getImageData = this.getImageData.bind(this);
-        this.validateImageData = this.validateImageData.bind(this);
     }
 
-    setFile(file, label) {
+    setFile = (file, label) => {
         const that = this;
         var oFReader = new FileReader();
         oFReader.readAsDataURL(file);
@@ -41,7 +34,7 @@ export class CubeStereoFormat extends React.Component {
 
     }
 
-    setFileName(label) {
+    setFileName = (label) => {
         return e => {
             this.setFile(e.target.files[0], label);
             const fileObject = {}
@@ -50,14 +43,14 @@ export class CubeStereoFormat extends React.Component {
         };
     }
 
-    scaleToSize(x) {
+    scaleToSize = (x) => {
         x = Math.round((1 + x) * 512);
         x = Math.min(x, 1023);
         x = Math.max(0, x);
         return x;
     }
 
-    getImageData(context, canvas, label) {
+    getImageData = (context, canvas, label) => {
         var img = new Image();
         img.src = this.state[label + 'ImageData'];
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -66,7 +59,7 @@ export class CubeStereoFormat extends React.Component {
     }
 
 
-    validateImageData() {
+    validateImageData = () => {
         const labels = ['bottomImageData', 'topImageData', 'leftImageData', 'rightImageData', 'frontImageData', 'backImageData']
         const l_labels = labels.map(e => 'l_' + e)
         const r_labels = labels.map(e => 'r_' + e)
@@ -76,11 +69,7 @@ export class CubeStereoFormat extends React.Component {
         this.setState(Object.assign({}, this.state, { valid: l_valid && r_valid }));
     }
 
-    convertToEquiWrapper() {
-        this.setState(Object.assign({}, this.state, { conversion: STARTED }), this.convertToEqui)
-    }
-
-    convertToEquiEye(eye, start_x, start_y) {
+    convertToEquiEye = (eye, start_x, start_y) => {
         var c = document.getElementById('workingCanvas');
         var ctx = c.getContext('2d');
 
@@ -155,7 +144,7 @@ export class CubeStereoFormat extends React.Component {
         stitchedContext.putImageData(idata, start_x, start_y)
     }
 
-    convertToEqui() {
+    convertToEqui = () => {
         this.convertToEquiEye('l', 0, 0);
         this.convertToEquiEye('r', 0, 2048);
 
@@ -166,11 +155,17 @@ export class CubeStereoFormat extends React.Component {
         var previewContext = previewCanvas.getContext('2d');
         var previewImg = new Image();
         previewImg.src = c.toDataURL();
-        previewContext.drawImage(previewImg, 0, 0, 4096, 4096, 0, 0, 600, 600);
+        previewImg.onload = () => previewContext.drawImage(previewImg, 0, 0, 4096, 4096, 0, 0, 600, 600);
 
         var image = c.toDataURL('image/jpeg').replace('image/jpeg', 'image/octet-stream');  // here is the most important part because if you dont replace you will get a DOM 18 exception.
         this.onCreativeAddition(dataURItoBlob(image));
         this.setState(Object.assign({}, this.state, { conversion: CONVERTED }))
+    }
+
+
+    convertToEquiWrapper = (e, d) => {
+        e.preventDefault();
+        this.setState(Object.assign({}, this.state, { conversion: STARTED }), this.convertToEqui)
     }
 
     render() {
@@ -227,7 +222,7 @@ export class CubeStereoFormat extends React.Component {
                     <Grid.Row columns={3}>
                         <Grid.Column width={6} />
                         <Grid.Column width={4}>
-                            <Button fluid positive content="Convert" onClick={this.convertToEquiWrapper} disabled={!this.state.valid} />
+                            <Button fluid positive content="Convert" onClick={(e, d) => this.convertToEquiWrapper(e, d)} disabled={!this.state.valid} />
                         </Grid.Column>
                         <Grid.Column width={6} />
                     </Grid.Row>

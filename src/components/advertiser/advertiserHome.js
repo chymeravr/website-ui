@@ -17,10 +17,6 @@ export class AdvertiserHomeView extends React.Component {
         document.title = 'Advertiser | Chymera VR'
     }
 
-    componentWillMount() {
-
-    }
-
     render() {
         const getImageWithCaption = (image, caption) => {
             return (

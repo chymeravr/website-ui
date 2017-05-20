@@ -27,18 +27,14 @@ export class AdgroupDetailView extends React.Component {
             adgroupId: props.match.params.adgroupId,
             targeting: []
         });
-        this.openAdModal = this.openAdModal.bind(this);
-        this.openAgModal = this.openAgModal.bind(this);
-        this.closeAdModal = this.closeAdModal.bind(this);
-        this.closeAgModal = this.closeAgModal.bind(this);
     }
 
-    handleChange(key) {
-        return function (e) {
+    handleChange = (key) => {
+        return (e) => {
             var state = {};
             state[key] = e.target.value;
             this.setState(Object.assign({}, this.state, state));
-        }.bind(this);
+        }
     }
 
     componentWillMount() {
@@ -60,7 +56,7 @@ export class AdgroupDetailView extends React.Component {
         );
     }
 
-    setAdStatus(index, status) {
+    setAdStatus = (index, status) => {
         const adId = this.state.adgroup.ads[index].id;
         callApiWithJwt('/user/api/advertiser/ad/' + adId,
             'PATCH',
@@ -75,31 +71,31 @@ export class AdgroupDetailView extends React.Component {
         );
     }
 
-    openAgModal() {
+    openAgModal = () => {
         this.setState(Object.assign({}, this.state, { agModalIsOpen: true }));
     }
 
-    openAdModal() {
+    openAdModal = () => {
         this.setState(Object.assign({}, this.state, { adModalIsOpen: true }));
     }
 
-    closeAgModal() {
+    closeAgModal = () => {
         this.setState(Object.assign({}, this.state, { agModalIsOpen: false }));
     }
 
-    closeAdModal() {
+    closeAdModal = () => {
         this.setState(Object.assign({}, this.state, { adModalIsOpen: false }));
     }
 
 
-    postAdgroupEdit(adgroup) {
+    postAdgroupEdit = (adgroup) => {
         adgroup.startDate = moment(adgroup.startDate, 'YYYY-MM-DD');
         adgroup.endDate = moment(adgroup.endDate, 'YYYY-MM-DD')
         adgroup['ads'] = this.state.adgroup.ads;
         this.setState(Object.assign({}, this.state, { adgroup: adgroup }), this.closeAgModal)
     }
 
-    postAdAddition(ad) {
+    postAdAddition = (ad) => {
         this.state.adgroup.ads.unshift(ad);
         this.setState(Object.assign({}, this.state), this.closeAdModal);
     }
@@ -137,7 +133,7 @@ export class AdgroupDetailView extends React.Component {
                                     <Divider />
                                     <Card.Description>
                                         <Statistic>
-                                            <Statistic.Value>{this.state.adgroup.dailyBudget}<Icon name="dollar" size="mini" /></Statistic.Value>
+                                            <Statistic.Value>{this.state.adgroup.totalBudget}<Icon name="dollar" size="mini" /></Statistic.Value>
                                             <Statistic.Label>Total Budget</Statistic.Label>
                                         </Statistic>
                                         <Statistic>
@@ -190,9 +186,9 @@ export class AdgroupDetailView extends React.Component {
                             </Table>
                         </Grid.Column>
                     </Grid.Row>
-                    <AdgroupEditModal postSave={this.postAdgroupEdit.bind(this)} campaignId={this.state.adgroup.campaignId}
+                    <AdgroupEditModal postSave={this.postAdgroupEdit} campaignId={this.state.adgroup.campaignId}
                         open={this.state.agModalIsOpen} closeModal={this.closeAgModal} adgroup={this.state.adgroup} />
-                    <AdModal postSave={this.postAdAddition.bind(this)} adgroupId={this.state.adgroup.id} open={this.state.adModalIsOpen} closeModal={this.closeAdModal} />
+                    <AdModal postSave={this.postAdAddition} adgroupId={this.state.adgroup.id} open={this.state.adModalIsOpen} closeModal={this.closeAdModal} />
                 </Grid >
             </main>
 

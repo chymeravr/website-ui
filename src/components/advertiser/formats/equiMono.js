@@ -10,11 +10,9 @@ export class EquiMonoFormat extends React.Component {
         this.state = {
             valid: true
         }
-        this.setFile = this.setFile.bind(this);
-        this.setFileName = this.setFileName.bind(this);
     }
 
-    setFile(file, label) {
+    setFile = (file, label) => {
         const that = this;
         var oFReader = new FileReader();
         oFReader.readAsDataURL(file);
@@ -36,7 +34,7 @@ export class EquiMonoFormat extends React.Component {
 
     }
 
-    setFileName(label) {
+    setFileName = (label) => {
         return e => {
             this.setFile(e.target.files[0], label);
             const fileObject = {}

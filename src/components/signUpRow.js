@@ -12,13 +12,10 @@ export class SignUp extends React.Component {
         };
         this.headingRow = props.headingRow;
         this.bordered = props.bordered;
-        this.handleChange = this.handleChange.bind(this);
-        this.registerUser = this.registerUser.bind(this);
-        this.clearMessages = this.clearMessages.bind(this);
     }
 
 
-    handleChange(key) {
+    handleChange = (key) => {
         return function (e) {
             var state = {};
             state[key] = e.target.value;
@@ -26,11 +23,11 @@ export class SignUp extends React.Component {
         };
     }
 
-    clearMessages() {
+    clearMessages = () => {
         this.setState(Object.assign({}, this.state, { emailExists: false, registered: false }));
     }
 
-    registerUser() {
+    registerUser = () => {
         callApiWithJwt(
             '/user/api/preview_register',
             'POST',
@@ -56,13 +53,13 @@ export class SignUp extends React.Component {
         const emailInput =
             <Input className={this.bordered ? 'orangeInput' : ''} fluid error={this.state.emailExists && this.state.registered}
                 label={submitButton} placeholder='Email Address' labelPosition='right'
-                onChange={this.handleChange('email').bind(this)} value={this.state.email} />
+                onChange={this.handleChange('email')} value={this.state.email} />
 
         const emailInputMobile =
             <div>
                 <Input className={this.bordered ? 'orangeInput' : ''} fluid error={this.state.emailExists && this.state.registered}
                     placeholder='Email Address'
-                    onChange={this.handleChange('email').bind(this)} value={this.state.email} />
+                    onChange={this.handleChange('email')} value={this.state.email} />
                 <br />
                 {mobileSubmitButton}
             </div>

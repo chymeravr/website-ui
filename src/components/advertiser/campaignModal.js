@@ -30,12 +30,6 @@ export class CampaignEditModal extends React.Component {
         this.label = this.isEditModal ? 'Edit Campaign' : 'Create Campaign';
         this.saveMethod = this.isEditModal ? 'PUT' : 'POST';
         this.successStatus = this.isEditModal ? 200 : 201;
-
-        this.onDatesChange = this.onDatesChange.bind(this);
-        this.handleChange = this.handleChange.bind(this);
-        this.validateState = this.validateState.bind(this);
-        this.setOs = this.setOs.bind(this);
-        this.setHmd = this.setHmd.bind(this);
     }
 
     componentDidMount() {
@@ -46,7 +40,7 @@ export class CampaignEditModal extends React.Component {
         this.setState(Object.assign({}, this.state, nextProps));
     }
 
-    onDatesChange(dateType) {
+    onDatesChange = (dateType) => {
         return (date) => {
             var newCampaign = Object.assign({}, this.state.campaign);
             newCampaign[dateType] = date;
@@ -55,7 +49,7 @@ export class CampaignEditModal extends React.Component {
         }
     }
 
-    handleChange(key) {
+    handleChange = (key) => {
         return (e, d) => {
             this.state.campaign[key] = e.target.value;
             var newCampaign = Object.assign({}, this.state.campaign);
@@ -66,7 +60,7 @@ export class CampaignEditModal extends React.Component {
     }
 
 
-    validateState() {
+    validateState = () => {
         var campaign = this.state.campaign;
         var valid = campaign;
         // Campaign fields should be present
@@ -79,7 +73,7 @@ export class CampaignEditModal extends React.Component {
         this.setState(Object.assign({}, this.state, { valid: valid }));
     }
 
-    saveCampaign() {
+    saveCampaign = () => {
         fetch(addHttp(this.state.campaign.appUrl), {
             method: 'HEAD',
             mode: 'no-cors'
@@ -108,12 +102,12 @@ export class CampaignEditModal extends React.Component {
             }).catch((ex) => { this.setState(Object.assign({}, this.state, { valid: false, validAppUrl: false })) });
     }
 
-    setHmd(e, d) {
+    setHmd = (e, d) => {
         const updatedCampaign = Object.assign({}, this.state.campaign, { hmd: d.value });
         this.setState(Object.assign({}, this.state, { campaign: updatedCampaign }))
     };
 
-    setOs(e, d) {
+    setOs = (e, d) => {
         const updatedCampaign = Object.assign({}, this.state.campaign, { os: d.value });
         this.setState(Object.assign({}, this.state, { campaign: updatedCampaign }))
     };
@@ -194,7 +188,7 @@ export class CampaignEditModal extends React.Component {
 
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button positive content="Save" disabled={!this.state.valid} onClick={this.saveCampaign.bind(this)} />
+                    <Button positive content="Save" disabled={!this.state.valid} onClick={this.saveCampaign} />
                 </Modal.Actions>
             </Modal>
         )

@@ -15,15 +15,9 @@ export class EquiStereoFormat extends React.Component {
         super(props);
         this.onCreativeAddition = props.onCreativeAddition;
         this.state = { converted: false }
-        this.stitchEye = this.stitchEye.bind(this);
-        this.stitch = this.stitch.bind(this);
-        this.setFile = this.setFile.bind(this);
-        this.setFileName = this.setFileName.bind(this);
-        this.getImageData = this.getImageData.bind(this);
-        this.validateImageData = this.validateImageData.bind(this);
     }
 
-    setFile(file, label) {
+    setFile = (file, label) => {
         const that = this;
         var oFReader = new FileReader();
         oFReader.readAsDataURL(file);
@@ -42,7 +36,7 @@ export class EquiStereoFormat extends React.Component {
 
     }
 
-    setFileName(label) {
+    setFileName = (label) => {
         return e => {
             this.setFile(e.target.files[0], label);
             const fileObject = {}
@@ -52,7 +46,7 @@ export class EquiStereoFormat extends React.Component {
     }
 
 
-    getImageData(context, canvas, label) {
+    getImageData = (context, canvas, label) => {
         var img = new Image();
         img.src = this.state[label + 'ImageData'];
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -61,12 +55,12 @@ export class EquiStereoFormat extends React.Component {
     }
 
 
-    validateImageData() {
+    validateImageData = () => {
         this.setState(Object.assign({}, this.state, { valid: this.state.leftImageData && this.state.rightImageData }));
     }
 
 
-    stitchEye(eye, start_x, start_y) {
+    stitchEye = (eye, start_x, start_y) => {
         var c = document.getElementById('workingCanvas');
         var ctx = c.getContext('2d');
 
@@ -77,7 +71,7 @@ export class EquiStereoFormat extends React.Component {
         stitchedContext.putImageData(imageData, start_x, start_y)
     }
 
-    stitch() {
+    stitch = () => {
         this.setState(Object.assign({}, this.state, { conversion: STARTED }))
 
         this.stitchEye('left', 0, 0);
