@@ -19,7 +19,7 @@ body {
 }
 
 body.wait, body.wait *{
-    cursor: wait !important;   
+    cursor: wait !important;
 }
 
 .Site {
@@ -31,7 +31,6 @@ body.wait, body.wait *{
 
 .Site-content {
     top: auto;
-    padding-top: 20px; 
 }
 
 .ui.form input[type="file"] {
@@ -58,7 +57,7 @@ body.wait, body.wait *{
 
 .ui.orange.button {
     color: #555 !important;
-    background-color: #fda700 !important; 
+    background-color: #fda700 !important;
     font-size: calc(18rem/16) !important;
     font-weight: 700 !important;
     color: #414042 !important;
@@ -98,15 +97,15 @@ body.wait, body.wait *{
 
 h1 {
     font-weight: 200 !important;
-    font-size: calc( 54rem/16 ) !important;       
+    font-size: calc( 54rem/16 ) !important;
 }
 
 h2 {
-    font-size: calc( 30rem/16 ) !important;  
+    font-size: calc( 30rem/16 ) !important;
 }
 
 h3 {
-    font-size: calc( 24rem/16 ) !important;       
+    font-size: calc( 24rem/16 ) !important;
 }
 
 p {
@@ -145,7 +144,7 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
     background-position-x: center;
     background-position-y: bottom;
     padding: 100px 0px 100px 0px !important;
-    margin: -1em; 
+    margin: -1em;
     text-align: center !important;
 }
 .advertiserSummary {
@@ -173,7 +172,7 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 }
 
 .orangeInput {
- 
+
 }
 
 .navbar {
@@ -183,7 +182,7 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 
 .navbarMenu {
     border-bottom: none !important;
-}   
+}
 
 .navbarMenuMobile {
     border-bottom: none !important;
@@ -276,8 +275,13 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
         border: 2px solid white !important;
     }
 
+    .Site-content {
+        top: auto;
+        margin-top: -28px;
+    }
+
     h1 {
-        font-size: calc( 40rem/16 ) !important;       
+        font-size: calc( 40rem/16 ) !important;
     }
 
     p {
@@ -310,4 +314,33 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
         padding: 0rem 0 0rem 0 !important;
     }
 
+}
+
+/********************* SmokeMachine.css *******************/
+.smoke-container{
+    background-color: #008FCB;
+    position: absolute;
+    top: inherit;
+    height: inherit;
+    width: inherit;
+}
+
+/********************* home.css ***************/
+.page-header-section{
+    /*margin-top: -120px;*/
+    margin-top: -120px !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    height: 850px !important;
+    width: 100%;
+}
+
+.adjustment-due-to-smoke-component{
+    position: absolute !important;
+    top: 360px !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .page-header-section{
+        margin-top: -176px !important;
+    }
 }

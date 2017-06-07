@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { debug, callApiWithJwt, callApi } from '../lib.js'
 import { SignUp } from './signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
+import SmokeComponent from './SmokeComponent';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -62,8 +63,9 @@ export class HomeView extends React.Component {
             <main className="Site-content" >
                 <Grid stackable centered verticalAlign='middle'>
 
-                    <Grid.Row columns={1} verticalAlign='middle' style={{ minHeight: 'calc(70vh)', marginTop: '-10px' }} className='blueBg' >
-                        <Grid.Column width={10}>
+                    <Grid.Row columns={1} verticalAlign='middle' className='page-header-section' >
+                        <SmokeComponent />
+                        <Grid.Column width={10} className='adjustment-due-to-smoke-component'>
                             <Grid centered verticalAlign='middle'>
                                 <Grid.Row>
                                     <Grid.Column width={12}>
@@ -81,15 +83,16 @@ export class HomeView extends React.Component {
                             </Grid>
                         </Grid.Column>
                     </Grid.Row>
-                    <Grid.Row className="blueBg">
+
+                    {/* <Grid.Row className="blueBg">
                         <Image src="/static/img/arrow.png" />
-                    </Grid.Row>
+                    </Grid.Row> */}
                     <Grid.Row style={{ backgroundColor: '#0d95ce', }} columns={1}>
                         <Grid.Column width={16}>
-                            {this.state.eventName ? <p className='centerText whiteText'>Meet us at <strong>{this.state.eventName} </strong>{this.state.description}</p> : ''}
+                            {/* {this.state.eventName ? <p className='centerText whiteText'>Meet us at <strong>{this.state.eventName} </strong>{this.state.description}</p> : ''} */}
+                            <p className='centerText whiteText'>Meet us at <strong>blah </strong>blah blah</p>
                         </Grid.Column>
                     </Grid.Row>
-
 
                     <Grid.Row className='section' columns={5}>
                         {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}

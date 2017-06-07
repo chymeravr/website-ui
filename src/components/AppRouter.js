@@ -78,7 +78,7 @@ export class AppRouter extends React.Component {
         //     isAdBlockDetected = true;
         // }
 
-        // Recommended audit because AdBlock lock the file 'fuckadblock.js' 
+        // Recommended audit because AdBlock lock the file 'fuckadblock.js'
         // If the file is not called, the variable does not exist 'fuckAdBlock'
         // This means that AdBlock is present
         if (typeof fuckAdBlock === 'undefined') {
@@ -104,7 +104,7 @@ export class AppRouter extends React.Component {
                     {
 
                         [
-                            ['/', 'home', HomeView],
+                            ['/', 'home', HomeView, false, true],
                             ['/contact/', 'contact', ContactView],
                             ['/careers/', 'careers', CareerView],
                             ['/terms/', 'terms', TermsView],

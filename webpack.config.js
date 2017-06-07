@@ -127,7 +127,7 @@ module.exports = {
     devServer: {
         host: 'localhost',
         port: 3000,
-
+        disableHostCheck: true,
         historyApiFallback: true,
         // respond to 404s with index.html
 
