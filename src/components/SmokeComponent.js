@@ -16,7 +16,7 @@ class SmokeComponent extends Component{
     componentDidMount(){
         var canvas = document.getElementsByClassName('smoke-container')[0];
         var ctx = canvas.getContext('2d');
-        var smokeMachine = SmokeMachine(ctx, [230, 255, 230], 0.3, 1.0, 50)
+        var smokeMachine = SmokeMachine(ctx, [230, 255, 230], 0.2, 1.0, 50)
         smokeMachine.start();
         this.emitSmoke(smokeMachine, canvas.width, canvas.height);
     }
