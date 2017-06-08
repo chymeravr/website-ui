@@ -316,13 +316,20 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 
 }
 
-/********************* SmokeMachine.css *******************/
+/********************* SmokeComponent.css *******************/
 .smoke-container{
     background-color: #008FCB;
+    z-index: 1;
     position: absolute;
-    top: inherit;
+    top: 0px;
     height: inherit;
-    width: inherit;
+    width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    .smoke-container{
+        width:auto;
+    }
 }
 
 /********************* home.css ***************/
@@ -337,6 +344,7 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 .adjustment-due-to-smoke-component{
     position: absolute !important;
     top: 360px !important;
+    z-index: 2;
 }
 
 @media only screen and (max-width: 767px) {

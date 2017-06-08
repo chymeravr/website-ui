@@ -2,20 +2,23 @@ import React, {Component} from 'react';
 import SmokeMachine from './SmokeMachine';
 
 class SmokeComponent extends Component{
-    emitSmoke(smokeMachine){
-		smokeMachine.addsmoke(300,200,50, 2, 0.5)
-        smokeMachine.addsmoke(150,200,50, 2, 0.5)
-		smokeMachine.addsmoke(0,200,50, 2, 0.5)
+    constructor(props){
+        super(props);
+    }
+    emitSmoke(smokeMachine, canvasWidth, canvasHeight){
+		smokeMachine.addsmoke(10,canvasHeight,50, 2, 0.5)
+        smokeMachine.addsmoke(canvasWidth*0.5,canvasHeight,50, 2, 0.5)
+		smokeMachine.addsmoke(canvasWidth-10,canvasHeight,50, 2, 0.5)
 		setTimeout(function(){
-            this.emitSmoke(smokeMachine)
+            this.emitSmoke(smokeMachine, canvasWidth, canvasHeight)
         }.bind(this), 7000);
 	}
     componentDidMount(){
         var canvas = document.getElementsByClassName('smoke-container')[0];
         var ctx = canvas.getContext('2d');
-        var smokeMachine = SmokeMachine(ctx, [230, 255, 230], 0.3, 0.8, 50)
+        var smokeMachine = SmokeMachine(ctx, [230, 255, 230], 0.3, 1.0, 50)
         smokeMachine.start();
-        this.emitSmoke(smokeMachine);
+        this.emitSmoke(smokeMachine, canvas.width, canvas.height);
     }
 
     render(){

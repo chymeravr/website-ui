@@ -60,6 +60,7 @@ var SmokeMachine = function (context, color, speed, smokeAlpha, cloudSize){
             var ymin = this.y-off
             var ymax = ymin+this.scale*imageheight
             context.drawImage(buffer, xmin, ymin, xmax-xmin, ymax-ymin)
+            //context.drawImage(buffer, xmin, ymin)
         }
     }
 
