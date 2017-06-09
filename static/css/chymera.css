@@ -175,66 +175,8 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 
 }
 
-.navbar {
-    padding: 0 150px 0 150px;
-    z-index: 3;
-}
-
-.navbarMenu {
-    border-bottom: none !important;
-}
-
-.navbarMenuMobile {
-    border-bottom: none !important;
-    padding: 0 10px 15px 10px !important;
-}
-
-.navbarActiveItem {
-    text-align: right !important;
-    color: white !important;
-    border-color: white !important;
-    margin-bottom: 2px !important;
-    padding: 10px 0px 10px 0px !important;
-    margin: 0px 25px 0px 25px !important;
-}
-
-.navbarItem {
-    color: white !important;
-    text-align: right !important;
-    margin-bottom: 2px !important;
-    padding: 10px 0px 10px 0px !important;
-    margin: 0px 25px 0px 25px !important;
-}
-
-.navbarItem, .navbarActiveItem {
-    font-weight: normal !important;
-}
-
-.navbarItem:hover {
-    border-color: white !important;
-}
-
-.navbarButton {
-    border: 2px solid white !important;
-    border-radius:2px !important;
-    color: white !important;
-    padding: 10px 25px 10px 25px !important;
-    margin-left: 50px !important;
-    margin-right: 50px !important;
-    margin-bottom: 2px !important;
-    text-align: right !important;
-}
-
 .blueBg {
     background-color: #008FCB !important;
-}
-
-.navbarMobile {
-    z-index: 3;
-    padding-bottom: 0 !important;
-    -webkit-box-shadow: 0 4px 18px -2px #444;
-    -moz-box-shadow: 0 4px 18px -2px #444;
-    box-shadow: 0 4px 18px -2px #444;
 }
 
 .publisherHomeMain {
@@ -265,16 +207,6 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 }
 
 @media only screen and (max-width: 767px) {
-    .navbarButton {
-        border: 0px !important;
-        padding-right: 0px !important;
-        margin-right: 25px !important;
-    }
-
-    .navbarButton.transparent {
-        border: 2px solid white !important;
-    }
-
     .Site-content {
         top: auto;
         margin-top: -28px;
@@ -350,5 +282,78 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 @media only screen and (max-width: 767px) {
     .page-header-section{
         margin-top: -176px !important;
+    }
+}
+
+/***************** header.css *******************/
+
+.navbar {
+    padding: 0px;
+    z-index: 3;
+    position: absolute;
+}
+
+.navbarMenu {
+    border-bottom: none !important;
+}
+
+.navbarMenuMobile {
+    border-bottom: none !important;
+    padding: 0 10px 15px 10px !important;
+}
+
+.navbarActiveItem {
+    text-align: right !important;
+    color: white !important;
+    border-color: white !important;
+    margin-bottom: 2px !important;
+    padding: 10px 0px 10px 0px !important;
+    margin: 0px 25px 0px 25px !important;
+}
+
+.navbarItem {
+    color: white !important;
+    text-align: right !important;
+    margin-bottom: 2px !important;
+    padding: 10px 0px 10px 0px !important;
+    margin: 0px 25px 0px 25px !important;
+}
+
+.navbarItem, .navbarActiveItem {
+    font-weight: normal !important;
+}
+
+.navbarItem:hover {
+    border-color: white !important;
+}
+
+.navbarButton {
+    border: 2px solid white !important;
+    border-radius:2px !important;
+    color: white !important;
+    padding: 10px 25px 10px 25px !important;
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+    margin-bottom: 2px !important;
+    text-align: right !important;
+}
+
+.navbarMobile {
+    z-index: 3;
+    padding-bottom: 0 !important;
+    -webkit-box-shadow: 0 4px 18px -2px #444;
+    -moz-box-shadow: 0 4px 18px -2px #444;
+    box-shadow: 0 4px 18px -2px #444;
+}
+
+@media only screen and (max-width: 767px) {
+    .navbarButton {
+        border: 0px !important;
+        padding-right: 0px !important;
+        margin-right: 25px !important;
+    }
+
+    .navbarButton.transparent {
+        border: 2px solid white !important;
     }
 }

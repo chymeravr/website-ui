@@ -79,23 +79,27 @@ export class Header_P extends React.Component {
                         </Accordion>
                     </Grid.Column>
                 </Grid.Row>
-                <Grid.Row only='computer'>
-                    <Table padded inverted className={'navbar ' + (transparent ? 'transparent' : 'blueBg')}>
-                        <Table.Body>
-                            <Table.Row>
-                                <Table.Cell><Image src="/static/img/logo.png" size="tiny" as={Link} to={'/'} style={{ paddingTop: '14px' }} /></Table.Cell>
-                                <Table.Cell textAlign='right'>
-                                    <Menu pointing secondary size='massive' floated='right' color='blue' className="navbarMenu">
-                                        {getItem('advertisers', '/advertiser/')}
-                                        {getItem('publishers', '/publisher/')}
-                                        {getItem('careers', '/careers/')}
-                                        {button}
-                                        {this.state.loginState === LOGIN_SUCCEEDED ? <Button color="teal" content='Profile' onClick={(e) => this.props.history.push('/profile/')} /> : ''}
-                                    </Menu>
-                                </Table.Cell>
-                            </Table.Row>
-                        </Table.Body>
-                    </Table>
+                <Grid.Row only='computer tablet' className={'navbar ' + (transparent ? 'transparent' : 'blueBg')}>
+                    <Grid.Column computer={1} tablet={0}></Grid.Column>
+                    <Grid.Column computer={14} tablet={16}>
+                        <Table padded inverted className="transparent">
+                            <Table.Body>
+                                <Table.Row>
+                                    <Table.Cell><Image src="/static/img/logo.png" size="tiny" as={Link} to={'/'} style={{ paddingTop: '14px' }} /></Table.Cell>
+                                    <Table.Cell textAlign='right'>
+                                        <Menu pointing secondary size='massive' floated='right' color='blue' className="navbarMenu">
+                                            {getItem('advertisers', '/advertiser/')}
+                                            {getItem('publishers', '/publisher/')}
+                                            {getItem('careers', '/careers/')}
+                                            {button}
+                                            {this.state.loginState === LOGIN_SUCCEEDED ? <Button color="teal" content='Profile' onClick={(e) => this.props.history.push('/profile/')} /> : ''}
+                                        </Menu>
+                                    </Table.Cell>
+                                </Table.Row>
+                            </Table.Body>
+                        </Table>
+                    </Grid.Column>
+                    <Grid.Column computer={1} tablet={0}></Grid.Column>
                 </Grid.Row>
             </Grid>
         );
