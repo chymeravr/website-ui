@@ -100,6 +100,28 @@ export class HomeView extends React.Component {
                         {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI')}
                     </Grid.Row>
 
+                    <Grid.Row>
+                        <Grid.Column width={3}></Grid.Column>
+                        <Grid.Column width={4}>
+                            <Image centered src='/static/img/emotions-vr.jpg' />
+                        </Grid.Column>
+                        <Grid.Column width={1}></Grid.Column>
+                        <Grid.Column width={5}>
+                            <Header as='h2'>
+                                Emotions in VR
+                            </Header>
+                            <p>'Virtual Reality is a powerful storytelling platform. Research suggests
+                            that VR content evokes emotions of a higher intensity vis-a-vis traditional
+                            2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,
+                            discover the secret to a user\'s heart!''Virtual Reality is a powerful storytelling platform. Research suggests
+                            that VR content evokes emotions of a higher intensity vis-a-vis traditional
+                            2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,
+                            discover the secret to a user\'s heart!'
+                            </p>
+                            <Button color="orange" content='Read More' as='' to='' />
+                        </Grid.Column>
+                        <Grid.Column width={3}></Grid.Column>
+                    </Grid.Row>
 
                     <Grid.Row columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
                         <Grid.Column width={1} />
