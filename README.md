@@ -44,6 +44,13 @@ This boilerplate is purposefully simple to show the minimal configuration for Re
 
 Because the WebStorm IDE uses "safe writes" by default, Webpack's file-watcher won't recognize file changes, so hot-loading won't work. To fix this, disable "safe write" in WebStorm.
 
+### Semantic UI
+https://semantic-ui.com/usage/theming.html
+Inside semantic folder.
+Theme is derived from three variables themes/default < themes/<packaged theme - chymera> < site. Change .variables files to edit the overall theme. Then run
+gulp build to generate css/js files in the dist folder.
+
+
 ### Dependencies
 
 * React
