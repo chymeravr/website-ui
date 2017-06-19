@@ -54,14 +54,14 @@ body.wait, body.wait *{
     font-weight: bold !important
 }
 
-
+/*
 .ui.orange.button {
     color: #555 !important;
     background-color: #fda700 !important;
     font-size: calc(18rem/16) !important;
     font-weight: 700 !important;
     color: #414042 !important;
-}
+}*/
 
 .greyBackground {
     background-color: #f3f3f3 !important;
@@ -153,10 +153,6 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 
 .publisherSummary {
     background-image: url('/static/img/publisher.png');
-}
-
-.button {
-    font-family: 'Lato', sans-serif !important;
 }
 
 .button.transparent {

@@ -34,7 +34,7 @@ export class HomeView extends React.Component {
                     <div >
                         <Header as='h2' style={{ fontWeight: 'bold', color: '#008fcb', }}>{header}</Header>
                         <p>{content}</p>
-                        <Button color="orange" content='Read More' as={Link} to={link} />
+                        <Button secondary content='Read More' as={Link} to={link} />
                     </div>
                 </Grid.Column>
             )
@@ -118,7 +118,7 @@ export class HomeView extends React.Component {
                             2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,
                             discover the secret to a user\'s heart!'
                             </p>
-                            <Button color="orange" content='Read More' as='' to='' />
+                            <Button secondary content='Read More' as='' to='' />
                         </Grid.Column>
                         <Grid.Column width={3}></Grid.Column>
                     </Grid.Row>
