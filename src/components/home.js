@@ -4,6 +4,7 @@ import { debug, callApiWithJwt, callApi } from '../lib.js'
 import { SignUp } from './signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
 import SmokeComponent from './SmokeComponent';
+import {ScrollFadeIn} from './animation/ScrollFadeIn';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -83,6 +84,13 @@ export class HomeView extends React.Component {
                             </Grid>
                         </Grid.Column>
                     </Grid.Row>
+                    <ScrollFadeIn as='div'>
+                        <div>root1</div>
+                        <div>
+                            <div>child1</div>
+                            <div>child2</div>
+                        </div>
+                    </ScrollFadeIn>
 
                     {/* <Grid.Row className="blueBg">
                         <Image src="/static/img/arrow.png" />
