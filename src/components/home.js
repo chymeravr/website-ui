@@ -84,13 +84,6 @@ export class HomeView extends React.Component {
                             </Grid>
                         </Grid.Column>
                     </Grid.Row>
-                    <ScrollFadeIn as='div'>
-                        <div>root1</div>
-                        <div>
-                            <div>child1</div>
-                            <div>child2</div>
-                        </div>
-                    </ScrollFadeIn>
 
                     {/* <Grid.Row className="blueBg">
                         <Image src="/static/img/arrow.png" />
@@ -108,7 +101,7 @@ export class HomeView extends React.Component {
                         {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI')}
                     </Grid.Row>
 
-                    <Grid.Row>
+                    <ScrollFadeIn Component={Grid.Row}>
                         <Grid.Column width={3}></Grid.Column>
                         <Grid.Column width={4}>
                             <Image centered src='/static/img/emotions-vr.jpg' />
@@ -129,7 +122,7 @@ export class HomeView extends React.Component {
                             <Button secondary content='Read More' as='' to='' />
                         </Grid.Column>
                         <Grid.Column width={3}></Grid.Column>
-                    </Grid.Row>
+                    </ScrollFadeIn>
 
                     <Grid.Row columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
                         <Grid.Column width={1} />
