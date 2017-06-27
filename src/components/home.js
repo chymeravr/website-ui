@@ -4,7 +4,7 @@ import { debug, callApiWithJwt, callApi } from '../lib.js'
 import { SignUp } from './signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
 import SmokeComponent from './SmokeComponent';
-import {ScrollFadeIn} from './animation/ScrollFadeIn';
+import {ScrollBasedTransition} from './animation/ScrollBasedTransition';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -95,13 +95,13 @@ export class HomeView extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
 
-                    <Grid.Row className='section' columns={5}>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15} Component={Grid.Row} className='section' columns={5}>
                         {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
                         {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT')}
                         {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI')}
-                    </Grid.Row>
+                    </ScrollBasedTransition>
 
-                    <ScrollFadeIn Component={Grid.Row}>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15} Component={Grid.Row}>
                         <Grid.Column width={3}></Grid.Column>
                         <Grid.Column width={4}>
                             <Image centered src='/static/img/emotions-vr.jpg' />
@@ -122,9 +122,9 @@ export class HomeView extends React.Component {
                             <Button secondary content='Read More' as='' to='' />
                         </Grid.Column>
                         <Grid.Column width={3}></Grid.Column>
-                    </ScrollFadeIn>
+                    </ScrollBasedTransition>
 
-                    <Grid.Row columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15}  Component={Grid.Row} columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
                         <Grid.Column width={1} />
                         {getClientLink('ADVERTISER',
                             'Virtual Reality is a powerful storytelling platform. Research suggests \
@@ -139,10 +139,10 @@ export class HomeView extends React.Component {
                               and users look forward to them! Let\'s get started, shall we?',
                             '/publisher/', 'summary publisherSummary')}
                         <Grid.Column width={1} />
-                    </Grid.Row>
+                    </ScrollBasedTransition>
 
 
-                    <Grid.Row columns={2} className="greyGradientBackground section">
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15}  Component={Grid.Row} columns={2} className="greyGradientBackground section">
                         <Grid.Column>
                             <Grid centered stackable>
                                 <Grid.Row columns={1}>
@@ -171,10 +171,10 @@ export class HomeView extends React.Component {
                                 </Grid.Row>
                             </Grid>
                         </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row columns={16} verticalAlign='middle' className='section'>
+                    </ScrollBasedTransition>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15} Component={Grid.Row} columns={16} verticalAlign='middle' className='section'>
                         <SignUp headingRow={signUpHeader} bordered={true} />
-                    </Grid.Row>
+                    </ScrollBasedTransition>
                     <Divider hidden />
                 </Grid >
             </main >

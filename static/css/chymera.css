@@ -355,7 +355,7 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 }
 
 /*********Example Transition***********/
-.fadein-appear {
+/*.fadein-appear {
   opacity: 0.01;
 }
 
@@ -380,4 +380,19 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 .fadein-leave.fadein-leave-active {
   opacity: 0.01;
   transition: opacity 300ms ease-in;
+}*/
+
+.fade-before-enter {
+    opacity: 0.01;
+}
+.fade-enter {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+.fade-before-leave{
+    opacity: 1;
+}
+.fade-leave {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
 }

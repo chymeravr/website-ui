@@ -1,10 +1,9 @@
 var React = require('react');
-import {ScrollFadeIn} from './ScrollFadeIn';
 
 export var onScroll = "onScroll";
 export var onInsideViewPort = "onInsideViewPort";
 
-export class ScrollAnimationElement extends React.Component{
+export class ScrollEventsGenerator extends React.Component{
     constructor(props){
         super(props);
         this.handleScroll = this.handleScroll.bind(this);
@@ -28,13 +27,14 @@ export class ScrollAnimationElement extends React.Component{
         }
     }
     componentDidMount(){
-        window.addEventListener('scroll', this.handleScroll)
+        window.addEventListener('scroll', this.handleScroll);
     }
     componentWillUnmount(){
-        window.removeEventListener('scroll', this.handleScroll)
+        window.removeEventListener('scroll', this.handleScroll);
     }
     handleScroll(event){
         if(typeof(this.props.elementref) == 'undefined'){
+            window.scrollTo(0, 0);
             return;
         }
         let marginFromTop = 0.0;
@@ -66,7 +66,6 @@ export class ScrollAnimationElement extends React.Component{
         let elementWidth = this.props.elementref.offsetWidth;
         let elementBottom = elementTop + elementHeight;
         let elementRight = elementLeft + elementWidth;
-
         let verticalPosition = this.state.scrollState.verticalPosition;
         let lastVerticalPosition = this.state.lastScrollState.verticalPosition;
         if(elementTop > scrollBottom){
