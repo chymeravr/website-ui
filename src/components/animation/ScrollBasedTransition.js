@@ -15,10 +15,14 @@ export class ScrollBasedTransition extends React.Component{
 
     }
     handleScrollState(scrollState){
-        const { Component, transitionClassName, marginFromTop, marginFromBottom, ...componentProps } = this.props;
+        const { Component, transitionClassName, marginFromTop, marginFromBottom, transitionDelay, ...componentProps } = this.props;
         let baseClassName = "scroll-transition";
+        let delayClassName = "";
         if(typeof(this.props.transitionClassName)!='undefined'){
             baseClassName = this.props.transitionClassName;
+        }
+        if(typeof(this.props.transitionDelay)!='undefined'){
+            delayClassName = "delay-"+this.props.transitionDelay;
         }
         const beforeTransitionEnter = baseClassName+"-enter";
         const transitionEnter = baseClassName+"-enter";
@@ -33,10 +37,10 @@ export class ScrollBasedTransition extends React.Component{
             className += " " + beforeTransitionEnter;
         }
         if(visibleStates.indexOf(currentState) > -1){
-            className += " " + transitionEnter;
+            className += " " + transitionEnter + " " + delayClassName;
         }
         else{
-            className += " " + transitionLeave;
+            className += " " + transitionLeave + " " + delayClassName;
         }
         return (
             <this.props.Component

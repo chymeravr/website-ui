@@ -387,12 +387,25 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 }
 .fade-enter {
     opacity: 1;
-    transition: opacity 500ms ease-in;
+    transition: opacity 300ms ease-in;
 }
 .fade-before-leave{
     opacity: 1;
 }
 .fade-leave {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
+    transition: opacity 150ms ease-in;
+}
+
+.fade-enter.delay-1, .fade-leave.delay-1{
+    transition-delay: 100ms;
+}
+.fade-enter.delay-2, .fade-leave.delay-2{
+    transition-delay: 200ms;
+}
+.fade-enter.delay-3, .fade-leave.delay-3{
+    transition-delay: 300ms;
+}
+.fade-enter.delay-4, .fade-leave.delay-4{
+    transition-delay: 400ms;
 }

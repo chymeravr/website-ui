@@ -37,6 +37,8 @@ export class ScrollEventsGenerator extends React.Component{
             window.scrollTo(0, 0);
             return;
         }
+
+        let boundingRect = this.props.elementref.getBoundingClientRect();
         let marginFromTop = 0.0;
         let marginFromBottom = 0.0;
         let marginFromLeft = 0.0;
@@ -60,8 +62,8 @@ export class ScrollEventsGenerator extends React.Component{
         let scrollBottom = event.srcElement.body.scrollTop + (1-marginFromBottom)*windowHeight;
         let scrollLeft = event.srcElement.body.scrollLeft + marginFromLeft*windowWidth;
         let scrollRight = event.srcElement.body.scrollLeft + (1-marginFromLeft)*windowWidth;
-        let elementTop = this.props.elementref.offsetTop;
-        let elementLeft = this.props.elementref.offsetLeft;
+        let elementTop = event.srcElement.body.scrollTop + boundingRect.top;
+        let elementLeft = event.srcElement.body.scrollLeft + boundingRect.left;
         let elementHeight = this.props.elementref.offsetHeight;
         let elementWidth = this.props.elementref.offsetWidth;
         let elementBottom = elementTop + elementHeight;

@@ -41,12 +41,12 @@ export class HomeView extends React.Component {
             )
         }
 
-        const getImageWithCaption = (image, caption) => {
+        const getImageWithCaption = (image, caption, transitionDelay) => {
             return (
-                <Grid.Column verticalAlign='bottom' width={3}>
+                <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} transitionDelay={transitionDelay} verticalAlign='bottom' width={3}>
                     <Image centered src={'/static/img/' + image} />
                     <p className="boldText caption">{caption}</p>
-                </Grid.Column>
+                </ScrollBasedTransition>
             )
         }
 
@@ -95,19 +95,19 @@ export class HomeView extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
 
-                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15} Component={Grid.Row} className='section' columns={5}>
+                    <Grid.Row className='section' columns={5}>
                         {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
-                        {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT')}
-                        {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI')}
-                    </ScrollBasedTransition>
+                        {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT', '1')}
+                        {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI', '2')}
+                    </Grid.Row>
 
-                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15} Component={Grid.Row}>
+                    <Grid.Row>
                         <Grid.Column width={3}></Grid.Column>
-                        <Grid.Column width={4}>
+                        <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} width={4}>
                             <Image centered src='/static/img/emotions-vr.jpg' />
-                        </Grid.Column>
+                        </ScrollBasedTransition>
                         <Grid.Column width={1}></Grid.Column>
-                        <Grid.Column width={5}>
+                        <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} width={5} transitionDelay="1">
                             <Header as='h2'>
                                 Emotions in VR
                             </Header>
@@ -120,11 +120,11 @@ export class HomeView extends React.Component {
                             discover the secret to a user\'s heart!'
                             </p>
                             <Button secondary content='Read More' as='' to='' />
-                        </Grid.Column>
+                        </ScrollBasedTransition>
                         <Grid.Column width={3}></Grid.Column>
-                    </ScrollBasedTransition>
+                    </Grid.Row>
 
-                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15}  Component={Grid.Row} columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
                         <Grid.Column width={1} />
                         {getClientLink('ADVERTISER',
                             'Virtual Reality is a powerful storytelling platform. Research suggests \
@@ -142,7 +142,7 @@ export class HomeView extends React.Component {
                     </ScrollBasedTransition>
 
 
-                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15}  Component={Grid.Row} columns={2} className="greyGradientBackground section">
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={2} className="greyGradientBackground section">
                         <Grid.Column>
                             <Grid centered stackable>
                                 <Grid.Row columns={1}>
@@ -172,7 +172,7 @@ export class HomeView extends React.Component {
                             </Grid>
                         </Grid.Column>
                     </ScrollBasedTransition>
-                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.15} Component={Grid.Row} columns={16} verticalAlign='middle' className='section'>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Row} columns={16} verticalAlign='middle' className='section'>
                         <SignUp headingRow={signUpHeader} bordered={true} />
                     </ScrollBasedTransition>
                     <Divider hidden />
