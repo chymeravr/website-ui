@@ -3,6 +3,7 @@ import { debug } from '../lib.js'
 import { Grid, Container, Message } from 'semantic-ui-react'
 import Header_C from './header_c'
 import Footer from './footer'
+import {FallingFlakes} from './animation/FallingFlakes';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -19,6 +20,7 @@ export default class App extends React.Component {
     render() {
         return !this.state.adblock ? (
             <div className="Site">
+                <FallingFlakes/>
                 <Header_C pathname={this.state.pathname} transparent={this.state.transparent} handleLogout={this.handleLogout} {...this.props} />
                 {this.state.child}
                 <Footer />

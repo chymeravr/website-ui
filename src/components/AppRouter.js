@@ -24,7 +24,6 @@ import { PublisherView } from './publisher/publisher'
 import { AppDetailView } from './publisher/appDetail'
 import { createBrowserHistory } from 'history'
 import { loginStore } from '../index'
-import {FallingFlakes} from './animation/FallingFlakes'
 
 export const hashHistory = createBrowserHistory();
 
@@ -98,31 +97,30 @@ export class AppRouter extends React.Component {
         let home = () => <AppView child={<HomeView />} />
 
         return (
-            <FallingFlakes/>            
-            // <Router history={hashHistory}>
-            //     <div>
-            //         {// List of arguments -> (path, name, child, adblock = false, transparent = false)
-            //         }
-            //         {
-            //
-            //             [
-            //                 ['/', 'home', HomeView, false, true],
-            //                 ['/contact/', 'contact', ContactView],
-            //                 ['/careers/', 'careers', CareerView],
-            //                 ['/terms/', 'terms', TermsView],
-            //                 ['/login/', 'login', Login_C, this.state.adblock],
-            //                 ['/profile/', 'profile', ProfileView, this.state.adblock],
-            //                 ['/advertiser/', 'advertiser', AdvertiserHomeView, this.state.adblock, true],
-            //                 ['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
-            //                 ['/dashboard/publisher/', 'publisherDashboard', PublisherView, this.state.adblock],
-            //                 ['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
-            //                 ['/advertiser/adgroups/:adgroupId', 'adgroupDetail', AdgroupDetailView, this.state.adblock],
-            //                 ['/publisher/', 'publisher', PublisherHomeView, false, true],
-            //                 ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
-            //             ].map(x => getRouteComponent.apply(null, x))
-            //         }
-            //     </div>
-            // </Router>
+            <Router history={hashHistory}>
+                <div>
+                    {// List of arguments -> (path, name, child, adblock = false, transparent = false)
+                    }
+                    {
+
+                        [
+                            ['/', 'home', HomeView, false, true],
+                            ['/contact/', 'contact', ContactView],
+                            ['/careers/', 'careers', CareerView],
+                            ['/terms/', 'terms', TermsView],
+                            ['/login/', 'login', Login_C, this.state.adblock],
+                            ['/profile/', 'profile', ProfileView, this.state.adblock],
+                            ['/advertiser/', 'advertiser', AdvertiserHomeView, this.state.adblock, true],
+                            ['/dashboard/advertiser/', 'advertiserDashboard', AdvertiserView, this.state.adblock],
+                            ['/dashboard/publisher/', 'publisherDashboard', PublisherView, this.state.adblock],
+                            ['/advertiser/campaigns/:campaignId', 'campaignDetail', CampaignDetailView, this.state.adblock],
+                            ['/advertiser/adgroups/:adgroupId', 'adgroupDetail', AdgroupDetailView, this.state.adblock],
+                            ['/publisher/', 'publisher', PublisherHomeView, false, true],
+                            ['/publisher/apps/:appId', 'appDetail', AppDetailView, this.state.adblock],
+                        ].map(x => getRouteComponent.apply(null, x))
+                    }
+                </div>
+            </Router>
         );
     }
 }
