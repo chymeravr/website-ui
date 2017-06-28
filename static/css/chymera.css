@@ -409,3 +409,23 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
 .fade-enter.delay-4, .fade-leave.delay-4{
     transition-delay: 400ms;
 }
+
+/**************** Falling Flakes ****************/
+.flake{
+    width: 0px;
+    height: 0px;
+    background-color: #008FCB;
+    border-radius: 10px;
+    position:absolute;
+    top: 200px;
+    left: 200px;
+}
+.flake.large{
+    box-shadow: 0px 0px 20px 3px #008FCB;/*h-shadow v-shadow blur spread color*/
+}
+.flake.medium{
+    box-shadow: 0px 0px 12px 2px #008FCB;/*h-shadow v-shadow blur spread color*/
+}
+.flake.small{
+    box-shadow: 0px 0px 6px 1px #008FCB;/*h-shadow v-shadow blur spread color*/
+}

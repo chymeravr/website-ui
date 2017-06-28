@@ -6,7 +6,7 @@ import {CSSTransitionGroup} from 'react-transition-group';
 export class ScrollBasedTransition extends React.Component{
     constructor(props){
         super(props);
-        this.handleScrollState = this.handleScrollState.bind(this);
+        this.renderer = this.renderer.bind(this);
     }
     componentDidMount(){
         this.reference = ReactDOM.findDOMNode(this);
@@ -14,7 +14,7 @@ export class ScrollBasedTransition extends React.Component{
     componentWillUnmount(){
 
     }
-    handleScrollState(scrollState){
+    renderer(scrollState){
         const { Component, transitionClassName, marginFromTop, marginFromBottom, transitionDelay, ...componentProps } = this.props;
         let baseClassName = "scroll-transition";
         let delayClassName = "";
@@ -61,7 +61,7 @@ export class ScrollBasedTransition extends React.Component{
             marginFromBottom = this.props.marginFromBottom;
         }
         return(
-            <ScrollEventsGenerator animator={this.handleScrollState}
+            <ScrollEventsGenerator renderer={this.renderer}
                  elementref={this.reference}
                  marginFromTop={marginFromTop}
                  marginFromBottom={marginFromBottom}

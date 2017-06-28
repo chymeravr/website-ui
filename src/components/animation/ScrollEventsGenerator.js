@@ -49,7 +49,7 @@ export class ScrollEventsGenerator extends React.Component{
         if(typeof(this.props.marginFromBottom) != 'undefined'){
             marginFromBottom = this.props.marginFromBottom;
         }
-        if(typeof(this.props.marginFromLeft) != 'undefined'){
+        if(typeof(this.props.marginFromLeft) != 'undefined'){//margin in form of fraction of the window width.. Events occur when scrolled pass the margin line
             marginFromLeft = this.props.marginFromLeft;
         }
         if(typeof(this.props.marginFromRight) != 'undefined'){
@@ -101,7 +101,7 @@ export class ScrollEventsGenerator extends React.Component{
         if(this.state.scrollState.horizontalPosition !== horizontalPosition){
             lastHorizontalPosition = this.state.scrollState.horizontalPosition;
         }
-        this.setState({
+        const newState = {
             scrollState : {
                 verticalPosition: verticalPosition,
                 horizontalPosition: horizontalPosition
@@ -118,11 +118,16 @@ export class ScrollEventsGenerator extends React.Component{
             elementLeft: elementLeft,
             elementHeight: elementHeight,
             elementWidth: elementWidth
-        });
+        };
+
+        this.setState(newState);
+        if(typeof(this.props.stateUpdater) != 'undefined'){
+            this.props.stateUpdater(newState);
+        }
     }
     render(){
         return(
-            this.props.animator(this.state)
+            this.props.renderer(this.state)
         );
     }
 }
