@@ -12,6 +12,18 @@
 @headerFont        : 'Roboto', sans-serif;
 @pageFont          : @fontName, sans-serif;
 
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+/* This is the single variable that controls them all */
+@emSize   : 16px;
+
+/* The size of page text  */
+@fontSize : @relative16px;
+
+
 /*-------------------
       Site Colors
 --------------------*/
@@ -20,9 +32,35 @@
 @orange           : #FDA700;
 @blue             : #2185D0;
 
+
 /*-------------------
     Brand Colors
 --------------------*/
 
 @primaryColor        : @blue;
 @secondaryColor      : @orange;
+
+
+/*-------------------
+        Page
+--------------------*/
+
+@pageBackground      : #FFFFFF;
+@pageOverflowX       : hidden;
+
+@lineHeight          : 1.5em;
+@textColor           : rgba(0, 0, 0, 0.75);
+
+
+/*--------------
+  Page Heading
+---------------*/
+
+@headerFontWeight : normal;
+@headerLineHeight : 1.5em;
+
+@h1 : @relative50px;
+@h2 : @relative30px;
+@h3 : @relative24px;
+@h4 : @relative20px;
+@h5 : @relative18px;

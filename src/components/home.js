@@ -70,11 +70,11 @@ export class HomeView extends React.Component {
                             <Grid centered verticalAlign='middle'>
                                 <Grid.Row>
                                     <Grid.Column width={12}>
-                                        <Header as='h1' className='centerText whiteText boldText'>Advertising Platform for VR
+                                        <Header as='h1' inverted className='centerText'>Advertising Platform for VR
                                         </Header>
-                                        <p className='centerText whiteText'>
+                                        <Header as='h3' inverted className='centerText'>
                                             ... ads are <strong>NOW</strong> cool
-                                        </p>
+                                        </Header>
                                     </Grid.Column>
                                 </Grid.Row>
                                 <Grid.Row />
@@ -95,6 +95,20 @@ export class HomeView extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
 
+                    <Grid.Row className='section'>
+                        <Grid.Column width={3}></Grid.Column>
+                        <Grid.Column width={10}>
+                            <Header className="centerText" as='h2'>
+                                Everything for VR ads here
+                            </Header>
+                            <p className='largeText centerText'>
+                                Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers.
+                                You can easily create advertisements, manage them, integrate them with your content.
+                            </p>
+                        </Grid.Column>
+                        <Grid.Column width={3}></Grid.Column>
+                    </Grid.Row>
+
                     <Grid.Row className='section' columns={5}>
                         {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
                         {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT', '1')}
@@ -108,7 +122,7 @@ export class HomeView extends React.Component {
                         </ScrollBasedTransition>
                         <Grid.Column width={1}></Grid.Column>
                         <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} width={5} transitionDelay="1">
-                            <Header as='h2'>
+                            <Header as='h3'>
                                 Emotions in VR
                             </Header>
                             <p>'Virtual Reality is a powerful storytelling platform. Research suggests

@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Roboto:300,400,700');
 
-body {
-    color: #555 !important;
-}
-
 .react-datepicker__tether-element {
     filter: none !important;
 }
@@ -31,6 +27,38 @@ body.wait, body.wait *{
 
 .Site-content {
     top: auto;
+}
+
+/*Text Attributes*/
+.boldText {
+    font-weight: bold !important;
+}
+.centerText {
+    text-align: center
+}
+.miniText{
+    font-size: 0.6875rem;/*11px/16*/
+}
+.tinyText{
+    font-size: 0.75rem;/*12px/16*/
+}
+.smallText {
+    font-size: 0.875;/*14px/16*/
+}
+.mediumText{
+    font-size: 1rem;/*16px/16*/
+}
+.largeText{
+    font-size: 1.125rem;/*18px/16*/
+}
+.bigText{
+    font-size: 1.25rem;/*20px/16*/
+}
+.hugeText{
+    font-size: 1.5rem;/*24px/16*/
+}
+.massiveText{
+    font-size: 1.875rem;/*30px/16*/
 }
 
 .ui.form input[type="file"] {
@@ -91,26 +119,6 @@ body.wait, body.wait *{
     color: #008FCB;
 }
 
-.centerText {
-    text-align: center
-}
-
-h1 {
-    font-weight: 200 !important;
-    font-size: calc( 54rem/16 ) !important;
-}
-
-h2 {
-    font-size: calc( 30rem/16 ) !important;
-}
-
-h3 {
-    font-size: calc( 24rem/16 ) !important;
-}
-
-p {
-    font-size: 18px !important;
-}
 
 .caption {
     font-size: calc(18em/16) !important;
@@ -121,15 +129,8 @@ p {
     color: white !important;
 }
 
-.boldText {
-    font-weight: bold !important;
-}
-
 .greyText {
     color: #555 !important;
-}
-h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
-    font-family: 'Lato', sans-serif !important;
 }
 
 .advPubSection {
@@ -189,11 +190,6 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
     /*background-attachment: fixed;*/
 }
 
-.smallText {
-    font-size: 14px !important;
-    font-weight: 300 !important;
-}
-
 .italic {
     font-style: italic !important;
 }
@@ -206,14 +202,6 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
     .Site-content {
         top: auto;
         margin-top: -28px;
-    }
-
-    h1 {
-        font-size: calc( 40rem/16 ) !important;
-    }
-
-    p {
-        font-size: calc( 18em/16) !important;
     }
 
     .summary {
@@ -416,16 +404,8 @@ h1, h2, h3, h4, .navbarItem, .navbarActiveItem {
     height: 0px;
     background-color: #008FCB;
     border-radius: 10px;
+    box-shadow: 0px 0px 8px 2px #008FCB;/*h-shadow v-shadow blur spread color*/
     position:absolute;
     top: 200px;
     left: 200px;
-}
-.flake.large{
-    box-shadow: 0px 0px 20px 3px #008FCB;/*h-shadow v-shadow blur spread color*/
-}
-.flake.medium{
-    box-shadow: 0px 0px 12px 2px #008FCB;/*h-shadow v-shadow blur spread color*/
-}
-.flake.small{
-    box-shadow: 0px 0px 6px 1px #008FCB;/*h-shadow v-shadow blur spread color*/
 }
