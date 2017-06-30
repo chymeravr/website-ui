@@ -30,8 +30,16 @@
 
 /*---  Colors  ---*/
 @orange           : #FDA700;
-@blue             : #2185D0;
+@orangeHover      : saturate(darken(@orange, 5), 10, relative);
+@orangeFocus      : saturate(darken(@orange, 8), 20, relative);
+@orangeActive     : saturate(darken(@orange, 5), 15, relative);
+@orangeDown       : darken(@orange, 10);
 
+@blue             : #2185D0;
+@blueHover        : saturate(darken(@blue, 5), 10, relative);
+@blueFocus        : saturate(darken(@blue, 8), 20, relative);
+@blueActive       : saturate(darken(@blue, 5), 15, relative);
+@blueDown         : darken(@blue, 10);
 
 /*-------------------
     Brand Colors
@@ -59,8 +67,8 @@
 @headerFontWeight : normal;
 @headerLineHeight : 1.5em;
 
-@h1 : @relative50px;
-@h2 : @relative30px;
-@h3 : @relative24px;
-@h4 : @relative20px;
-@h5 : @relative18px;
+@h1 : @relative60px;
+@h2 : @relative40px;
+@h3 : @relative30px;
+@h4 : @relative24px;
+@h5 : @relative20px;

@@ -42,14 +42,23 @@ export class ScrollBasedTransition extends React.Component{
         else{
             className += " " + transitionLeave + " " + delayClassName;
         }
-        return (
-            <this.props.Component
-                {...componentProps}
-                className={className}
-                >
-                    {this.props.children}
-            </this.props.Component>
-        );
+        if(typeof(this.props.children) == 'undefined'){
+            return (
+                <this.props.Component
+                    {...componentProps}
+                    className={className}
+                />
+            );
+        }else{
+            return (
+                <this.props.Component
+                    {...componentProps}
+                    className={className}
+                    >
+                        {this.props.children}
+                </this.props.Component>
+            );
+        }
     }
     render(){
         let marginFromTop = 0.0;

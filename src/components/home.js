@@ -5,6 +5,8 @@ import { SignUp } from './signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
 import SmokeComponent from './SmokeComponent';
 import {ScrollBasedTransition} from './animation/ScrollBasedTransition';
+import {OneColumnSection} from './websiteComponents/OneColumnSection';
+import {ImageTextSection} from './websiteComponents/ImageTextSection';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -95,19 +97,21 @@ export class HomeView extends React.Component {
                         </Grid.Column>
                     </Grid.Row>
 
-                    <Grid.Row className='section'>
-                        <Grid.Column width={3}></Grid.Column>
-                        <Grid.Column width={10}>
-                            <Header className="centerText" as='h2'>
-                                Everything for VR ads here
-                            </Header>
-                            <p className='largeText centerText'>
-                                Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers.
-                                You can easily create advertisements, manage them, integrate them with your content.
-                            </p>
-                        </Grid.Column>
-                        <Grid.Column width={3}></Grid.Column>
-                    </Grid.Row>
+                    <OneColumnSection className="section"
+                        icon="/static/img/360-image-video.png"
+                        content = {
+                            {
+                                header: "Everything for VR ads here",
+                                para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers. You can easily create advertisements, manage them, integrate them with your content."
+                            }
+                        }
+                        link = {
+                            {
+                                text: "Link Here",
+                                destination: '/advertiser/'
+                            }
+                        }
+                    />
 
                     <Grid.Row className='section' columns={5}>
                         {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
@@ -115,28 +119,48 @@ export class HomeView extends React.Component {
                         {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI', '2')}
                     </Grid.Row>
 
-                    <Grid.Row>
-                        <Grid.Column width={3}></Grid.Column>
-                        <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} width={4}>
-                            <Image centered src='/static/img/emotions-vr.jpg' />
-                        </ScrollBasedTransition>
-                        <Grid.Column width={1}></Grid.Column>
-                        <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} width={5} transitionDelay="1">
-                            <Header as='h3'>
-                                Emotions in VR
-                            </Header>
-                            <p>'Virtual Reality is a powerful storytelling platform. Research suggests
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional
-                            2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,
-                            discover the secret to a user\'s heart!''Virtual Reality is a powerful storytelling platform. Research suggests
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional
-                            2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,
-                            discover the secret to a user\'s heart!'
-                            </p>
-                            <Button secondary content='Read More' as='' to='' />
-                        </ScrollBasedTransition>
-                        <Grid.Column width={3}></Grid.Column>
-                    </Grid.Row>
+                    <ImageTextSection className='section'
+                        image='/static/img/emotions-vr.jpg'
+                        content={
+                            {
+                                header:"Emotions in VR",
+                                para:"Virtual Reality is a powerful storytelling platform. Research suggests\
+                                that VR content evokes emotions of a higher intensity vis-a-vis traditional\
+                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,\
+                                discover the secret to a users heart!Virtual Reality is a powerful storytelling platform. Research suggests\
+                                that VR content evokes emotions of a higher intensity vis-a-vis traditional\
+                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,\
+                                discover the secret to a users heart!"
+                            }
+                        }
+                        link = {
+                            {
+                                text: "Link Here",
+                                destination: '/advertiser/'
+                            }
+                        }
+                    />
+                    <ImageTextSection className='section' reversed
+                        image='/static/img/emotions-vr.jpg'
+                        content={
+                            {
+                                header:"Emotions in VR",
+                                para:"Virtual Reality is a powerful storytelling platform. Research suggests\
+                                that VR content evokes emotions of a higher intensity vis-a-vis traditional\
+                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,\
+                                discover the secret to a users heart!Virtual Reality is a powerful storytelling platform. Research suggests\
+                                that VR content evokes emotions of a higher intensity vis-a-vis traditional\
+                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,\
+                                discover the secret to a users heart!"
+                            }
+                        }
+                        link = {
+                            {
+                                text: "Link Here",
+                                destination: '/advertiser/'
+                            }
+                        }
+                    />
 
                     <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
                         <Grid.Column width={1} />
