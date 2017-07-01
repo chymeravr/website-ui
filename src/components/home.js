@@ -162,7 +162,7 @@ export class HomeView extends React.Component {
                         }
                     />
 
-                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
+                    {/* <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
                         <Grid.Column width={1} />
                         {getClientLink('ADVERTISER',
                             'Virtual Reality is a powerful storytelling platform. Research suggests \
@@ -177,8 +177,42 @@ export class HomeView extends React.Component {
                               and users look forward to them! Let\'s get started, shall we?',
                             '/publisher/', 'summary publisherSummary')}
                         <Grid.Column width={1} />
-                    </ScrollBasedTransition>
+                    </ScrollBasedTransition> */}
 
+                    <Grid.Row className="section translucent-dark-grey-section">
+                        <Grid.Column width={5} style={{backgroundImage:"url('/static/img/advertiser-home.jpg')", height: "402px", backgroundSize:"contain"}}>
+                            <Grid stackable centered verticalAlign='middle'>
+                                <Grid.Row verticalAlign="middle">
+                                    <Grid.Column width={8}>
+                                        <Header>Advertiser</Header>
+                                    </Grid.Column>
+
+                                </Grid.Row>
+                            </Grid>
+                            {/* <div style={{backgroundImage:"url('/static/img/advertiser-home.jpg')", height: "402px", backgroundSize:"contain"}}> */}
+
+                            {/* </div> */}
+                            {/* <p className="whiteText">
+                                'Virtual Reality is a powerful storytelling platform. Research suggests \
+                                that VR content evokes emotions of a higher intensity vis-a-vis traditional \
+                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
+                                discover the secret to a user\'s heart!'
+                            </p> */}
+                            {/* <Button secondary content='Read More' as={Link} to={/advertiser/} /> */}
+                        </Grid.Column>
+                        <Grid.Column width={5}>
+                            <div style={{backgroundImage:"url('/static/img/advertiser-home.jpg')", height: "402px", backgroundSize:"contain"}}>
+                                <Header as='h2' textAlign="center" className="orangeBackground" inverted >Advertiser</Header>
+                            </div>
+                            {/* <p className="whiteText">
+                                'Virtual Reality is a powerful storytelling platform. Research suggests \
+                                that VR content evokes emotions of a higher intensity vis-a-vis traditional \
+                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
+                                discover the secret to a user\'s heart!'
+                            </p> */}
+                            {/* <Button secondary content='Read More' as={Link} to={/advertiser/} /> */}
+                        </Grid.Column>
+                    </Grid.Row>
 
                     <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={2} className="greyGradientBackground section">
                         <Grid.Column>

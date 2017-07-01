@@ -195,7 +195,16 @@ body.wait, body.wait *{
 }
 
 .section {
-    padding: 7rem 0 0 0 !important;
+    margin: 7rem 0 0 0 !important;
+}
+
+.translucent-dark-grey-section{
+    background-color: rgba(0, 0, 40, 0.75);
+    padding: 7rem!important;
+}
+
+.orangeBackground{
+    background-color: #fda700 !important;
 }
 
 @media only screen and (max-width: 767px) {
