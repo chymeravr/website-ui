@@ -94,7 +94,7 @@ body.wait, body.wait *{
     background-size: cover;
 }
 
-.image-background a, button{
+.image-background a, .image-background button{
     width: 250px;
     height: 70px;
     font-size: 1.5rem !important;
@@ -124,7 +124,7 @@ body.wait, body.wait *{
     .image-background .dark-mask{
         min-height: 300px;
     }
-    .image-background a, button{
+    .image-background a, .image-background button{
         width: 250px;
         height: 70px;
         font-size: 1.125rem !important;
