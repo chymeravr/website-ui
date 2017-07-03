@@ -7,6 +7,7 @@ import SmokeComponent from './SmokeComponent';
 import {ScrollBasedTransition} from './animation/ScrollBasedTransition';
 import {OneColumnSection} from './websiteComponents/OneColumnSection';
 import {ImageTextSection} from './websiteComponents/ImageTextSection';
+import {OnHoverColorChangeButton} from './websiteComponents/OnHoverColorChangeButton';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -178,40 +179,21 @@ export class HomeView extends React.Component {
                             '/publisher/', 'summary publisherSummary')}
                         <Grid.Column width={1} />
                     </ScrollBasedTransition> */}
-
-                    <Grid.Row className="section translucent-dark-grey-section">
-                        <Grid.Column width={5} style={{backgroundImage:"url('/static/img/advertiser-home.jpg')", height: "402px", backgroundSize:"contain"}}>
-                            <Grid stackable centered verticalAlign='middle'>
-                                <Grid.Row verticalAlign="middle">
-                                    <Grid.Column width={8}>
-                                        <Header>Advertiser</Header>
-                                    </Grid.Column>
-
-                                </Grid.Row>
-                            </Grid>
-                            {/* <div style={{backgroundImage:"url('/static/img/advertiser-home.jpg')", height: "402px", backgroundSize:"contain"}}> */}
-
-                            {/* </div> */}
-                            {/* <p className="whiteText">
-                                'Virtual Reality is a powerful storytelling platform. Research suggests \
-                                that VR content evokes emotions of a higher intensity vis-a-vis traditional \
-                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
-                                discover the secret to a user\'s heart!'
-                            </p> */}
-                            {/* <Button secondary content='Read More' as={Link} to={/advertiser/} /> */}
-                        </Grid.Column>
-                        <Grid.Column width={5}>
-                            <div style={{backgroundImage:"url('/static/img/advertiser-home.jpg')", height: "402px", backgroundSize:"contain"}}>
-                                <Header as='h2' textAlign="center" className="orangeBackground" inverted >Advertiser</Header>
+                    <Grid.Row className="section">
+                        <div className="image-background two first" style={{backgroundImage: "url('/static/img/advertiser-home.jpg')"}}>
+                            <div className="dark-mask">
+                                <OnHoverColorChangeButton color="orange" className="absolute-middle" >
+                                    Advertiser
+                                </OnHoverColorChangeButton>
                             </div>
-                            {/* <p className="whiteText">
-                                'Virtual Reality is a powerful storytelling platform. Research suggests \
-                                that VR content evokes emotions of a higher intensity vis-a-vis traditional \
-                                2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
-                                discover the secret to a user\'s heart!'
-                            </p> */}
-                            {/* <Button secondary content='Read More' as={Link} to={/advertiser/} /> */}
-                        </Grid.Column>
+                        </div>
+                        <div className="image-background two first" style={{backgroundImage: "url('/static/img/advertiser-home.jpg')"}}>
+                            <div className="dark-mask">
+                                <OnHoverColorChangeButton color="orange" className="absolute-middle" >
+                                    Advertiser
+                                </OnHoverColorChangeButton>
+                            </div>
+                        </div>
                     </Grid.Row>
 
                     <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={2} className="greyGradientBackground section">

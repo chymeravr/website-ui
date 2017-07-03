@@ -37,28 +37,28 @@ body.wait, body.wait *{
     text-align: center
 }
 .miniText{
-    font-size: 0.6875rem;/*11px/16*/
+    font-size: 0.6875rem !important;/*11px/16*/
 }
 .tinyText{
-    font-size: 0.75rem;/*12px/16*/
+    font-size: 0.75rem !important;/*12px/16*/
 }
 .smallText {
-    font-size: 0.875;/*14px/16*/
+    font-size: 0.875 !important;/*14px/16*/
 }
 .mediumText{
-    font-size: 1rem;/*16px/16*/
+    font-size: 1rem !important;/*16px/16*/
 }
 .largeText{
-    font-size: 1.125rem;/*18px/16*/
+    font-size: 1.125rem !important;/*18px/16*/
 }
 .bigText{
-    font-size: 1.25rem;/*20px/16*/
+    font-size: 1.25rem !important;/*20px/16*/
 }
 .hugeText{
-    font-size: 1.5rem;/*24px/16*/
+    font-size: 1.5rem !important;/*24px/16*/
 }
 .massiveText{
-    font-size: 1.875rem;/*30px/16*/
+    font-size: 1.875rem !important;/*30px/16*/
 }
 
 .ui.form input[type="file"] {
@@ -75,8 +75,6 @@ body.wait, body.wait *{
     -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
 
-
-
 .ui.menu  {
     font-family: 'Roboto', sans-serif !important;
     font-weight: bold !important
@@ -90,6 +88,48 @@ body.wait, body.wait *{
     font-weight: 700 !important;
     color: #414042 !important;
 }*/
+
+.image-background{
+    position: relative;
+    background-size: cover;
+}
+
+.image-background a, button{
+    width: 250px;
+    height: 70px;
+    font-size: 1.5rem !important;
+}
+
+.image-background.two{
+    width: 50%;
+}
+
+.image-background .dark-mask{
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 500px;
+}
+
+.image-background.two.first .dark-mask{
+    background-color: rgba(0, 5, 0, 0.7);
+}
+
+.image-background.two.second .dark-mask{
+    background-color: rgba(5, 0, 0, 0.7);
+}
+
+@media only screen and (max-width: 767px) {
+    .image-background.two{
+        width:100%;
+    }
+    .image-background .dark-mask{
+        min-height: 300px;
+    }
+    .image-background a, button{
+        width: 250px;
+        height: 70px;
+        font-size: 1.125rem !important;
+    }
+}
 
 .greyBackground {
     background-color: #f3f3f3 !important;
@@ -205,6 +245,15 @@ body.wait, body.wait *{
 
 .orangeBackground{
     background-color: #fda700 !important;
+}
+
+.absolute-middle{
+    margin: auto !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
 }
 
 @media only screen and (max-width: 767px) {
