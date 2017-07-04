@@ -88,7 +88,7 @@ body.wait, body.wait *{
     font-weight: 700 !important;
     color: #414042 !important;
 }*/
-
+/***Image background****/
 .image-background{
     position: relative;
     background-size: cover;
@@ -130,6 +130,66 @@ body.wait, body.wait *{
         font-size: 1.125rem !important;
     }
 }
+
+/***horizontal icon slider***/
+.scroll-container-horizontal{
+    margin: 0 auto;
+}
+.scroll-container-horizontal.four-items{
+    width: 1100px;
+}
+.scroll-container-horizontal.three-items{
+    width: 850px;
+}
+.scroll-container-horizontal.two-items{
+    width: 600px;
+}
+.scroll-container-horizontal .arrow-container{
+    top: 40%;
+    position: relative;
+}
+.arrow-container:hover{
+    cursor: pointer;
+}
+.scroll-container-horizontal .arrow-container.left{
+    float:left;
+}
+.scroll-container-horizontal .arrow-container.right{
+    float:right;
+}
+.icon-slider-horizontal {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.icon-slider-horizontal.four-items{
+    width: 1000px;
+}
+.icon-slider-horizontal.three-items{
+    width: 750px;
+}
+.icon-slider-horizontal.two-items{
+    width: 500px;
+}
+.icon-slider-horizontal .icon-container{
+    width: 250px;
+    display: inline-block;
+}
+
+.icon-slider-horizontal .icon-container img{
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .scroll-container-horizontal.four-items{
+        width: 600px;
+    }
+    .icon-slider-horizontal.four-items{
+        width: 500px;
+    }
+}
+
+/*** ***/
 
 .greyBackground {
     background-color: #f3f3f3 !important;

@@ -8,6 +8,7 @@ import {ScrollBasedTransition} from './animation/ScrollBasedTransition';
 import {OneColumnSection} from './websiteComponents/OneColumnSection';
 import {ImageTextSection} from './websiteComponents/ImageTextSection';
 import {OnHoverColorChangeButton} from './websiteComponents/OnHoverColorChangeButton';
+import {ScrollingIcons} from './websiteComponents/ScrollingIcons';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -119,6 +120,8 @@ export class HomeView extends React.Component {
                         {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT', '1')}
                         {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI', '2')}
                     </Grid.Row>
+
+                    <ScrollingIcons className="section" elements="three"/>
 
                     <ImageTextSection className='section'
                         image='/static/img/emotions-vr.jpg'
