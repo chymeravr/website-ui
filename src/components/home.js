@@ -32,7 +32,6 @@ export class HomeView extends React.Component {
 
     render() {
         debug('home', this.state);
-
         const getClientLink = (header, content, link, className) => {
             return (
                 <Grid.Column width={5} className={className}>
@@ -44,7 +43,6 @@ export class HomeView extends React.Component {
                 </Grid.Column>
             )
         }
-
         const getImageWithCaption = (image, caption, transitionDelay) => {
             return (
                 <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} transitionDelay={transitionDelay} verticalAlign='bottom' width={3}>
@@ -53,7 +51,6 @@ export class HomeView extends React.Component {
                 </ScrollBasedTransition>
             )
         }
-
         const signUpHeader = (
             <Grid.Row>
                 <Grid.Column width={12}>
@@ -63,17 +60,15 @@ export class HomeView extends React.Component {
                 </Grid.Column>
             </Grid.Row>
         );
-
         return (
             <main className="Site-content" >
                 <Grid stackable centered verticalAlign='middle'>
-
                     <Grid.Row columns={1} verticalAlign='middle' className='page-header-section' >
                         <SmokeComponent />
                         <Grid.Column width={10} className='adjustment-due-to-smoke-component'>
                             <Grid centered verticalAlign='middle'>
                                 <Grid.Row>
-                                    <Grid.Column width={12}>
+                                    <Grid.Column width={14}>
                                         <Header as='h1' inverted className='centerText'>Advertising Platform for VR
                                         </Header>
                                         <Header as='h3' inverted className='centerText'>
@@ -165,23 +160,6 @@ export class HomeView extends React.Component {
                             }
                         }
                     />
-
-                    {/* <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={4} className='advPubSection' verticalAlign='top' style={{ paddingBottom: '0px' }}>
-                        <Grid.Column width={1} />
-                        {getClientLink('ADVERTISER',
-                            'Virtual Reality is a powerful storytelling platform. Research suggests \
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional \
-                            2D platforms. No wonder, a VR ad leaves a long lasting impression. Come, \
-                            discover the secret to a user\'s heart!',
-                            '/advertiser/', 'summary advertiserSummary')}
-                        <Grid.Column width={1} />
-                        {getClientLink('PUBLISHER',
-                            'VR advertising is attracting marketing dollars globally. Our seamless experience\
-                             makes it highly effective and incredibly engaging. Did we say they are no-nonsense\
-                              and users look forward to them! Let\'s get started, shall we?',
-                            '/publisher/', 'summary publisherSummary')}
-                        <Grid.Column width={1} />
-                    </ScrollBasedTransition> */}
                     <Grid.Row className="section">
                         <div className="image-background two first" style={{backgroundImage: "url('/static/img/advertiser-home.jpg')"}}>
                             <div className="dark-mask">

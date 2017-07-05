@@ -67,8 +67,8 @@
 @headerFontWeight : normal;
 @headerLineHeight : 1.5em;
 
-@h1 : @relative60px;
-@h2 : @relative40px;
-@h3 : @relative30px;
-@h4 : @relative24px;
-@h5 : @relative20px;
+@h1 : @relative48px;
+@h2 : @relative32px;
+@h3 : @relative24px;
+@h4 : @relative20px;
+@h5 : @relative16px;
