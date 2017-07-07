@@ -234,16 +234,16 @@ body.wait, body.wait *{
 }
 /*** section ***/
 .section {
-    padding: 7rem 0 7rem 0 !important;
+    padding: 2.5rem 0 2.5rem 0 !important;
 }
 .section.translucent-dark-grey{
     background-color: rgba(0, 0, 40, 0.75);
 }
-@media only screen and (max-width: 767px) {
+/*@media only screen and (max-width: 767px) {
     .section {
         padding: 4rem 0 4rem 0 !important;
     }
-}
+}*/
 /*** page-header-section ***/
 .page-header-section{
     padding-top: 16.5rem !important;

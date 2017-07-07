@@ -9,13 +9,30 @@ export class ImageTextSection extends React.Component{
         super(props);
     }
     render(){
-        const imageComponent = (
-            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} width={3}>
+        const tabComputerOnlyImageComponent = (
+            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column}
+                widescreen={4}
+                largeScreen={4}
+                computer={5}
+                tablet={6}
+                only="tablet computer" >
+                <Image centered src={this.props.image} />
+            </ScrollBasedTransition>
+        );
+        const mobileOnlyImageComponent = (
+            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column}
+                only="mobile"
+                mobile={14}>
                 <Image centered src={this.props.image} />
             </ScrollBasedTransition>
         );
         const textComponent = (
-            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} width={4} transitionDelay="1">
+            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} transitionDelay="1"
+                widescreen={5}
+                largeScreen={5}
+                computer={6}
+                tablet={7}
+                mobile={14}>
                 <Header as='h3'>
                     {this.props.content.header}
                 </Header>
@@ -36,23 +53,39 @@ export class ImageTextSection extends React.Component{
         );
         return(
             <Grid.Row verticalAlign="top" className={this.props.className}>
+                {mobileOnlyImageComponent}
+                {
+                    (typeof(this.props.rightAligned)!='undefined')?(
+                        <Grid.Column only="tablet computer" width={1}></Grid.Column>
+                    ):
+                    (
+                        null
+                    )
+                }
                 {
                     (!this.props.reversed)?
                     (
-                        imageComponent
+                        tabComputerOnlyImageComponent
                     ):
                     (
                         textComponent
                     )
                 }
-                <Grid.Column width={1}></Grid.Column>
                 {
                     (!this.props.reversed)?
                     (
                         textComponent
                     ):
                     (
-                        imageComponent
+                        tabComputerOnlyImageComponent
+                    )
+                }
+                {
+                    (typeof(this.props.leftAligned)!='undefined')?(
+                        <Grid.Column only="tablet computer" width={1}></Grid.Column>
+                    ):
+                    (
+                        null
                     )
                 }
             </Grid.Row>
