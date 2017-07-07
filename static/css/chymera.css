@@ -7,6 +7,22 @@
 @widescreenMonitorBreakpoint : 1920px;
 */
 
+/**********correction to semantic********/
+@media only screen and (max-width: 767px) {
+    h1, h1.ui.header{
+        font-size: 2rem;
+    }
+    h2, h2.ui.header{
+        font-size: 1.5rem;
+    }
+    h3, h3.ui.header{
+        font-size: 1.25rem;
+    }
+    h4, h4.ui.header{
+        font-size: 1.125rem;
+    }
+}
+
 /**********common to all**********/
 
 body.wait, body.wait *{
@@ -225,7 +241,7 @@ body.wait, body.wait *{
 }
 @media only screen and (max-width: 767px) {
     .section {
-        padding: 0rem 0 0rem 0 !important;
+        padding: 4rem 0 4rem 0 !important;
     }
 }
 /*** page-header-section ***/
@@ -342,6 +358,10 @@ body.wait, body.wait *{
 }
 .fade-enter {
     opacity: 1;
+    -webkit-transition: opacity 300ms ease-in;
+    -moz-transition: opacity 300ms ease-in;
+    -ms-transition: opacity 300ms ease-in;
+    -o-transition: opacity 300ms ease-in;
     transition: opacity 300ms ease-in;
 }
 .fade-before-leave{
@@ -349,18 +369,38 @@ body.wait, body.wait *{
 }
 .fade-leave {
     opacity: 0.01;
+    -webkit-transition: opacity 300ms ease-in;
+    -moz-transition: opacity 300ms ease-in;
+    -ms-transition: opacity 300ms ease-in;
+    -o-transition: opacity 300ms ease-in;
     transition: opacity 150ms ease-in;
 }
 .fade-enter.delay-1, .fade-leave.delay-1{
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
     transition-delay: 100ms;
 }
 .fade-enter.delay-2, .fade-leave.delay-2{
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
     transition-delay: 200ms;
 }
 .fade-enter.delay-3, .fade-leave.delay-3{
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
     transition-delay: 300ms;
 }
 .fade-enter.delay-4, .fade-leave.delay-4{
+    -webkit-transition-delay: 400ms;
+    -moz-transition-delay: 400ms;
+    -ms-transition-delay: 400ms;
+    -o-transition-delay: 400ms;
     transition-delay: 400ms;
 }
 

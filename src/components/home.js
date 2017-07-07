@@ -67,14 +67,7 @@ export class HomeView extends React.Component {
                     <Grid.Column width={16}>
                         <Grid centered verticalAlign='middle'>
                             <Grid.Row>
-                                <Grid.Column only="mobile" width={16}>
-                                    <Header as='h2' inverted className='centerText'>Advertising Platform for VR
-                                    </Header>
-                                    <Header as='h4' inverted className='centerText'>
-                                        ... ads are <strong>NOW</strong> cool
-                                    </Header>
-                                </Grid.Column>
-                                <Grid.Column only="tablet computer" width={16}>
+                                <Grid.Column width={16}>
                                     <Header as='h1' inverted className='centerText'>Advertising Platform for VR
                                     </Header>
                                     <Header as='h3' inverted className='centerText'>

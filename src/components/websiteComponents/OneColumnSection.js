@@ -13,7 +13,7 @@ export class OneColumnSection extends React.Component{
     render(){
         return(
             <Grid.Row className={this.props.className}>
-                <ScrollBasedTransition transitionClassName="fade" marginFromBottom="0.30" Component={Grid} stackable centered verticalAlign='middle'>
+                <ScrollBasedTransition transitionClassName="fade" marginFromBottom="0.30" Component={Grid} stackable centered verticalAlign='middle' >
                     {
                         (typeof(this.props.icon)!='undefined') ?
                         (

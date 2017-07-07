@@ -54,15 +54,17 @@ export class ScrollEventsGenerator extends React.Component{
         if(typeof(this.props.marginFromRight) != 'undefined'){
             marginFromRight = this.props.marginFromRight;
         }
+        
+        var target = event.target || event.srcElement;
 
-        let windowHeight = event.srcElement.body.offsetHeight;
-        let windowWidth = event.srcElement.body.offsetWidth;
-        let scrollTop = event.srcElement.body.scrollTop + marginFromTop*windowHeight;
-        let scrollBottom = event.srcElement.body.scrollTop + (1-marginFromBottom)*windowHeight;
-        let scrollLeft = event.srcElement.body.scrollLeft + marginFromLeft*windowWidth;
-        let scrollRight = event.srcElement.body.scrollLeft + (1-marginFromLeft)*windowWidth;
-        let elementTop = event.srcElement.body.scrollTop + boundingRect.top;
-        let elementLeft = event.srcElement.body.scrollLeft + boundingRect.left;
+        let windowHeight = target.body.offsetHeight;
+        let windowWidth = target.body.offsetWidth;
+        let scrollTop = target.body.scrollTop + marginFromTop*windowHeight;
+        let scrollBottom = target.body.scrollTop + (1-marginFromBottom)*windowHeight;
+        let scrollLeft = target.body.scrollLeft + marginFromLeft*windowWidth;
+        let scrollRight = target.body.scrollLeft + (1-marginFromLeft)*windowWidth;
+        let elementTop = target.body.scrollTop + boundingRect.top;
+        let elementLeft = target.body.scrollLeft + boundingRect.left;
         let elementHeight = this.props.elementref.offsetHeight;
         let elementWidth = this.props.elementref.offsetWidth;
         let elementBottom = elementTop + elementHeight;
