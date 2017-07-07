@@ -34,7 +34,6 @@ export class ScrollEventsGenerator extends React.Component{
     }
     handleScroll(event){
         if(typeof(this.props.elementref) == 'undefined'){
-            window.scrollTo(0, 0);
             return;
         }
 

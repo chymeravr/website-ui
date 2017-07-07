@@ -97,12 +97,7 @@ export class HomeView extends React.Component {
                 </Grid.Row>
 
 
-
-                {/* <Grid.Row className="blueBg">
-                    <Image src="/static/img/arrow.png" />
-                </Grid.Row> */}
-
-                {/* <OneColumnSection className="section"
+                <OneColumnSection className="section"
                     icon="/static/img/360-image-video.png"
                     content = {
                         {
@@ -117,7 +112,7 @@ export class HomeView extends React.Component {
                         }
                     }
                 />
-
+{/*
                 <Grid.Row className='section' columns={5}>
                     {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
                     {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT', '1')}

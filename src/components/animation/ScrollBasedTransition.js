@@ -24,24 +24,31 @@ export class ScrollBasedTransition extends React.Component{
         if(typeof(this.props.transitionDelay)!='undefined'){
             delayClassName = "delay-"+this.props.transitionDelay;
         }
-        const beforeTransitionEnter = baseClassName+"-enter";
+        const beforeTransitionEnter = baseClassName+"-before-enter";
         const transitionEnter = baseClassName+"-enter";
-        const beforeTransitionLeave = baseClassName+"-leave";
+        const beforeTransitionLeave = baseClassName+"-before-leave";
         const transitionLeave = baseClassName+"-leave";
 
         const lastState = scrollState.lastScrollState.verticalPosition;
         const currentState = scrollState.scrollState.verticalPosition;
         let className = this.props.className;
         let visibleStates = ["ElementTopInWindow", "ElementTopBottomInWindow", "ElementBottomInWindow"];
+
+        if(currentState === "None" && lastState==="None"){
+            className += " " + beforeTransitionLeave;
+        }
         if(lastState === "None" && visibleStates.indexOf(currentState)==-1){
             className += " " + beforeTransitionEnter;
         }
-        if(visibleStates.indexOf(currentState) > -1){
+        else if(currentState === "None"  || lastState==="None" && visibleStates.indexOf(currentState)>-1){
+            className += " " + beforeTransitionLeave;
+        }
+        else if(lastState==="ElementBelowWindow" && visibleStates.indexOf(currentState)>-1){
             className += " " + transitionEnter + " " + delayClassName;
+        }else{
+            className += " " + beforeTransitionLeave;
         }
-        else{
-            className += " " + transitionLeave + " " + delayClassName;
-        }
+
         if(typeof(this.props.children) == 'undefined'){
             return (
                 <this.props.Component
