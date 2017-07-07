@@ -18,7 +18,22 @@ export class OneColumnSection extends React.Component{
                         (typeof(this.props.icon)!='undefined') ?
                         (
                             <Grid.Row columns={1}>
-                                <Image centered src={this.props.icon} />
+                                <Grid centered>
+                                    <Grid.Row columns={1} style={{padding: 0}}>
+                                        <Image centered src={this.props.icon.image} />
+                                    </Grid.Row>
+                                    {
+                                        (typeof(this.props.icon.caption)!='undefined') ?
+                                        (
+                                            <Grid.Row columns={1} style={{padding: 0}}>
+                                                <div className="smallText">{this.props.icon.caption}</div>
+                                            </Grid.Row>
+                                        ) :
+                                        (
+                                            null
+                                        )
+                                    }
+                                </Grid>
                             </Grid.Row>
                         ) :
                         (

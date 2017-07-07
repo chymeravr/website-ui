@@ -91,7 +91,12 @@ export class HomeView extends React.Component {
 
 
                 <OneColumnSection className="section"
-                    icon="/static/img/360-image-video.png"
+                    icon = {
+                        {
+                            image: "/static/img/info.png",
+                            caption: "What we do"
+                        }
+                    }
                     content = {
                         {
                             header: "Everything for VR ads here",
