@@ -57,7 +57,7 @@ export class Header_P extends React.Component {
         const getItem = (name, link) => <Menu.Item name={name} className={activeItem === name ? 'navbarActiveItem' : 'navbarItem'} as={Link} to={link} />
 
         return (
-            <Grid columns={16}>
+            <Grid columns={16} style={{margin:0}}>
                 <Grid.Row only='mobile' columns={2} className={'navbarMobile ' + (transparent ? 'transparent' : 'blueBg')}>
                     <Grid.Column width={6}>
                         <Image size='tiny' src='/static/img/logo-simple.png' style={{ padding: '15px 20px 0px 15px' }} as={Link} to={'/'} />
@@ -79,13 +79,12 @@ export class Header_P extends React.Component {
                         </Accordion>
                     </Grid.Column>
                 </Grid.Row>
-                <Grid.Row only='computer tablet' className={'navbar ' + (transparent ? 'transparent' : 'blueBg')}>
-                    <Grid.Column computer={1} tablet={0}></Grid.Column>
-                    <Grid.Column computer={14} tablet={16}>
+                <Grid.Row only='tablet computer' centered className={'navbar ' + (transparent ? 'transparent' : 'blueBg')}>
+                    <Grid.Column tablet={16} computer={14} largeScreen={13} widescreen={12}>
                         <Table padded inverted className="transparent">
                             <Table.Body>
                                 <Table.Row>
-                                    <Table.Cell><Image src="/static/img/logo.png" size="tiny" as={Link} to={'/'} style={{ paddingTop: '14px' }} /></Table.Cell>
+                                        <Table.Cell><Image src="/static/img/logo.png" className="logo" size="tiny" as={Link} to={'/'} /></Table.Cell>
                                     <Table.Cell textAlign='right'>
                                         <Menu pointing secondary size='massive' floated='right' color='blue' className="navbarMenu">
                                             {getItem('advertisers', '/advertiser/')}
@@ -99,7 +98,6 @@ export class Header_P extends React.Component {
                             </Table.Body>
                         </Table>
                     </Grid.Column>
-                    <Grid.Column computer={1} tablet={0}></Grid.Column>
                 </Grid.Row>
             </Grid>
         );

@@ -19,16 +19,18 @@ export default class App extends React.Component {
 
     render() {
         return !this.state.adblock ? (
-            <div className="Site">
-                <FallingFlakes/>
+            <div className="site">
+                {/* <FallingFlakes/> */}
                 <Header_C pathname={this.state.pathname} transparent={this.state.transparent} handleLogout={this.handleLogout} {...this.props} />
-                {this.state.child}
+                <main className="site-content" >
+                    {this.state.child}
+                </main>
                 <Footer />
             </div>)
             :
-            (<div className="Site">
+            (<div className="site">
                 <Header_C currentPath={this.state.name} transparent={this.state.transparent} handleLogout={this.handleLogout} {...this.props} />
-                <main className="Site-content ui center aligned" style={{ backgroundColor: '#008FCB' }}>
+                <main className="site-content ui center aligned" style={{ backgroundColor: '#008FCB' }}>
                     <Grid centered columns={16} style={{ margin: 0 }} verticalAlign='middle'>
                         <Grid.Row columns={16} verticalAlign='middle' style={{ height: '92vh' }}>
                             <Grid.Column width={10}>

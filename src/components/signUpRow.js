@@ -65,24 +65,24 @@ export class SignUp extends React.Component {
             </div>
 
         return (
-            <Grid.Column width={10}>
+            <Grid.Column width={16}>
                 <Grid centered verticalAlign='middle'>
                     {this.headingRow}
-                    <Grid.Row only='computer'>
-                        <Grid.Column width={10} >
-                            <Form>
-                                {this.state.emailExists ? <Message negative><p>Email invalid or already registered!</p></Message> : ''}
-                                {this.state.registered ? <Message positive><p>Email registered!</p></Message> : ''}
-                                {emailInput}
-                            </Form>
-                        </Grid.Column>
-                    </Grid.Row>
                     <Grid.Row only='mobile'>
                         <Grid.Column width={14}>
                             <Form>
                                 {this.state.emailExists ? <Message negative><p>Email invalid or already registered!</p></Message> : ''}
                                 {this.state.registered ? <Message positive><p>Email registered!</p></Message> : ''}
                                 {emailInputMobile}
+                            </Form>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row only='tablet computer'>
+                        <Grid.Column tablet={10} computer={8} largeScreen={6} widescreen={4} >
+                            <Form>
+                                {this.state.emailExists ? <Message negative><p>Email invalid or already registered!</p></Message> : ''}
+                                {this.state.registered ? <Message positive><p>Email registered!</p></Message> : ''}
+                                {emailInput}
                             </Form>
                         </Grid.Column>
                     </Grid.Row>
