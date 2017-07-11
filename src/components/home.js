@@ -9,6 +9,8 @@ import {OneColumnSection} from './websiteComponents/OneColumnSection';
 import {ImageTextSection} from './websiteComponents/ImageTextSection';
 import {OnHoverColorChangeButton} from './websiteComponents/OnHoverColorChangeButton';
 import {ScrollingIcons} from './websiteComponents/ScrollingIcons';
+import {FallingFlakes} from './animation/FallingFlakes';
+import {ImpressionCounter} from './ImpressionCounter';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -62,6 +64,9 @@ export class HomeView extends React.Component {
         );
         return (
             <Grid stackable centered verticalAlign='middle' style={{margin:0}}>
+                <Grid.Row only="computer" style={{padding: 0}}>
+                    <FallingFlakes />
+                </Grid.Row>
                 <Grid.Row verticalAlign='middle' className='page-header-section blueBackground'>
                     {/* <SmokeComponent /> */}
                     <Grid.Column width={16}>
@@ -182,6 +187,45 @@ export class HomeView extends React.Component {
                         }
                     }
                 />
+                <Grid.Row className="section">
+                    <div className="image-background two first" style={{backgroundImage: "url('/static/img/advertiser-home.jpg')"}}>
+                        <div className="dark-mask">
+                            <OnHoverColorChangeButton color="orange" className="absolute-middle" >
+                                Advertiser
+                            </OnHoverColorChangeButton>
+                        </div>
+                    </div>
+                    <div className="image-background two first" style={{backgroundImage: "url('/static/img/publisher-home.jpg')"}}>
+                        <div className="dark-mask">
+                            <OnHoverColorChangeButton color="orange" className="absolute-middle" >
+                                Publisher
+                            </OnHoverColorChangeButton>
+                        </div>
+                    </div>
+                </Grid.Row>
+                <Grid.Row></Grid.Row>
+                <Grid.Row></Grid.Row>
+                <OneColumnSection className="section"
+                    icon = {
+                        {
+                            image: "/static/img/community.png",
+                            caption: "Community"
+                        }
+                    }
+                    content = {
+                        {
+                            header: "Trusted by world leaders",
+                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers. You can easily create advertisements, manage them, integrate them with your content."
+                        }
+                    }
+                />
+                <Grid.Row>
+                    <Grid.Column width={4}>
+                        <p className="centerText" >
+                            <ImpressionCounter className="massiveText" /> Impressions served
+                        </p>
+                    </Grid.Column>
+                </Grid.Row>
 {/*
                 <Grid.Row className='section' columns={5}>
                     {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
@@ -213,22 +257,6 @@ export class HomeView extends React.Component {
                         }
                     }
                 />
-                <Grid.Row className="section">
-                    <div className="image-background two first" style={{backgroundImage: "url('/static/img/advertiser-home.jpg')"}}>
-                        <div className="dark-mask">
-                            <OnHoverColorChangeButton color="orange" className="absolute-middle" >
-                                Advertiser
-                            </OnHoverColorChangeButton>
-                        </div>
-                    </div>
-                    <div className="image-background two first" style={{backgroundImage: "url('/static/img/advertiser-home.jpg')"}}>
-                        <div className="dark-mask">
-                            <OnHoverColorChangeButton color="orange" className="absolute-middle" >
-                                Advertiser
-                            </OnHoverColorChangeButton>
-                        </div>
-                    </div>
-                </Grid.Row>
 
                 <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={2} className="greyGradientBackground section">
                     <Grid.Column>
