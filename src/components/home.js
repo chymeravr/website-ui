@@ -146,7 +146,7 @@ export class HomeView extends React.Component {
                     }
                 />
                 <ImageTextSection
-                    image='/static/img/emotions-vr.jpg'
+                    image='/static/img/immersion.png'
                     rightAligned
                     content={
                         {
@@ -164,7 +164,7 @@ export class HomeView extends React.Component {
                     }
                 />
                 <ImageTextSection
-                    image='/static/img/emotions-vr.jpg'
+                    image='/static/img/irritatedUser.png'
                     leftAligned
                     reversed
                     content={
