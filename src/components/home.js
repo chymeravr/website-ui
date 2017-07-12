@@ -65,7 +65,28 @@ export class HomeView extends React.Component {
         return (
             <Grid stackable centered verticalAlign='middle' style={{margin:0}}>
                 <Grid.Row only="computer" style={{padding: 0}}>
-                    <FallingFlakes />
+                    <FallingFlakes
+                        layers={[
+                            {
+                                n: 10,
+                                defaultFallingSpeed: 2,
+                                scrollSpeed: 0.9,
+                                displayClassName: "small"
+                            },
+                            {
+                                n: 10,
+                                defaultFallingSpeed: 1,
+                                scrollSpeed: 0.5,
+                                displayClassName: "medium"
+                            },
+                            {
+                                n: 10,
+                                defaultFallingSpeed: 0.5,
+                                scrollSpeed: 0.3,
+                                displayClassName: "large"
+                            }
+                        ]}
+                    />
                 </Grid.Row>
                 <Grid.Row verticalAlign='middle' className='page-header-section blueBackground'>
                     {/* <SmokeComponent /> */}
