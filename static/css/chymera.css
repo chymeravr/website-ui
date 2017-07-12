@@ -226,10 +226,23 @@ body.wait, body.wait *{
 }
 @media only screen and (max-width: 1199px) {
     .scroll-container-horizontal.four-items{
+        width: 850px;
+    }
+    .icon-slider-horizontal.four-items{
+        width: 750px;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .scroll-container-horizontal.four-items{
         width: 600px;
     }
     .icon-slider-horizontal.four-items{
         width: 500px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .scroll-container-horizontal .arrow-container{
+        display: none;
     }
 }
 /*** section ***/

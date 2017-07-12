@@ -226,6 +226,70 @@ export class HomeView extends React.Component {
                         </p>
                     </Grid.Column>
                 </Grid.Row>
+                <Grid.Row></Grid.Row>
+                <ImageTextSection
+                    image='/static/img/geography.png'
+                    leftAligned
+                    reversed
+                    content={
+                        {
+                            header:"Global presence",
+                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
+                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
+                            2D platforms."
+                        }
+                    }
+                />
+                <ImageTextSection
+                    image='/static/img/case-study-icon.png'
+                    rightAligned
+                    content={
+                        {
+                            header:"Case Studies",
+                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
+                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
+                            2D platforms."
+                        }
+                    }
+                    link = {
+                        {
+                            text: "More customer stories",
+                            destination: '/advertiser/'
+                        }
+                    }
+                />
+                <ImageTextSection
+                    image='/static/img/testimonial.png'
+                    leftAligned
+                    reversed
+                    content={
+                        {
+                            header:"Testimonial",
+                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
+                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
+                            2D platforms."
+                        }
+                    }
+                    link = {
+                        {
+                            text: "More testimonials",
+                            destination: '/advertiser/'
+                        }
+                    }
+                />
+                <Grid.Row></Grid.Row>
+                <Grid.Row>
+                    <Grid.Column width={3}>
+                        <Header as="h3" className="centerText">Proud to work with</Header>
+                    </Grid.Column>
+                </Grid.Row>
+                <ScrollingIcons visibleElements="four" items={11} folder="/static/img/customerLogos" />
+                {/* <Grid.Row>
+                    <Grid.Column width={3}>
+                        <Header as="h3" className="centerText">Advertisers</Header>
+                    </Grid.Column>
+                </Grid.Row>
+                <ScrollingIcons elements="four" /> */}
 {/*
                 <Grid.Row className='section' columns={5}>
                     {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
@@ -233,7 +297,7 @@ export class HomeView extends React.Component {
                     {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI', '2')}
                 </Grid.Row>
 
-                <ScrollingIcons className="section" elements="three"/>
+
 
 
                 <ImageTextSection className='section' reversed

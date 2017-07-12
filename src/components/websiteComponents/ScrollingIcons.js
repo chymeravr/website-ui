@@ -43,10 +43,21 @@ export class ScrollingIcons extends React.Component{
             this.startConstantScroll();
     }
     startConstantScroll(){
-        this.constantScrollIntervalId = setInterval(this.constantScroll, 50);
+        this.constantScrollIntervalId = setInterval(this.constantScroll, 100);
+    }
+    getIconRenderList(){
+        let list = [];
+        for(let i=1; i<=this.props.items; i++){
+            list.push(
+                <div className="icon-container">
+                    <Image src={this.props.folder + "/" + i + ".png"} />
+                </div>
+            );
+        }
+        return list;
     }
     render(){
-        const elements = this.props.elements+"-items";
+        const elements = this.props.visibleElements+"-items";
         const rootClassName = this.props.className + " scroll-container-horizontal "+elements;
         return(
             <div className={rootClassName}>
@@ -57,33 +68,7 @@ export class ScrollingIcons extends React.Component{
                     <Icon size='large' name="chevron right" />
                 </div>
                 <div className={"icon-slider-horizontal "+elements} ref="horizontalScroll">
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
-                    <div className="icon-container">
-                        <Image src="/static/img/logos/1.png" />
-                    </div>
+                    {this.getIconRenderList()}
                 </div>
             </div>
         );
