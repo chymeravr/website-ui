@@ -11,13 +11,18 @@ export class ScrollingIcons extends React.Component{
         this.animateScroll = this.animateScroll.bind(this);
         this.constantScroll = this.constantScroll.bind(this);
         this.constantScrollRestart = this.constantScrollRestart.bind(this);
+        this.lasttimestamp = -1;
+        window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+            window.setTimeout(callback, 1000 / 60);
+        };
+        window.cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame || window.webkitCancelAnimationFrame || window.msCancelAnimationFrame || window.oCancelAnimationFrame;
     }
     componentDidMount(){
         this.scrollReference = ReactDOM.findDOMNode(this.refs.horizontalScroll);
         this.startConstantScroll();
     }
     componentWillUnmount(){
-        clearInterval(this.constantScrollIntervalId);
+        window.cancelAnimationFrame(this.animationId);
     }
     leftScrollClickHandler(){
         AnimateLinearly(this.scrollReference.scrollLeft, this.scrollReference.scrollLeft-this.scrollReference.offsetWidth, 700, this.animateScroll, 0);
@@ -28,13 +33,24 @@ export class ScrollingIcons extends React.Component{
     animateScroll(value){
         this.scrollReference.scrollLeft = value;
     }
-    constantScroll(){
-        this.scrollReference.scrollLeft += 3;
-        if(this.scrollReference.scrollLeft >= (this.scrollReference.scrollWidth-this.scrollReference.offsetWidth)){
-            clearInterval(this.constantScrollIntervalId);
+    constantScroll(timestamp){
+        const keyframeTime = 50;
+        if(this.lasttimestamp==-1){
+            this.lasttimestamp = timestamp;
+        }
+        let duration = timestamp - this.lasttimestamp;
+        let newScrollLeft = this.scrollReference.scrollLeft;
+        if(duration>keyframeTime){
+            newScrollLeft += Math.floor(duration/keyframeTime);
+            this.lasttimestamp = timestamp;
+        }
+        if(newScrollLeft >= (this.scrollReference.scrollWidth-this.scrollReference.offsetWidth)){
             setTimeout(function(){
                 AnimateLinearly(this.scrollReference.scrollLeft, 0, 700, this.constantScrollRestart);
             }.bind(this), 1000)
+        }else{
+            this.scrollReference.scrollLeft = newScrollLeft;
+            this.startConstantScroll();
         }
     }
     constantScrollRestart(value){
@@ -43,7 +59,7 @@ export class ScrollingIcons extends React.Component{
             this.startConstantScroll();
     }
     startConstantScroll(){
-        this.constantScrollIntervalId = setInterval(this.constantScroll, 100);
+        this.animationId = window.requestAnimationFrame(this.constantScroll);
     }
     getIconRenderList(){
         let list = [];

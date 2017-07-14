@@ -283,7 +283,7 @@ export class HomeView extends React.Component {
                         <Header as="h3" className="centerText">Proud to work with</Header>
                     </Grid.Column>
                 </Grid.Row>
-                {/* <ScrollingIcons visibleElements="four" items={11} folder="/static/img/customerLogos" /> */}
+                <ScrollingIcons visibleElements="four" items={11} folder="/static/img/customerLogos" />
                 {/* <Grid.Row>
                     <Grid.Column width={3}>
                         <Header as="h3" className="centerText">Advertisers</Header>
