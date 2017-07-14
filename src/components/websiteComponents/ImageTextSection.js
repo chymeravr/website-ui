@@ -10,24 +10,29 @@ export class ImageTextSection extends React.Component{
     }
     render(){
         const tabComputerOnlyImageComponent = (
-            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column}
+            // <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} Component={Grid.Column}
+            <Grid.Column
                 widescreen={4}
                 largeScreen={4}
                 computer={5}
                 tablet={6}
                 only="tablet computer" >
                 <Image centered src={this.props.image} />
-            </ScrollBasedTransition>
+            {/* </ScrollBasedTransition> */}
+            </Grid.Column>
         );
         const mobileOnlyImageComponent = (
-            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column}
-                only="mobile"
-                mobile={14}>
+            // <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} Component={Grid.Column}
+            <Grid.Column
+                mobile={14}
+                only="mobile" >
                 <Image centered src={this.props.image} />
-            </ScrollBasedTransition>
+            {/* </ScrollBasedTransition> */}
+            </Grid.Column>
         );
         const textComponent = (
-            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column} transitionDelay="1"
+            // <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column}
+            <Grid.Column
                 widescreen={5}
                 largeScreen={5}
                 computer={6}
@@ -49,10 +54,11 @@ export class ImageTextSection extends React.Component{
                         null
                     )
                 }
-            </ScrollBasedTransition>
+            {/* </ScrollBasedTransition> */}
+                </Grid.Column>
         );
         return(
-            <Grid.Row verticalAlign="top" className={this.props.className}>
+            <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} Component={Grid.Row} verticalAlign="top" className={this.props.className}>
                 {mobileOnlyImageComponent}
                 {
                     (typeof(this.props.rightAligned)!='undefined')?(
@@ -88,7 +94,7 @@ export class ImageTextSection extends React.Component{
                         null
                     )
                 }
-            </Grid.Row>
+            </ScrollBasedTransition>
         );
     }
 }

@@ -371,50 +371,50 @@ body.wait, body.wait *{
 }
 .fade-enter {
     opacity: 1;
-    -webkit-transition: opacity 300ms ease-in;
-    -moz-transition: opacity 300ms ease-in;
-    -ms-transition: opacity 300ms ease-in;
-    -o-transition: opacity 300ms ease-in;
-    transition: opacity 300ms ease-in;
+    -webkit-transition: opacity 150ms ease-in;
+    -moz-transition: opacity 150ms ease-in;
+    -ms-transition: opacity 150ms ease-in;
+    -o-transition: opacity 150ms ease-in;
+    transition: opacity 150ms ease-in;
 }
 .fade-before-leave{
     opacity: 1;
 }
 .fade-leave {
     opacity: 0.01;
-    -webkit-transition: opacity 300ms ease-in;
-    -moz-transition: opacity 300ms ease-in;
-    -ms-transition: opacity 300ms ease-in;
-    -o-transition: opacity 300ms ease-in;
+    -webkit-transition: opacity 150ms ease-in;
+    -moz-transition: opacity 150ms ease-in;
+    -ms-transition: opacity 150ms ease-in;
+    -o-transition: opacity 150ms ease-in;
     transition: opacity 150ms ease-in;
 }
 .fade-enter.delay-1, .fade-leave.delay-1{
-    -webkit-transition-delay: 100ms;
-    -moz-transition-delay: 100ms;
-    -ms-transition-delay: 100ms;
-    -o-transition-delay: 100ms;
-    transition-delay: 100ms;
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
 }
 .fade-enter.delay-2, .fade-leave.delay-2{
-    -webkit-transition-delay: 200ms;
-    -moz-transition-delay: 200ms;
-    -ms-transition-delay: 200ms;
-    -o-transition-delay: 200ms;
-    transition-delay: 200ms;
-}
-.fade-enter.delay-3, .fade-leave.delay-3{
     -webkit-transition-delay: 300ms;
     -moz-transition-delay: 300ms;
     -ms-transition-delay: 300ms;
     -o-transition-delay: 300ms;
     transition-delay: 300ms;
 }
+.fade-enter.delay-3, .fade-leave.delay-3{
+    -webkit-transition-delay: 450ms;
+    -moz-transition-delay: 450ms;
+    -ms-transition-delay: 450ms;
+    -o-transition-delay: 450ms;
+    transition-delay: 450ms;
+}
 .fade-enter.delay-4, .fade-leave.delay-4{
-    -webkit-transition-delay: 400ms;
-    -moz-transition-delay: 400ms;
-    -ms-transition-delay: 400ms;
-    -o-transition-delay: 400ms;
-    transition-delay: 400ms;
+    -webkit-transition-delay: 600ms;
+    -moz-transition-delay: 600ms;
+    -ms-transition-delay: 600ms;
+    -o-transition-delay: 600ms;
+    transition-delay: 600ms;
 }
 
 /**************** Falling Flakes ****************/

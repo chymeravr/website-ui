@@ -64,7 +64,7 @@ export class HomeView extends React.Component {
         );
         return (
             <Grid stackable centered verticalAlign='middle' style={{margin:0}}>
-                <Grid.Row style={{padding: 0}}>
+                <Grid.Row only="tablet computer" style={{padding: 0}}>
                     <FallingFlakes />
                 </Grid.Row>
                 <Grid.Row verticalAlign='middle' className='page-header-section blueBackground'>
@@ -219,13 +219,13 @@ export class HomeView extends React.Component {
                         }
                     }
                 />
-                <Grid.Row>
+                <ScrollBasedTransition transitionClassName="fade" marginFromBottom="0.15" Component={Grid.Row}>
                     <Grid.Column width={4}>
                         <p className="centerText" >
                             <ImpressionCounter className="massiveText" /> Impressions served
                         </p>
                     </Grid.Column>
-                </Grid.Row>
+                </ScrollBasedTransition>
                 <Grid.Row></Grid.Row>
                 <ImageTextSection
                     image='/static/img/geography.png'
