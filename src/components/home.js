@@ -11,6 +11,7 @@ import {OnHoverColorChangeButton} from './websiteComponents/OnHoverColorChangeBu
 import {ScrollingIcons} from './websiteComponents/ScrollingIcons';
 import {FallingFlakes} from './animation/FallingFlakes';
 import {ImpressionCounter} from './ImpressionCounter';
+import {Testimonial} from './websiteComponents/Testimonial';
 
 export class HomeView extends React.Component {
     constructor(props) {
@@ -284,78 +285,44 @@ export class HomeView extends React.Component {
                     </Grid.Column>
                 </Grid.Row>
                 <ScrollingIcons visibleElements="four" items={11} folder="/static/img/customerLogos" />
-                {/* <Grid.Row>
-                    <Grid.Column width={3}>
-                        <Header as="h3" className="centerText">Advertisers</Header>
-                    </Grid.Column>
-                </Grid.Row>
-                <ScrollingIcons elements="four" /> */}
-{/*
-                <Grid.Row className='section' columns={5}>
-                    {getImageWithCaption('cross-promotion.png', 'CROSS PROMOTE APPS')}
-                    {getImageWithCaption('access-premium.png', 'MONETIZE VR CONTENT', '1')}
-                    {getImageWithCaption('increase-downloads.png', 'GET UNMATCHED ROI', '2')}
-                </Grid.Row>
-
-
-
-
-                <ImageTextSection className='section' reversed
-                    image='/static/img/emotions-vr.jpg'
-                    content={
+                <Grid.Row></Grid.Row>
+                <OneColumnSection className="section"
+                    icon = {
                         {
-                            header:"Emotions in VR",
-                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,\
-                            discover the secret to a users heart!Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms. No wonder, a VR ad leaves a long lasting impression. Come,\
-                            discover the secret to a users heart!"
+                            image: "/static/img/testimonial-icon.png",
+                            caption: "Testimonials"
                         }
                     }
-                    link = {
+                    content = {
                         {
-                            text: "Link Here",
-                            destination: '/advertiser/'
+                            header: "Trusted by world leaders",
+                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
                         }
                     }
                 />
-
-                <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05}  Component={Grid.Row} columns={2} className="greyGradientBackground section">
-                    <Grid.Column>
-                        <Grid centered stackable>
-                            <Grid.Row columns={1}>
-                                <Grid.Column>
-                                    <Header as='h2' className='greyText centerText'>Ad Formats</Header>
-                                    <Image centered src="/static/img/lines-heading.png" />
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row columns={2}>
-                                <Grid.Column verticalAlign='top' width={8}>
-                                    <Image centered src="/static/img/360-image-video.png" />
-                                    <Header as='h3' className="boldText blue"> 360 IMAGE/VIDEO ADS</Header>
-                                    <p style={{ paddingLeft: '40px', paddingRight: '40px' }}>Fully immersive user experience using 360 Ad creatives</p>
-                                </Grid.Column>
-                                <Grid.Column verticalAlign='top' width={8}>
-                                    <Image centered src="static/img/2d-texture.png" />
-                                    <Header as='h3' className="boldText blue">TEXTURE ADS</Header>
-                                    <p style={{ paddingLeft: '40px', paddingRight: '40px' }}>Traditional 2D Ads, strategically placed within VR environment</p>
-                                </Grid.Column>
-                            </Grid.Row>
-                            <Grid.Row only='computer' />
-                            <Grid.Row>
-                                <Grid.Column>
-                                    <Image size='medium' centered src="/static/img/all-platforms.png" />
-                                </Grid.Column>
-                            </Grid.Row>
-                        </Grid>
+                <Grid.Row only="mobile">
+                    <Grid.Column width={10}>
+                        <Testimonial align="center" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin" >asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
                     </Grid.Column>
-                </ScrollBasedTransition>
-                <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Row} columns={16} verticalAlign='middle' className='section'>
-                    <SignUp headingRow={signUpHeader} bordered={true} />
-                </ScrollBasedTransition>
-                <Divider hidden /> */}
+                </Grid.Row>
+                <Grid.Row only="mobile">
+                    <Grid.Column width={10}>
+                        <Testimonial align="center" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row only="tablet computer" >
+                    <Grid.Column tablet={7} computer={6} largeScreen={5} widescreen={4}>
+                        <Testimonial align="left" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
+                    </Grid.Column>
+                    <Grid.Column tablet={7} computer={6} largeScreen={5} widescreen={4}>
+                        <Testimonial align="right" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        <Testimonial align="center" size="large" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
+                    </Grid.Column>
+                </Grid.Row>
             </Grid >
         );
     }

@@ -579,7 +579,73 @@ body.wait, body.wait *{
     will-change: transform;
 }
 
-
+/*** Testimonials ***/
+.testimonial-container{
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+.testimonial-container.normal{
+    width: 300px;
+}
+.testimonial-container.large{
+    width: 400px;
+}
+.testimonial-container .testimonial{
+    background-color: #fafaff;
+    border: 2px #008fcb solid;
+    padding: 32px;
+    border-radius: 20px;
+    position: relative;
+}
+.testimonial-container .testimonial-arrow{
+    background-image: url(/static/img/testimonial-arrow.png);
+    background-size: 32px 32px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    bottom: -26px;
+}
+.testimonial-container.left .testimonial-arrow{
+    left: 50px;
+}
+.testimonial-container.center .testimonial-arrow{
+    left: 134px;
+}
+.testimonial-container.large.center .testimonial-arrow{
+    left: 188px;
+}
+.testimonial-container.right .testimonial-arrow{
+    right: 50px;
+}
+.testimonial-container .profile-image{
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+}
+.testimonial-container.left .profile-image{
+    left: 34px;
+}
+.testimonial-container.center .profile-image{
+    left: 118px;
+}
+.testimonial-container.large.center .profile-image{
+    left: 168px;
+}
+.testimonial-container.right .profile-image{
+    right: 34px;
+}
+@media only screen and (max-width: 767px) {
+    .testimonial-container.large{
+        width: 300px;
+    }
+    .testimonial-container.large.center .testimonial-arrow{
+        left: 134px;
+    }
+    .testimonial-container.large.center .profile-image{
+        left: 118px;
+    }
+}
 /*********** non-classified *************/
 .particles {
   position: absolute;
