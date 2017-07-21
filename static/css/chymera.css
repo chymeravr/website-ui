@@ -274,6 +274,10 @@ body.wait, body.wait *{
 .page-header-section .highlight p{
     margin: 0 auto;
 }
+.page-header-section.image-background{
+    background-size: cover;
+    background-position: center;
+}
 @media only screen and (max-width: 767px){
     .page-header-section{
         padding-top: 19.25rem !important;
@@ -735,4 +739,9 @@ body.wait, body.wait *{
         padding-top: 70vh !important;
         padding-bottom: 30vh !important;
     }
+}
+
+/******************************customers.js*************************/
+.customers-page-header{
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/static/img/customers/header-image.jpg');
 }

@@ -242,7 +242,7 @@ export class HomeView extends React.Component {
                     }
                 />
                 <ImageTextSection
-                    image='/static/img/case-study-icon.png'
+                    image='/static/img/case-study.png'
                     rightAligned
                     content={
                         {
@@ -286,43 +286,6 @@ export class HomeView extends React.Component {
                 </Grid.Row>
                 <ScrollingIcons visibleElements="four" items={11} folder="/static/img/customerLogos" />
                 <Grid.Row></Grid.Row>
-                <OneColumnSection className="section"
-                    icon = {
-                        {
-                            image: "/static/img/testimonial-icon.png",
-                            caption: "Testimonials"
-                        }
-                    }
-                    content = {
-                        {
-                            header: "Trusted by world leaders",
-                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
-                        }
-                    }
-                />
-                <Grid.Row only="mobile">
-                    <Grid.Column width={10}>
-                        <Testimonial align="center" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin" >asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row only="mobile">
-                    <Grid.Column width={10}>
-                        <Testimonial align="center" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row only="tablet computer" >
-                    <Grid.Column tablet={7} computer={6} largeScreen={5} widescreen={4}>
-                        <Testimonial align="left" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
-                    </Grid.Column>
-                    <Grid.Column tablet={7} computer={6} largeScreen={5} widescreen={4}>
-                        <Testimonial align="right" size="normal" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column>
-                        <Testimonial align="center" size="large" profileImage="/static/img/testimonial-pics/1.png" name="@jonylin">asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf asdfasfsadfsafs saf sa saf as sf as sfa sdfads fsd sd saf sa sad s sdf sdf</Testimonial>
-                    </Grid.Column>
-                </Grid.Row>
             </Grid >
         );
     }

@@ -24,6 +24,7 @@ import { PublisherView } from './publisher/publisher'
 import { AppDetailView } from './publisher/appDetail'
 import { createBrowserHistory } from 'history'
 import { loginStore } from '../index'
+import { Customers } from './customers'
 
 export const hashHistory = createBrowserHistory();
 
@@ -106,6 +107,7 @@ export class AppRouter extends React.Component {
                         [
                             ['/', 'home', HomeView, false, true],
                             ['/contact/', 'contact', ContactView],
+                            ['/customers/', 'customers', Customers],
                             ['/careers/', 'careers', CareerView],
                             ['/terms/', 'terms', TermsView],
                             ['/login/', 'login', Login_C, this.state.adblock],
