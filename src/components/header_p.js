@@ -58,7 +58,7 @@ export class Header_P extends React.Component {
 
         return (
             <Grid columns={16} style={{margin:0}}>
-                <Grid.Row only='mobile' columns={2} className={'navbarMobile ' + (transparent ? 'transparent' : 'blueBg')}>
+                <Grid.Row only='mobile' columns={2} className={'navbarMobile ' + (transparent ? 'transparent' : 'blueBackground')}>
                     <Grid.Column width={6}>
                         <Image size='tiny' src='/static/img/logo-simple.png' style={{ padding: '15px 20px 0px 15px' }} as={Link} to={'/'} />
                     </Grid.Column>
@@ -79,7 +79,7 @@ export class Header_P extends React.Component {
                         </Accordion>
                     </Grid.Column>
                 </Grid.Row>
-                <Grid.Row only='tablet computer' centered className={'navbar ' + (transparent ? 'transparent' : 'blueBg')}>
+                <Grid.Row only='tablet computer' centered className={'navbar ' + (transparent ? 'transparent' : 'blueBackground')}>
                     <Grid.Column tablet={16} computer={14} largeScreen={13} widescreen={12}>
                         <Table padded inverted className="transparent">
                             <Table.Body>

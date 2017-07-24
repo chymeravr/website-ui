@@ -278,10 +278,18 @@ body.wait, body.wait *{
     background-size: cover;
     background-position: center;
 }
+.page-header-section.no-content{
+    padding-top: 15rem !important;
+    padding-bottom: 0 !important;
+}
 @media only screen and (max-width: 767px){
     .page-header-section{
         padding-top: 19.25rem !important;
         padding-bottom: 4.5rem !important;
+    }
+    .page-header-section.no-content{
+        padding-top: 20rem !important;
+        padding-bottom: 0 !important;
     }
 }
 

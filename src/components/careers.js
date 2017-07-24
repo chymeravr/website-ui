@@ -26,11 +26,12 @@ export class CareerView extends React.Component {
         const getListItem = (content) => <List.Item><p className='smallText'>{content}</p></List.Item>;
 
         return (
-            <main className="Site-content centre ui aligned" style={{ backgroundColor: '#FFF', minHeight: '100vh' }}>
-                <Grid stackable columns={10} verticalAlign='top' style={{ paddingTop: '100px', paddingLeft: '20px' }}>
+            <main className="Site-content centre ui aligned" >
+                <Grid stackable columns={10} verticalAlign='top' >
+                    <Grid.Row className="page-header-section no-content"></Grid.Row>
                     <Grid.Row centered columns={1} >
                         <Grid.Column width={8}>
-                            <Header as='h1' style={Object.assign({}, style, { textAlign: 'left' })}>We are hiring!</Header>
+                            <Header as='h1' className="blue">We are hiring!</Header>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row centered columns={1} >
@@ -113,6 +114,7 @@ export class CareerView extends React.Component {
                             </Header>
                         </Grid.Column>
                     </Grid.Row>
+                    <Grid.Row></Grid.Row>
                 </Grid>
             </main >
         );
