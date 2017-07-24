@@ -13,7 +13,7 @@ export class ContactView extends React.Component {
     componentDidMount() {
         document.title = 'Contact Us | Chymera VR'
     }
-    
+
 
     render() {
 
@@ -26,7 +26,8 @@ export class ContactView extends React.Component {
 
         return (
             <main className="Site-content centre ui aligned" style={{ backgroundColor: '#FFF', minHeight: '100vh' }}>
-                <Grid stackable columns={10} verticalAlign='top' style={{ paddingTop: '100px', paddingLeft: '20px' }}>
+                <Grid stackable columns={10} verticalAlign='top' >
+                    <Grid.Row className="page-header-section no-content"></Grid.Row>
                     <Grid.Row centered columns={1} >
                         <Grid.Column width={6}>
                             <Header as='h1' style={Object.assign({}, style, { textAlign: 'left' })}>Office</Header>
