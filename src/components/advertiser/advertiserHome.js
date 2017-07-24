@@ -3,6 +3,7 @@ var Link = require('react-router').Link
 import { debug, callApiWithJwt } from '../../lib.js'
 import { SignUp } from './../signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
+import {OneColumnSection} from '../websiteComponents/OneColumnSection';
 
 export class AdvertiserHomeView extends React.Component {
     constructor(props) {
@@ -41,19 +42,37 @@ export class AdvertiserHomeView extends React.Component {
 
         return (
             <main className="Site-content">
-                <Grid stackable centered verticalAlign='middle'>
-                    <Grid.Row columns={1} verticalAlign='middle' className='advertiserHomeMain' style={{ minHeight: 'calc(80vh)' }}>
-                        <Grid.Column width={10}>
-                            <Header as='h2' className='centerText whiteText boldText italic'>
-                                Tell your brand story  &amp; <br />
-                                generate user interest like never before <br /><br />
-                                <Button className="ui button navbarButton transparent" onClick={(e, d) => { } }>
-                                    <Icon name='book' /> Documentation
-                                </Button>
-                            </Header>
-
+                <Grid stackable centered verticalAlign='middle' style={{margin:0}}>
+                    <Grid.Row className='page-header-section advertiser-page-header image-background'>
+                        <Grid.Column width={16}>
+                            <Grid centered verticalAlign='middle'>
+                                <Grid.Row>
+                                    <Grid.Column width={16}>
+                                        <Header as='h1' inverted className='centerText'>Tell your brand story
+                                        </Header>
+                                        <Header as='h3' inverted className='centerText'>
+                                            generate user interest like never before
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
                         </Grid.Column>
                     </Grid.Row>
+                    <Grid.Row style={{paddingTop: "1rem", paddingBottom: "1rem"}}></Grid.Row>
+                    <OneColumnSection className="section"
+                        icon = {
+                            {
+                                image: "/static/img/advertiser/scale.png",
+                                caption: "VR wins"
+                            }
+                        }
+                        content = {
+                            {
+                                header: "VR ads outperforming mobile ads",
+                                para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
+                            }
+                        }
+                    />
                     <Grid.Row columns={3} verticalAlign='middle' className='section'>
                         <Grid.Column only='computer' width={2} />
                         <Grid.Column only='computer' width={4}>

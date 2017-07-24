@@ -722,13 +722,6 @@ body.wait, body.wait *{
     /*background-attachment: fixed;*/
 }
 
-.advertiserHomeMain {
-    margin-top: -120px !important;
-    background-image: url('http://res.cloudinary.com/chymeravr/image/upload/v1492430134/advertiser-banner_ysqkkc.png');
-    background-size: contain;
-    /*background-attachment: fixed;*/
-}
-
 @media only screen and (max-width: 767px) {
     .summary {
         padding: 70px 0px 20px 0px !important;
@@ -752,4 +745,9 @@ body.wait, body.wait *{
 /******************************customers.js*************************/
 .customers-page-header{
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/static/img/customers/header-image.jpg');
+}
+
+/****************************advertiserHome*************************/
+.advertiser-page-header{
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/static/img/advertiser/header-image.jpg');
 }
