@@ -748,6 +748,11 @@ body.wait, body.wait *{
 }
 
 /****************************advertiserHome*************************/
+
 .advertiser-page-header{
     background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('/static/img/advertiser/header-image.jpg');
+}
+/****************************publisherHome*************************/
+.publisher-page-header{
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('/static/img/publisher/header-image.jpg');
 }

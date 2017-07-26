@@ -3,6 +3,9 @@ var Link = require('react-router').Link
 import { debug, callApiWithJwt } from '../../lib.js'
 import { SignUp } from './../signUpRow'
 import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segment, Container, List } from 'semantic-ui-react'
+import {OneColumnSection} from '../websiteComponents/OneColumnSection';
+import {ImageTextSection} from '../websiteComponents/ImageTextSection';
+import {ScrollingIcons} from '../websiteComponents/ScrollingIcons';
 
 export class PublisherHomeView extends React.Component {
     constructor(props) {
@@ -22,7 +25,8 @@ export class PublisherHomeView extends React.Component {
             return (
                 <Grid.Column verticalAlign='bottom' width={2}>
                     <Image centered src={'/static/img/' + image} />
-                    <p className="boldText caption">{caption}</p>
+                    <h4>{caption}</h4>
+                    {/* <p className="boldText caption">{caption}</p> */}
                 </Grid.Column>
             )
         }
@@ -41,94 +45,130 @@ export class PublisherHomeView extends React.Component {
 
         return (
             <main className="Site-content">
-                <Grid stackable centered verticalAlign='middle'>
-                    <Grid.Row columns={1} verticalAlign='middle' className='publisherHomeMain' style={{ minHeight: 'calc(80vh)' }}>
-                        <Grid.Column width={10}>
-                            <Header as='h2' className='centerText whiteText boldText italic'>
-                                Monetize your VR &amp; 360<sup>o</sup> Video Content <br />
-                                &amp; drive discovery <br /><br />
-                                <Button className="ui button navbarButton transparent" onClick={(e, d) => { } }>
-                                    <Icon name='book' /> Documentation
-                                </Button>
+                <Grid stackable centered verticalAlign='middle' style={{margin:0}}>
+                    <Grid.Row className='page-header-section publisher-page-header image-background'>
+                        <Grid.Column width={16}>
+                            <Grid centered verticalAlign='middle'>
+                                <Grid.Row>
+                                    <Grid.Column width={16}>
+                                        <Header as='h1' inverted className='centerText'>Monetize VR content
+                                        </Header>
+                                        <Header as='h3' inverted className='centerText'>
+                                            drive discovery
+                                        </Header>
+                                    </Grid.Column>
+                                </Grid.Row>
+                            </Grid>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row style={{paddingTop: "1rem", paddingBottom: "1rem"}}></Grid.Row>
+                    <OneColumnSection className="section"
+                        icon = {
+                            {
+                                image: "/static/img/publisher/benefits.png",
+                                caption: "Benefits"
+                            }
+                        }
+                        content = {
+                            {
+                                header: "Earn more and without irritating user",
+                                para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
+                            }
+                        }
+                    />
+                    <ImageTextSection
+                        image='/static/img/publisher/high-earning.png'
+                        leftAligned
+                        reversed
+                        content={
+                            {
+                                header:"Higher earnings",
+                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
+                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
+                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                            }
+                        }
+                    />
+                    <ImageTextSection
+                        image='/static/img/publisher/user-experience.png'
+                        rightAligned
+                        content={
+                            {
+                                header:"Excellent user experience",
+                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
+                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
+                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                            }
+                        }
+                    />
+                    <OneColumnSection className="section"
+                        icon = {
+                            {
+                                image: "/static/img/advertiser/offering.png",
+                                caption: "Offerings"
+                            }
+                        }
+                        content = {
+                            {
+                                header: "Range of product and services",
+                                para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
+                            }
+                        }
+                    />
+                    <Grid.Row>
+                        <Grid.Column>
+                            <Header as='h3' className='centerText'>
+                                Cross Promotion Network
                             </Header>
-
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row className='section' columns={9}>
-                        <Grid.Column width={1} />
-                        <Grid.Column only='computer' width={3} textAlign='right' verticalAlign='bottom'>
-                            <Header as='h1' className='boldText greyText'>
-                                Cross  <br />
-                                Promotion  <br />
-                                Network <br />
-                            </Header>
-                        </Grid.Column>
-                        <Grid.Column only='mobile' width={3} textAlign='center' verticalAlign='bottom'>
-                            <Header as='h1' className='boldText greyText'>
-                                Cross  <br />
-                                Promotion  <br />
-                                Network  <br />
-                            </Header>
-                        </Grid.Column>
-                        <Grid.Column stretched width={1} />
-                        {getImageWithCaption('integrate-chymera.png', 'INTEGRATE CHYMERA ADS')}
-                        <Grid.Column only='computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
+                        {getImageWithCaption('integrate-chymera.png', 'Integrate chymera ads')}
+                        <Grid.Column only='tablet computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
                         <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
-                        {getImageWithCaption('earn-credits.png', 'EARN CREDITS')}
-                        <Grid.Column only='computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
+                        {getImageWithCaption('earn-credits.png', 'Earn credits')}
+                        <Grid.Column only='tablet computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
                         <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
-                        {getImageWithCaption('spend-credits.png', 'PROMOTE YOUR APP')}
-                        <Grid.Column width={2} />
+                        {getImageWithCaption('spend-credits.png', 'Promote app')}
                     </Grid.Row>
-                    <Divider />
-                    <Grid.Row columns={3} verticalAlign='middle' className='section'>
-                        <Grid.Column only='computer' width={2} />
-                        <Grid.Column only='computer' width={4}>
-                            <Image centered src="/static/img/access-premium.png" size='small' />
-                        </Grid.Column>
-                        <Grid.Column width={6}>
-                            <Header as='h1' className='boldText blue'>
-                                Premium Advertisers
-                            </Header>
-                            <p style={{ lineHeight: '35px' }}>
-                                VR is an excellent platform for storytelling. Did you know that advertisers are excited to
-                                unlock the potential of VR to share their brand story? They are eager to shell out big monies
-                                to connect with users. So, your search for earnings ends here. Integrate Chymera ads and open
-                                a brand new channel for revenue influx.
-                            </p>
-                        </Grid.Column>
-                        <Grid.Column width={2} />
-                    </Grid.Row>
-                    <Divider />
-                    <Grid.Row className='section' verticalAlign='middle'>
-                        <Grid stackable columns={16}>
-                            <Grid.Row columns={4} verticalAlign='middle' textAlign='left'>
-                                <Grid.Column width={2} />
-                                <Grid.Column width={6}>
-                                    <Header as='h3' className='boldText blue'><Icon name='clock' />Timely payouts </Header>
-                                    <p>We make sure your money reaches you at the earliest</p>
-                                    <br />
-                                </Grid.Column>
-                                <Grid.Column width={6}>
-                                    <Header as='h3' className='boldText blue'><Icon name='cubes' />Unity app?</Header>
-                                    <p >Easy to use, drag and drop Chymera Unity SDK</p>
-                                    <br />
-                                </Grid.Column>
-                                <Grid.Column only='computer' width={2} />
-                                <Grid.Column only='computer' width={2} />
-                                <Grid.Column width={6}>
-                                    <Header as='h3' className='boldText blue'><Icon name='android' />Have native Android app for VR?</Header>
-                                    <p>Try Chymera Android SDK for Daydream, Cardboard and GearVR</p>
-                                    <br />
-                                </Grid.Column>
-                                <Grid.Column width={6}>
-                                    <Header as='h3' className='boldText blue'><Icon name='line chart' />Worried when and where to place ad units?</Header>
-                                    <p>Chymera Analytics helps you find out the best time and location for ad placement.</p>
-                                </Grid.Column>
-                                <Grid.Column width={2} />
-                            </Grid.Row>
-                        </Grid>
-                    </Grid.Row>
+                    <ImageTextSection
+                        image='/static/img/advertiser/image360.jpg'
+                        leftAligned
+                        reversed
+                        content={
+                            {
+                                header:"360 ads",
+                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
+                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
+                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                            }
+                        }
+                    />
+                    <ImageTextSection
+                        image='/static/img/advertiser/native-ads.jpg'
+                        rightAligned
+                        content={
+                            {
+                                header:"Native ads",
+                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
+                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
+                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                            }
+                        }
+                    />
+                    <ImageTextSection
+                        image='/static/img/publisher/analytics.png'
+                        leftAligned
+                        reversed
+                        content={
+                            {
+                                header:"Analytics",
+                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
+                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
+                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                            }
+                        }
+                    />
                     <Divider />
                     <Grid.Row columns={16} verticalAlign='middle' className="section">
                         <SignUp headingRow={signUpHeader} />
