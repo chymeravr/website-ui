@@ -90,8 +90,7 @@ export class HomeView extends React.Component {
                 </Grid.Row>
                 <Grid.Row style={{ backgroundColor: '#0d95ce', }} columns={1}>
                     <Grid.Column width={16}>
-                        {/* {this.state.eventName ? <p className='centerText whiteText'>Meet us at <strong>{this.state.eventName} </strong>{this.state.description}</p> : ''} */}
-                        <p className='centerText whiteText'>Meet us at <strong>blah </strong>blah blah</p>
+                        {this.state.eventName ? <p className='centerText whiteText'>Meet us at <strong>{this.state.eventName} </strong>{this.state.description}</p> : ''}
                     </Grid.Column>
                 </Grid.Row>
 
