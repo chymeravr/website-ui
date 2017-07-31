@@ -6,6 +6,7 @@ import { Grid, Form, Button, Header, Input, Icon, Image, Message, Divider, Segme
 import {OneColumnSection} from '../websiteComponents/OneColumnSection';
 import {ImageTextSection} from '../websiteComponents/ImageTextSection';
 import {ScrollingIcons} from '../websiteComponents/ScrollingIcons';
+import {ScrollBasedTransition} from '../animation/ScrollBasedTransition';
 
 export class PublisherHomeView extends React.Component {
     constructor(props) {
@@ -117,14 +118,14 @@ export class PublisherHomeView extends React.Component {
                             }
                         }
                     />
-                    <Grid.Row>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} Component={Grid.Row}>
                         <Grid.Column>
                             <Header as='h3' className='centerText'>
                                 Cross Promotion Network
                             </Header>
                         </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row className='section' columns={9}>
+                    </ScrollBasedTransition>
+                    <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} Component={Grid.Row} className='section' columns={9}>
                         {getImageWithCaption('integrate-chymera.png', 'Integrate chymera ads')}
                         <Grid.Column only='tablet computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
                         <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
@@ -132,7 +133,7 @@ export class PublisherHomeView extends React.Component {
                         <Grid.Column only='tablet computer' width={1}><Image centered src="/static/img/arrow-right.png" /></Grid.Column>
                         <Grid.Column only='mobile' width={1}><Image centered src="/static/img/arrow-down.png" /></Grid.Column>
                         {getImageWithCaption('spend-credits.png', 'Promote app')}
-                    </Grid.Row>
+                    </ScrollBasedTransition>
                     <ImageTextSection
                         image='/static/img/advertiser/image360.jpg'
                         leftAligned
