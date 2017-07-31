@@ -71,7 +71,7 @@ export class AdvertiserHomeView extends React.Component {
                         content = {
                             {
                                 header: "VR ads outperforming mobile ads",
-                                para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
+                                para: "Digital platform has performed really well for advertisers. Early results of advertising in VR suggest that it is even more impressive."
                             }
                         }
                     />
@@ -82,9 +82,7 @@ export class AdvertiserHomeView extends React.Component {
                         content={
                             {
                                 header:"High value audience",
-                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
-                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
-                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                                para:"VR is in early stage and current users of VR are of high value, explorers, and early adopters. Each dollar spent in VR advertising till now has yielded significantly higher returns. You can tap into this user base and get your brand sailing."
                             }
                         }
                     />
@@ -94,9 +92,7 @@ export class AdvertiserHomeView extends React.Component {
                         content={
                             {
                                 header:"Global reach",
-                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
-                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
-                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                                para:"Even though VR is relatively a new technology, it has been able to penetrate across the globe. We have partnered with publishers in five countries who have their user base across 20 countries. If you want to engage a global audience effectively, try Chymera VR ads."
                             }
                         }
                     />
@@ -107,9 +103,7 @@ export class AdvertiserHomeView extends React.Component {
                         content={
                             {
                                 header:"Higher brand recall",
-                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
-                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
-                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                                para:"VR is the only medium that gives you a user's full attention. A VR user isn't distracted by surrounding visual and audio noise. Hence, VR ads have a far greater ability to generate a higher brand recall. Our customers have recorded a mere 53% ad skip rates, a 19% CTR and a 60% user satisfaction. So, leave an everlasting impact with VR ads."
                             }
                         }
                     />
@@ -122,8 +116,8 @@ export class AdvertiserHomeView extends React.Component {
                         }
                         content = {
                             {
-                                header: "Range of product and services",
-                                para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
+                                header: "A complete package for VR campaigns",
+                                para: "Creating a VR ad is difficult. Making sense of its efficacy, even more difficult. But you don't have to worry as we have already taken care of your needs."
                             }
                         }
                     />
@@ -134,9 +128,7 @@ export class AdvertiserHomeView extends React.Component {
                         content={
                             {
                                 header:"360 ads",
-                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
-                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
-                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                                para:"360 Image and Video ads give you an ability to immerse users completely in your ad world. It is an experience breaking ad format but you have got the full attention of the viewer. If done right, it can create emotions and excitement for your brand. Paint your ad in an empty 3D canvas using 360 ads."
                             }
                         }
                     />
@@ -146,9 +138,7 @@ export class AdvertiserHomeView extends React.Component {
                         content={
                             {
                                 header:"Native ads",
-                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
-                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
-                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                                para:"Do Out-Of-Home (OOH) marketing inside VR. Native ads let you place advertisements strategically in the VR content. The user continues enjoying the original experience, while your message gets delivered subtly. Chymera currently supports billboard, poster, video and product placements ad formats."
                             }
                         }
                     />
@@ -159,9 +149,7 @@ export class AdvertiserHomeView extends React.Component {
                         content={
                             {
                                 header:"Behavioral analytics",
-                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
-                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
-                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                                para:"VR headsets give you the data that has never been captured before - where the user is looking. Chymera has developed cutting edge technology for behavioral analysis. Get answers to the questions that have bothered you forever."
                             }
                         }
                     />
@@ -170,10 +158,8 @@ export class AdvertiserHomeView extends React.Component {
                         rightAligned
                         content={
                             {
-                                header:"Content creation service",
-                                para:"Video ads in mobile and web, have been historically skipped by around 80% of users. We did our first 360 video ad campaign with Audi. \
-                                Both us and our client, were surprised to see the result. Even without expending justifiable resources in ad creation, the campaign was able to \
-                                acheive a 53% of skip rate. This campaign was run on high end VR devices - HTC Vive and Oculus Rift."
+                                header:"Ad creation service",
+                                para:"VR content is difficult to make. Searching for the right VR agency is challenging. Chymera has now solved your problem by partnering with 30 VR agencies across the globe. Now you have the option to get your VR ad developed from award winning creators to industry specific agencies to affordable options."
                             }
                         }
                     />

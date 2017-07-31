@@ -105,14 +105,14 @@ export class HomeView extends React.Component {
                     }
                     content = {
                         {
-                            header: "Everything for VR ads here",
-                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers. You can easily create advertisements, manage them, integrate them with your content."
+                            header: "The future of advertising is here",
+                            para: "Chymera VR is a pioneer in Virtual Reality (VR) advertising. We provide a host of solutions that help VR publishers monetize their content and advertisers access this brand new medium of story telling. You can easily create advertisements, manage them and integrate them with your content."
                         }
                     }
                     link = {
                         {
                             text: "Contact Us",
-                            destination: '/advertiser/'
+                            destination: '/contact/'
                         }
                     }
                 />
@@ -127,7 +127,7 @@ export class HomeView extends React.Component {
                     content = {
                         {
                             header: "VR brings new branding possibilities",
-                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers. You can easily create advertisements, manage them, integrate them with your content."
+                            para: "VR is an immersive medium, in which you have got the full attention of the user with no external distractions. This has profound implications for advertising opportunities."
                         }
                     }
                 />
@@ -139,15 +139,14 @@ export class HomeView extends React.Component {
                     content={
                         {
                             header:"Emotions in VR",
-                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms."
+                            para:"VR is a powerful storytelling platform. Research suggests that VR content evokes emotions of a higher intensity vis-a-vis traditional 2D platforms. A study established that VR ads had a 193% higher brand recall as compared to mobile ads. Leave a long lasting impact on your users through VR."
                         }
                     }
                     link = {
                         {
-                            text: "Link Here",
-                            destination: '/advertiser/'
+                            text: "Youtube compilations",
+                            destination: 'https://www.youtube.com/results?search_query=VR+first+time+reactions',
+                            target: "_blank"
                         }
                     }
                 />
@@ -157,15 +156,13 @@ export class HomeView extends React.Component {
                     content={
                         {
                             header:"Better engagement",
-                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms."
+                            para:"As VR medium is free of distractions, it engages users a lot. Our customers have been able to achieve a click through rate of 19%. Time spent by users watching VR ads is also 130% higher when compared to mobile ads."
                         }
                     }
                     link = {
                         {
-                            text: "Link Here",
-                            destination: '/advertiser/'
+                            text: "Case study",
+                            destination: '/customers#clickThroughRates'
                         }
                     }
                 />
@@ -176,29 +173,27 @@ export class HomeView extends React.Component {
                     content={
                         {
                             header:"Less unhappy users",
-                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms."
+                            para:"Users have traditionally reacted to ads with displeasure. But not anymore with VR. In a survey, 60% of users said that VR ads didn't irritate them. Chymera ads have only 53% of skip rates as compared to 80% skip rates in mobile and web. So, now you can earn through ads while keeping your users happy."
                         }
                     }
                     link = {
                         {
-                            text: "Link Here",
-                            destination: '/advertiser/'
+                            text: "Case study",
+                            destination: '/customers#survey'
                         }
                     }
                 />
                 <Grid.Row className="section">
                     <div className="image-background two first" style={{backgroundImage: "url('/static/img/advertiser-home.jpg')"}}>
                         <div className="dark-mask">
-                            <OnHoverColorChangeButton color="orange" className="absolute-middle" >
+                            <OnHoverColorChangeButton as={Link} to='/advertiser/' color="orange" className="absolute-middle" >
                                 Advertiser
                             </OnHoverColorChangeButton>
                         </div>
                     </div>
                     <div className="image-background two first" style={{backgroundImage: "url('/static/img/publisher-home.jpg')"}}>
                         <div className="dark-mask">
-                            <OnHoverColorChangeButton color="orange" className="absolute-middle" >
+                            <OnHoverColorChangeButton as={Link} to='/publisher/' color="orange" className="absolute-middle" >
                                 Publisher
                             </OnHoverColorChangeButton>
                         </div>
@@ -215,8 +210,8 @@ export class HomeView extends React.Component {
                     }
                     content = {
                         {
-                            header: "Trusted by world leaders",
-                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers. You can easily create advertisements, manage them, integrate them with your content."
+                            header: "A thriving VR community",
+                            para: "Within one year of operation, Chymera has been fortunate to work with global advertisers and publishers. The symbiotic relationship with VR community has helped us a lot in ideation and experimentation. We are working closely with advertisers, IAB and publishers on standardization of VR ad formats."
                         }
                     }
                 />
@@ -235,9 +230,7 @@ export class HomeView extends React.Component {
                     content={
                         {
                             header:"Global presence",
-                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms."
+                            para:"The publisher and advertiser base of Chymera spreads across 5 countries. Our ads are gathering eye-balls across 20 countries in six continents."
                         }
                     }
                 />
@@ -247,15 +240,13 @@ export class HomeView extends React.Component {
                     content={
                         {
                             header:"Case Studies",
-                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms."
+                            para:"VR ads have given our clients unprecedented results. Audi has been able to achieve a 53% of skip rate as compared to historical 80%. Rovio could achieve a CTR of 19%."
                         }
                     }
                     link = {
                         {
                             text: "More customer stories",
-                            destination: '/advertiser/'
+                            destination: '/customers#caseStudy'
                         }
                     }
                 />
@@ -266,15 +257,13 @@ export class HomeView extends React.Component {
                     content={
                         {
                             header:"Testimonial",
-                            para:"Virtual Reality is a powerful storytelling platform. Research suggests\
-                            that VR content evokes emotions of a higher intensity vis-a-vis traditional\
-                            2D platforms."
+                            para:"See what our customers say about us."
                         }
                     }
                     link = {
                         {
                             text: "More testimonials",
-                            destination: '/advertiser/'
+                            destination: '/customers#testimonials'
                         }
                     }
                 />

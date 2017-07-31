@@ -107,7 +107,7 @@ export class AppRouter extends React.Component {
                         [
                             ['/', 'home', HomeView, false, true],
                             ['/contact/', 'contact', ContactView],
-                            ['/customers/', 'customers', Customers],
+                            ['/customers/', 'customers', Customers, this.state.adblock, true],
                             ['/careers/', 'careers', CareerView],
                             ['/terms/', 'terms', TermsView],
                             ['/login/', 'login', Login_C, this.state.adblock],

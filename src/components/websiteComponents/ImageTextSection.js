@@ -30,6 +30,8 @@ export class ImageTextSection extends React.Component{
             {/* </ScrollBasedTransition> */}
             </Grid.Column>
         );
+
+        const target = (typeof(this.props.link) != 'undefined' && typeof(this.props.link.target) != 'undefined')?this.props.link.target:"_self";
         const textComponent = (
             // <ScrollBasedTransition transitionClassName="fade" marginFromBottom={0.15} marginFromTop={0.05} Component={Grid.Column}
             <Grid.Column
@@ -46,7 +48,7 @@ export class ImageTextSection extends React.Component{
                 </p>
                 {
                     (typeof(this.props.link) != 'undefined')?(
-                        <OnHoverColorChangeButton as={Link} to={this.props.link.destination} color="blue">
+                        <OnHoverColorChangeButton as={Link} target={target} to={this.props.link.destination} color="blue">
                             {this.props.link.text}
                         </OnHoverColorChangeButton>
                     ):

@@ -78,6 +78,7 @@ export class Customers extends React.Component{
                         </Grid>
                     </Grid.Column>
                 </Grid.Row>
+                <div id="testimonials"></div>
                 <OneColumnSection className="section"
                     icon = {
                         {
@@ -100,6 +101,7 @@ export class Customers extends React.Component{
                 {getTwoColumnTestimonialsMobile(4)}
                 {getTwoColumnTestimonials(3, 4)}
                 <Grid.Row></Grid.Row>
+                <div id="caseStudy"></div>
                 <OneColumnSection className="section"
                     icon = {
                         {
@@ -128,6 +130,7 @@ export class Customers extends React.Component{
                     }
                 />
                 <Grid.Row></Grid.Row>
+                <div id="clickThroughRates" ></div>
                 <ImageTextSection
                     image='/static/img/customers/rovio.jpg'
                     rightAligned
@@ -141,6 +144,7 @@ export class Customers extends React.Component{
                     }
                 />
                 <Grid.Row></Grid.Row>
+                <div id="survey" ></div>
                 <ImageTextSection
                     image='/static/img/customers/amaze.jpg'
                     leftAligned

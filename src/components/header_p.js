@@ -48,6 +48,9 @@ export class Header_P extends React.Component {
             case 'careers':
                 activeItem = 'careers'
                 break;
+            case 'customers':
+                activeItem = 'customers'
+                break;
             default:
                 activeItem = ''
         }
@@ -71,7 +74,8 @@ export class Header_P extends React.Component {
                                 <Menu fluid vertical pointing secondary size='massive' floated='right' color='blue' className="navbarMenuMobile">
                                     {getItem('advertisers', '/advertiser/')}
                                     {getItem('publishers', '/publisher/')}
-                                    {getItem('careers', '/careers/')}
+                                    {/* {getItem('careers', '/careers/')} */}
+                                    {getItem('customers', '/customers/')}
                                     {button}
                                     {this.state.loginState === LOGIN_SUCCEEDED ? <Button color="teal" content='Profile' onClick={(e, d) => this.props.history.push('/profile/')} /> : ''}
                                 </Menu>
@@ -89,7 +93,8 @@ export class Header_P extends React.Component {
                                         <Menu pointing secondary size='massive' floated='right' color='blue' className="navbarMenu">
                                             {getItem('advertisers', '/advertiser/')}
                                             {getItem('publishers', '/publisher/')}
-                                            {getItem('careers', '/careers/')}
+                                            {/* {getItem('careers', '/careers/')} */}
+                                            {getItem('customers', '/customers/')}
                                             {button}
                                             {this.state.loginState === LOGIN_SUCCEEDED ? <Button color="teal" content='Profile' onClick={(e) => this.props.history.push('/profile/')} /> : ''}
                                         </Menu>
