@@ -89,7 +89,7 @@ export class Customers extends React.Component{
                     content = {
                         {
                             header: "Trusted by world leaders",
-                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers."
+                            para: "We take feedback from our customers very seriously. Their input has helped us a lot in shaping our product. These kind and critical words keep us motivated."
                         }
                     }
                 />
@@ -111,8 +111,8 @@ export class Customers extends React.Component{
                     }
                     content = {
                         {
-                            header: "VR brings new branding possibilities",
-                            para: "Chymera VR is an advertisement platform for Virtual Reality content. We provide a host of solutions to both VR publishers and advertisers. You can easily create advertisements, manage them, integrate them with your content."
+                            header: "Numbers don't lie",
+                            para: "VR advertising is in a nascent stage and there are no industry standards and benchmarks for evaluating performance. Chymera and its customers have run experiments to understand how VR ads perform when compared to traditional 2D ads. And the results have been encouraging."
                         }
                     }
                 />

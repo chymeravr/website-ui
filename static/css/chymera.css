@@ -148,7 +148,7 @@ body.wait, body.wait *{
 }
 .image-background a, .image-background button{
     width: 250px;
-    height: 70px;
+    height: 60px;
     font-size: 1.5rem !important;
 }
 .image-background.two{

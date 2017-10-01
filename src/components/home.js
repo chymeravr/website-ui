@@ -105,7 +105,7 @@ export class HomeView extends React.Component {
                     content = {
                         {
                             header: "The future of advertising is here",
-                            para: "Chymera VR is a pioneer in Virtual Reality (VR) advertising. We provide a host of solutions that help VR publishers monetize their content and advertisers access this brand new medium of story telling. You can easily create advertisements, manage them and integrate them with your content."
+                            para: "Chymera VR is a pioneer in the field Virtual Reality (VR) advertising. We provide a host of solutions that help VR publishers monetize their content and advertisers access this brand new medium of story telling. You can easily create advertisements, manage them and integrate them with your content."
                         }
                     }
                     link = {
@@ -256,7 +256,7 @@ export class HomeView extends React.Component {
                     content={
                         {
                             header:"Testimonial",
-                            para:"See what our customers say about us."
+                            para:"We work with our customers closely.  Their critical feedback has helped us a lot in shaping our strategy and product. See what our customers say about us."
                         }
                     }
                     link = {

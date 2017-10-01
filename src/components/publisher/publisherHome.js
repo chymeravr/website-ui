@@ -73,7 +73,7 @@ export class PublisherHomeView extends React.Component {
                         content = {
                             {
                                 header: "Earnings and happy users",
-                                para: "Earning through ads comes at the cost of upsetting your users. But not anymore with VR. VR is a medium where you get a higher earning while users stay engaged."
+                                para: "Ad earnings come at the cost of poor user experience. But not anymore with VR. VR is a medium where you can get higher earnings while users stay engaged."
                             }
                         }
                     />
@@ -84,7 +84,7 @@ export class PublisherHomeView extends React.Component {
                         content={
                             {
                                 header:"Higher earnings",
-                                para:"Advertisers have realized that VR is an effective medium of advertising. They are getting significantly higher engagement with VR ads. Hence, CPMs and CPCs have soared quite high. So, relax and keep creating amazing VR content, while we take care of your monetization needs."
+                                para:"Advertisers have realized that VR is an effective medium of advertising. They are getting significantly higher engagement with VR ads. Hence, CPMs and CPCs have soared high. So, relax and keep creating amazing VR content, while we take care of your monetization needs."
                             }
                         }
                     />

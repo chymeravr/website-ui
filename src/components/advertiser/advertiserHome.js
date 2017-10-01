@@ -87,7 +87,7 @@ export class AdvertiserHomeView extends React.Component {
                         }
                     />
                     <ImageTextSection
-                        image='/static/img/advertiser/globe.gif'
+                        image='/static/img/advertiser/geography.png'
                         rightAligned
                         content={
                             {
@@ -138,7 +138,7 @@ export class AdvertiserHomeView extends React.Component {
                         content={
                             {
                                 header:"Native ads",
-                                para:"Do Out-Of-Home (OOH) marketing inside VR. Native ads let you place advertisements strategically in the VR content. The user continues enjoying the original experience, while your message gets delivered subtly. Chymera currently supports billboard, poster, video and product placements ad formats."
+                                para:"Do Out-Of-Home (OOH) marketing inside VR. Native ads let you place advertisements strategically in the VR content. The user continues enjoying the original experience, while your message gets delivered subtly. Chymera currently supports billboard, poster, video and product placement ad formats."
                             }
                         }
                     />
