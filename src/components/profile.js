@@ -57,9 +57,9 @@ export class ProfileView extends React.Component {
         const amount = this.state.amount;
         if (this.state.user && this.state.user.username) {
             var body = (
-                <Grid centered columns={1}>
-                    <Grid.Row columns={5} style={{ minHeight: '70vh' }}>
-                        <Grid.Column verticalAlign='middle'>
+                // <Grid centered columns={1}>
+                    <Grid.Row style={{ minHeight: '70vh' }}>
+                        <Grid.Column mobile={12} tablet={9} computer={7} largeScreen={5} widescreen={3} verticalAlign='middle'>
                             <Card fluid>
                                 <Card.Content>
                                     <Card.Header>{this.state.user.username}</Card.Header>
@@ -100,7 +100,7 @@ export class ProfileView extends React.Component {
                             {this.state.chargeFailed ? <Message error className='smallText' content="Payment Failed" /> : ''}
                         </Grid.Column>
                     </Grid.Row>
-                </Grid>
+                // </Grid>
             )
         } else {
             /**
@@ -109,9 +109,17 @@ export class ProfileView extends React.Component {
             var body = <div key="notloaded"></div>
         }
         return (
-            <main className="Site-content" style={{ backgroundColor: '#008FCB', minHeight: '100vh' }}>
-                {body}
+            // <main className="Site-content" style={{ backgroundColor: '#008FCB', minHeight: '100vh' }}>
+            <main className="Site-content centre ui aligned blueBackground" >
+                <Grid stackable centered columns={1} verticalAlign='top' >
+                    <Grid.Row className="page-header-section no-content"></Grid.Row>
+                    {body}
+                    <Grid.Row></Grid.Row>
+                    <Grid.Row></Grid.Row>
+                    <Grid.Row></Grid.Row>
+                </Grid>
             </main>
+            // </main>
         );
     }
 }
