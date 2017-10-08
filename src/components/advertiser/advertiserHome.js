@@ -154,7 +154,7 @@ export class AdvertiserHomeView extends React.Component {
                         }
                     />
                     <ImageTextSection
-                        image='/static/img/advertiser/vr-creation.jpg'
+                        image='/static/img/advertiser/vr-creation.png'
                         rightAligned
                         content={
                             {
