@@ -65,9 +65,10 @@ export class HomeView extends React.Component {
         );
         return (
             <Grid stackable centered verticalAlign='middle' style={{margin:0}}>
-                <Grid.Row only="tablet computer" style={{padding: 0}}>
+                {/*<Grid.Row only="tablet computer" style={{padding: 0}}>
                     <FallingFlakes />
                 </Grid.Row>
+                */}
                 <Grid.Row verticalAlign='middle' className='page-header-section blueBackground'>
                     {/* <SmokeComponent /> */}
                     <Grid.Column width={16}>
