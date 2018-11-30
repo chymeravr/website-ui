@@ -1,68 +1,103 @@
-react-hot-boilerplate
-=====================
 
-The minimal dev environment to enable live-editing React components.
+  
+  
 
-Based on the guide available at https://webpack.js.org/guides/hmr-react/
+# Company website and dashboard frontend
 
-### Usage
+## Product Description
 
-```
-npm install
-npm start
-open http://localhost:3000
-```
+This module contains the ChymeraVR company website and dashboard frontend for advertisers and developers
 
-Now edit `src/App.js`.  
-Your changes will appear without reloading the browser like in [this video](http://vimeo.com/100010922).
+The frontend dashboard consumes backend APIs which achieve following purposes:
 
-### Linting
+*  **Chymera User** - API for generic chymera user
 
-This boilerplate project includes React-friendly ESLint configuration.
+* Registration, login and access control
 
-```
-npm run lint
-```
+* Payments and payouts
 
-### Building
+* Test devices for testing VR ads
 
-A basic production script is included that builds your app to a `dist` folder
+*  **Advertiser**
 
-```
-npm run build
-```
+* Managing campaigns, adgroups and ads
 
-### Using `0.0.0.0` as Host
+* Targeting module
 
-You may want to change the host in `webpack.config.js` from `localhost` to `0.0.0.0` to allow access from same WiFi network. This is not enabled by default because it is reported to cause problems on Windows. This may also be useful if you're using a VM.
+* Bidding and budgeting
 
-### Missing Features
+* Analytics dashboard to understand ad performance
 
-This boilerplate is purposefully simple to show the minimal configuration for React Hot Loader. For a real project, you may want to add a router, styles and maybe combine dev server with an existing server. This is out of scope of this boilerplate, but you may want to look into [other starter kits](https://github.com/gaearon/react-hot-loader/blob/master/docs/README.md#starter-kits).
+*  **Publisher**
 
-### WebStorm
+* Managing apps and ad placements
 
-Because the WebStorm IDE uses "safe writes" by default, Webpack's file-watcher won't recognize file changes, so hot-loading won't work. To fix this, disable "safe write" in WebStorm.
+* Managing earnings
 
-### Semantic UI
-https://semantic-ui.com/usage/theming.html
-Inside semantic folder.
-Theme is derived from three variables themes/default < themes/<packaged theme - chymera> < site. Change .variables files to edit the overall theme. Then run
-gulp build to generate css/js files in the dist folder.
+## Technologies used
 
+* Frontend framework - React
 
-### Dependencies
+* Routing - React Router
 
-* React
-* Webpack
-* [webpack-dev-server](https://github.com/webpack/webpack-dev-server)
-* [babel-loader](https://github.com/babel/babel-loader)
-* [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+* CSS framework - React Semantic (***unfortunately the support has been discontinued and hence UI might not render correctly in this project***)
 
-### Resources
+* Bundling - webpack
 
-* [Demo video](http://vimeo.com/100010922)
-* [react-hot-loader on Github](https://github.com/gaearon/react-hot-loader)
-* [Integrating JSX live reload into your workflow](http://gaearon.github.io/react-hot-loader/getstarted/)
-* [Troubleshooting guide](https://github.com/gaearon/react-hot-loader/blob/master/docs/Troubleshooting.md)
-* Ping dan_abramov on Twitter or #reactjs IRC
+## Getting started
+
+* Install docker
+
+`bash install_docker.sh `
+
+* From project root, build docker image
+
+`sudo docker build -t websiteui . `
+
+* Starting docker container
+
+* For dev purpose
+
+* Start container with DEBUG='True'
+
+`sudo docker run -d --net=host --name websiteui-container -e DEBUG='True' websiteui`
+
+* For product purpose
+
+* Start container without DEBUG='True'
+
+`sudo docker run -d --net=host --name websiteui-container -e websiteui`
+
+* Now dev server is live at :3000 port
+
+* For testing, access backend APIs through postman using collection https://www.getpostman.com/collections/d468561862a4da8c770d
+
+## Understanding project components
+
+### Semantic
+
+React semantic is the CSS framework of Semantic library built for ReactJS. It uses LESS for defining CSS properties. semantic/src/themes/default contains the default theme values. Custom values specific to chymera has been written in semantic/src/themes/chymera.
+
+*semantic/src/definition* contains the CSS definitions, that uses variables defined in themes. 
+*semantic/src/semantic.less* imports the CSS definitions
+*semantic/src/theme.config* imports themes for specific UI elements
+*semantic/gulpfile.js* manages build
+
+ For changing CSS values of existing elements change the theme.
+ For introducing or editing elements, create it in definitions.
+To build use `gulp build`
+
+### React and react router
+*src/index.js* is the entry point for the project
+
+## License
+
+This project is licensed under the MIT License
+
+  
+
+## Authors
+
+* Rubbal Sidhu
+
+* Sushil Kumar - [Github](https://github.com/sushilmiitb)
